@@ -36,6 +36,10 @@ async function getSpecificProduct(req, res) {
     next(err);
   }
 }
+//TODO
+//FUNCTION- UPDATE PRODUCT
+//FUNCTION- DELETE PRODUCT
+//FUNCTION- PRODUCT BY CATEGORY
 
 module.exports = {
   addProduct,
