@@ -74,7 +74,33 @@ async function loginCustomer(req, res, next) {
   }
 }
 
-//FUNCTION LOOUT
+//FUNCTION LOGOUT
+async function logoutCustomer(req, res, next) {
+  try {
+    if (!req.body) {
+      return res.status(400).json({
+        message: "Kan ju inte tassa iväg om du inte kommit hit än...",
+      });
+    }
+    res
+      .status(204)
+      .json({ message: "Du har tassat ut, välkommen tillbaka..." });
+  } catch (err) {
+    console.log(err);
+    next(err);
+  }
+}
+
+//TO DO kolla på
+//-cookie
+//-middlewares
+//-auth
+//-OAuth/google?
+//-CLIENT- LOGIN FORM
+//-Kolla listan TOdos
+//-Lägga till productmodell
+//-Lägga till i customer modell
+//COOKIE
 //FUNCTION AUTH
 
 // // ADD CUSTOMER
@@ -88,4 +114,4 @@ async function loginCustomer(req, res, next) {
 //   }
 // }
 
-module.exports = { registerCustomer, loginCustomer };
+module.exports = { registerCustomer, loginCustomer, logoutCustomer };
