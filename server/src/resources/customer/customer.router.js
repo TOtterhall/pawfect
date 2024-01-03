@@ -1,9 +1,9 @@
 const { Router } = require("express");
 
-const { registerCustomer } = require("./customer.controller");
+const { registerCustomer, loginCustomer } = require("./customer.controller");
 // const { CustomerVallidationSchema } = require("./customer.model");
 
 const customerRouter = Router();
-customerRouter.post("/customers/register", registerCustomer);
-
+customerRouter.post("/customers/register", registerCustomer); //MÅSTE SKAPA VALIDERING
+customerRouter.post("/customers/login", loginCustomer);
 module.exports = { customerRouter };

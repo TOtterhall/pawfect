@@ -12,7 +12,7 @@ const CustomerSchema = new Schema({
 const CustomerModel = model("customer", CustomerSchema);
 //VALLIDATION
 const CustomerValidationSchema = Joi.object({
-  email: Joi.string().strict().required(),
+  email: Joi.string().email().strict().required(),
   password: Joi.string().strict().required(),
 });
 
