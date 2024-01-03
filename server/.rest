@@ -1,3 +1,6 @@
+###//==============================//
+###//===========PRODUCTS===========//
+###//==============================//
 ### // CREATE PRODUCTS
 POST http://localhost:3080/api/products
 Content-Type: application/json
@@ -14,3 +17,21 @@ GET http://localhost:3080/api/products
 ### // GET PRODUCTS BY ID
 GET http://localhost:3080/api/products/659421c88866f6d4715be803
 ###
+
+###//==============================//
+###//===========CUSTOMER===========//
+###//==============================//
+### // CREATE CUSTOMER
+POST http://localhost:3080/api/customers/register
+Content-Type: application/json
+
+{
+    "email":"therese@gmail.com",
+    "password":"KalleAnka1234"
+   
+}
+###
+
+###//==============================//
+###//===========NEXT THING TO TRY===========//
+###//==============================//

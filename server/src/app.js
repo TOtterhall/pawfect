@@ -3,6 +3,7 @@ const cors = require("cors");
 const cookieSession = require("cookie-session");
 
 const { productRouter } = require("./resources/product/product.router");
+const { customerRouter } = require("./resources/customer/customer.router");
 //Also need to add errorhandler
 const app = express();
 app.use(express.json());
@@ -21,6 +22,7 @@ app.use(
 //Routes
 
 app.use("/api", productRouter);
+app.use("/api", customerRouter);
 app.use((req, res) => {
   console.log("!404!");
   res.status(404).json("missing resource");
