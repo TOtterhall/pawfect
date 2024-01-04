@@ -9,17 +9,20 @@
 //     </main>
 //   );
 // }
+
 "use client";
 import React from "react";
 import Main from "./components/Main/Main";
 import ProductProvider from "../Context/productContext/productContext";
-
+import CustomerProvider from "../Context/customerContext/customerContext";
 export default function Home() {
   return (
     <ProductProvider>
-      <>
-        <Main />
-      </>
+      <CustomerProvider>
+        <>
+          <Main />
+        </>
+      </CustomerProvider>
     </ProductProvider>
   );
 }

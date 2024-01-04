@@ -1,11 +1,23 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { useCustomerContext } from "../../../Context/customerContext/customerContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function LoginForm() {
+  const { isLoggedIn, login } = useCustomerContext();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleLogin = (e) => {
+    e.preventdefault();
+    if (!isLoggedIn) {
+      login();
+      console.log("loggat in här");
+    }
+  };
   return (
     // form from bootstrap
-    <form>
+    <form onSubmit={handleLogin}>
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">Email address</label>
         <input
@@ -14,6 +26,8 @@ export default function LoginForm() {
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Enter email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
         <small id="emailHelp" className="form-text text-muted">
           We'll never share your email with anyone else.
@@ -26,6 +40,8 @@ export default function LoginForm() {
           className="form-control"
           id="exampleInputPassword1"
           placeholder="Password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <div className="form-group form-check">
