@@ -1,3 +1,6 @@
+###//==============================//
+###//===========PRODUCTS===========//
+###//==============================//
 ### // CREATE PRODUCTS
 POST http://localhost:3080/api/products
 Content-Type: application/json
@@ -11,6 +14,11 @@ Content-Type: application/json
 ### // GET ALL PRODUCTS
 GET http://localhost:3080/api/products
 
-### // GET PRODUCTS BY ID
+
+### // GET PRODUCTS BY ID(existingproduct)
+GET http://localhost:3080/api/products/659421c88866f6d4715be804
+###
+
+### // GET PRODUCTS BY ID(NOT existingproduct)
 GET http://localhost:3080/api/products/659421c88866f6d4715be803
 ###

@@ -1,0 +1,31 @@
+
+###//==============================//
+###//===========CUSTOMER===========//
+###//==============================//
+### // CREATE CUSTOMER
+POST http://localhost:3080/api/customers/register
+Content-Type: application/json
+
+{
+    "email":"Tessan@gmail.com",
+    "password":"Tessan1234"
+   
+}
+###
+### // CREATE LOGIN
+POST http://localhost:3080/api/customers/login
+Content-Type: application/json
+
+{
+    "email":"Tessan@gmail.com",
+    "password":"Tessan1234"
+   
+}
+
+
+###
+### // LOGOUT
+POST http://localhost:3080/api/customers/logout
+Content-Type: application/json
+
+###
