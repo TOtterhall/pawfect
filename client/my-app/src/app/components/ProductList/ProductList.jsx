@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { useProductContext } from "../../../Context/Context"; // Uppdatera sökvägen här om det behövs
-import Image from "next/image";
+import { useProductContext } from "../../../Context/productContext/productContext";
 const ProductList = () => {
   const { products, getAllProducts } = useProductContext();
 
@@ -16,7 +15,7 @@ const ProductList = () => {
           <h2>{product.name}</h2>
           <p>{product.description}</p>
           <p>{product.price}</p>
-          <Image
+          <img
             src={product.image}
             alt={product.title}
             width={100}

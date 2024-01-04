@@ -15,14 +15,14 @@ const ProductContextProvider = ({ children }) => {
     setAllProducts(products);
   };
 
-  // ... andra funktioner och useEffect
+  // andra funktioner och useEffect
 
   return (
     <ProductContext.Provider
       value={{
         getAllProducts,
         products,
-        // ... andra värden/funktioner du vill tillhandahålla
+        // andra värden/funktioner
       }}
     >
       {children}
