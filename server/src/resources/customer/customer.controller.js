@@ -117,26 +117,19 @@ async function logoutCustomer(req, res, next) {
 // }
 
 //TO DO kolla på
-//-cookie
 //-middlewares
-//-auth
-//-OAuth/google?
 //-CLIENT- LOGIN FORM
 //-Kolla listan TOdos
-//-Lägga till productmodell
-//-Lägga till i customer modell
-//COOKIE
+//-Lägga till fler productmodell(vallidering/exist)
+//-Lägga till fler saker i customer modell
 //FUNCTION AUTH
 
-// // ADD CUSTOMER
-// async function registerCustomer(req, res, next) {
-//   try {
-//     const customer = new CustomerModel(req.body);
-//     await customer.save();
-//     res.status(201).json(customer);
-//   } catch (err) {
-//     next(err);
-//   }
-// }
+//DONE
+//-cookie
+//-OAuth/google?
 
+//NEXT SPRINT
+//-auth/autherize
+//Ta bort console.log
+//Lägga till bättre beskrivningar?
 module.exports = { registerCustomer, loginCustomer, logoutCustomer };
