@@ -26,12 +26,27 @@ POST http://localhost:3080/api/customers/register
 Content-Type: application/json
 
 {
-    "email":"therese@gmail.com",
-    "password":"KalleAnka1234"
+    "email":"Kajssa@gmail.com",
+    "password":"Kajsa1234"
    
 }
 ###
+### // CREATE LOGIN
+POST http://localhost:3080/api/customers/login
+Content-Type: application/json
 
+{
+    "email":"Kajssa@gmail.com",
+    "password":"Kajsa1234"
+   
+}
+
+
+###
+### // CREATE LOGIN
+POST http://localhost:3080/api/customers/logout
+
+###
 ###//==============================//
 ###//===========NEXT THING TO TRY===========//
 ###//==============================//
