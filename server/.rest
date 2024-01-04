@@ -26,8 +26,8 @@ POST http://localhost:3080/api/customers/register
 Content-Type: application/json
 
 {
-    "email":"Kajssa@gmail.com",
-    "password":"Kajsa1234"
+    "email":"Åsa@gmail.com",
+    "password":"Åsa1234"
    
 }
 ###
@@ -43,8 +43,9 @@ Content-Type: application/json
 
 
 ###
-### // CREATE LOGIN
+### // LOGOUT
 POST http://localhost:3080/api/customers/logout
+Content-Type: application/json
 
 ###
 ###//==============================//

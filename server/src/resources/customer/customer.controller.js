@@ -19,12 +19,13 @@ async function registerCustomer(req, res, next) {
     const hashedPassword = await bcrypt.hash(password, 10);
     const customer = new CustomerModel({
       email: email,
+      password: hashedPassword,
     });
 
     //TOKEN INNAN ANVÄNDAREN SPARAS
     const token = jwt.sign(
       { customerId: customer._id },
-      "my2oTalS3c3tk3Y4you",
+      "bytnamnsedanpånyckeln",
       { expiresIn: "4h" }
     );
     await customer.save();
@@ -63,7 +64,7 @@ async function loginCustomer(req, res, next) {
     }
     const token = jwt.sign(
       { customerId: customer._id },
-      "my2oTalS3c3tk3Y4you",
+      "bytnamnsedanpånyckeln",
       { expiresIn: "4h" }
     );
 
@@ -77,19 +78,43 @@ async function loginCustomer(req, res, next) {
 //FUNCTION LOGOUT
 async function logoutCustomer(req, res, next) {
   try {
-    if (!req.body) {
-      return res.status(400).json({
-        message: "Kan ju inte tassa iväg om du inte kommit hit än...",
-      });
-    }
+    // if (!req.session || !req.session._id) {
+    //   console.log(req.session._id);
+    //   return res.status(400).json({
+    //     message: "Kan ju inte tassa iväg om du inte kommit hit än...",
+    //   });
+    // }
+
+    res.clearCookie("jwtToken");
+    req.session = null;
     res
-      .status(204)
+      .status(200)
       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
   } catch (err) {
     console.log(err);
     next(err);
   }
 }
+
+// //FUNCTION LOGOUT
+// async function logoutCustomer(req, res, next) {
+//   try {
+//     const token = req.cookies.jwtToken;
+//     console.log(token);
+//     if (!token) {
+//       return res.status(400).json({
+//         message: "Kan ju inte tassa iväg om du inte kommit hit än...",
+//       });
+//     }
+//     res.clearCookie("jwtToken");
+//     res
+//       .status(204)
+//       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
+//   } catch (err) {
+//     console.log(err);
+//     next(err);
+//   }
+// }
 
 //TO DO kolla på
 //-cookie

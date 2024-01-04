@@ -1,11 +1,14 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
+const cookieParse = require("cookie-parser");
 
 const { productRouter } = require("./resources/product/product.router");
 const { customerRouter } = require("./resources/customer/customer.router");
+const cookieParser = require("cookie-parser");
 //Also need to add errorhandler
 const app = express();
+app.use(cookieParser());
 app.use(express.json());
 app.use(cors({ origin: true, credentials: true }));
 app.use(

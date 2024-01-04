@@ -1,4 +1,4 @@
-const { model, Schema } = require("mongoose");
+const { model, Schema, models } = require("mongoose");
 const Joi = require("joi");
 
 //SCHEMA
@@ -9,7 +9,7 @@ const CustomerSchema = new Schema({
 
 //MODELL
 // const CustomerModel = model.customer || model("customer", CustomerSchema);
-const CustomerModel = model("customer", CustomerSchema);
+const CustomerModel = models.user || model("customer", CustomerSchema);
 //VALLIDATION
 const CustomerValidationSchema = Joi.object({
   email: Joi.string().email().strict().required(),
