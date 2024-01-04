@@ -12,14 +12,14 @@
 "use client";
 import React from "react";
 import Main from "./components/Main/Main";
-import ProductProvider from "../Context/Context.jsx";
+import ProductProvider from "../Context/productContext/productContext";
 
 export default function Home() {
   return (
     <ProductProvider>
-      <main>
+      <>
         <Main />
-      </main>
+      </>
     </ProductProvider>
   );
 }
