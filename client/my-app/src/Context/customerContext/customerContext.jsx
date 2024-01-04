@@ -16,29 +16,32 @@ const CustomerContextProvider = ({ children }) => {
       const customers = await res.json();
       setAllCustomers(customers);
     } catch (error) {
-      console.error("Kan inte hämta alla användarna.....", error);
+      console.log("Kan inte hämta alla användarna.....", error);
     }
   };
 
   const login = async (email, password) => {
-    const customer = { email, password };
+    const customerData = { email: email, password: password };
+    console.log(customerData);
     try {
       const res = await fetch(`http://localhost:3080/api/customers/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(customer),
+        body: JSON.stringify(customerData),
       });
+      console.log(res);
       if (res.ok) {
+        const data = await res.json(data);
         setIsLoggedIn(true);
+        console.log(data);
         console.log("inloggning lyckades från context");
       } else {
-        console.error("Kan inte logga in DU i context.....", error);
+        console.log("Kan inte logga in DU i context.....");
       }
-      // const data = await res.json(data);
     } catch (error) {
-      console.error("Kan inte logga in DU.....", error);
+      console.log("Kan inte logga in DU.....");
     }
   };
 
