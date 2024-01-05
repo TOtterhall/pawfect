@@ -7,8 +7,8 @@ POST http://localhost:3080/api/customers/register
 Content-Type: application/json
 
 {
-    "email":"Tessan@gmail.com",
-    "password":"Tessan1234"
+    "email":"Nalle@gmail.com",
+    "password":"Nalle1234"
    
 }
 ###

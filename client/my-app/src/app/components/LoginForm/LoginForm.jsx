@@ -1,8 +1,26 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import { useCustomerContext } from "../../../Context/customerContext/customerContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-export default function LoginForm() {
+const LoginForm = () => {
+  const { login } = useCustomerContext();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+  };
+  const handlePasswordChange = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleLogin = async (e) => {
+    e.preventDefault();
+
+    await login({ email, password });
+  };
+
   return (
     // form from bootstrap
     <form>
@@ -14,6 +32,8 @@ export default function LoginForm() {
           id="exampleInputEmail1"
           aria-describedby="emailHelp"
           placeholder="Enter email"
+          value={email}
+          onChange={handleEmailChange}
         />
         <small id="emailHelp" className="form-text text-muted">
           We'll never share your email with anyone else.
@@ -26,6 +46,8 @@ export default function LoginForm() {
           className="form-control"
           id="exampleInputPassword1"
           placeholder="Password"
+          value={password}
+          onChange={handlePasswordChange}
         />
       </div>
       <div className="form-group form-check">
@@ -40,14 +62,16 @@ export default function LoginForm() {
       </div>
 
       {/* skapa en annan knapp so komponent sedan? */}
-      <button type="submit" className="btn btn-primary">
+      <button type="submit" onClick={handleLogin} className="btn btn-primary">
         Submit
       </button>
+      <p></p>
     </form>
   );
-}
-
+};
+export default LoginForm;
 // Notes to myself
+//Setcookie?-logga ut sesson._id
 // <label className="form-check-label" htmlFor="exampleCheck1">
 // var for innan men enligt stckowerflow borde det vara htmlFor,stämmer?
 //stackoverflow.com/questions/59924585/im-getting-an-error-using-react-invalid-dom-property-for-did-you-mean-htm

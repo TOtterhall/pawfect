@@ -38,8 +38,8 @@ async function registerCustomer(req, res, next) {
 
 //FUNCTION LOGIN
 async function loginCustomer(req, res, next) {
+  const { email, password } = req.body;
   try {
-    const { email, password } = req.body;
     console.log(password);
     // const thisIsThePassword = req.body.password;
     // console.log(thisIsThePassword);
@@ -55,7 +55,10 @@ async function loginCustomer(req, res, next) {
       });
     }
 
-    const correctPassword = await bcrypt.compare(password, customer.password);
+    const correctPassword = await bcrypt.compare(
+      req.body.password,
+      customer.password
+    );
     // console.log(correctPassword);
     if (!correctPassword) {
       return res.status(401).json({
@@ -68,10 +71,10 @@ async function loginCustomer(req, res, next) {
       { expiresIn: "4h" }
     );
 
-    res.status(200).json({ customer, token });
+    return res.status(200).json({ customer, token });
   } catch (err) {
     console.log(err);
-    next(err);
+    next();
   }
 }
 

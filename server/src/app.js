@@ -1,8 +1,7 @@
 const express = require("express");
 const cors = require("cors");
 const cookieSession = require("cookie-session");
-const cookieParse = require("cookie-parser");
-
+const { errorHandler } = require("./error");
 const { productRouter } = require("./resources/product/product.router");
 const { customerRouter } = require("./resources/customer/customer.router");
 const cookieParser = require("cookie-parser");
@@ -30,5 +29,5 @@ app.use((req, res) => {
   console.log("!404!");
   res.status(404).json("missing resource");
 });
-
+app.use(errorHandler);
 module.exports = { app };
