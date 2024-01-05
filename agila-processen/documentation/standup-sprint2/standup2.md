@@ -33,6 +33,17 @@
 **Idag ska jag göra** Fortsätta med mina task, har även lagt in todo-anteckningar i VSC för att veta vart jag ska börja.
 **Förklaring till beslut jag tagit** -
 
+# Datum: 2024-01-05
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Fortsatte med mina task, har även lagt in todo-anteckningar i VSC för att veta vart jag ska börja idag. Började med #customer-client-setup och skapade customer context.
+**Ett problem jag har** Har problem med att logga in användaren från klienten.
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** Bugg - stirrade mig blind på min rest fil och customer model när den klagade på att den inte fick in lösenordet rätt när jag hade gjort en validering/middleware. MEN efter ett tag upptäckte jag att jag lyckats ta bort en rad.
+**Idag ska jag göra** Fortsätta med mina task, har även lagt in todo-anteckningar i VSC för att veta vart jag ska börja. Fortsätta med #customer-client-setup för att kunna logga in kunder men behöver göra mer research.
+**Förklaring till beslut jag tagit** -
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
