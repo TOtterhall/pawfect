@@ -1,6 +1,8 @@
+
 # Sprint 2
 
 # Datum: 2024-01-02
+
 
 ## Namn: Therese Otterhäll
 
@@ -10,6 +12,7 @@
 **I torsdags lärde jag mig** Mer om Next.js
 **Idag ska jag göra** Sätta SP på min kommande sprint. Plocka nya tasks.
 **Förklaring till beslut jag tagit**
+
 
 # Datum: 2024-01-03
 
@@ -45,6 +48,7 @@
 **Förklaring till beslut jag tagit** -
 
 **Frågor jag har:**
+
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
 OBS! Ta kort på veckan från toogle...
