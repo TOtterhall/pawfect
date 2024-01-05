@@ -14,6 +14,10 @@ customerRouter.post(
   validate(CustomerValidationSchema),
   registerCustomer
 ); //MÅSTE SKAPA VALIDERING
-customerRouter.post("/customers/login", loginCustomer);
+customerRouter.post(
+  "/customers/login",
+  validate(CustomerValidationSchema),
+  loginCustomer
+);
 customerRouter.post("/customers/logout", logoutCustomer);
 module.exports = { customerRouter };
