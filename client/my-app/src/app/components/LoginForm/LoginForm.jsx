@@ -4,7 +4,7 @@ import { useCustomerContext } from "../../../Context/customerContext/customerCon
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const LoginForm = () => {
-  const { isLoggedIn, login } = useCustomerContext();
+  const { login } = useCustomerContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -14,13 +14,11 @@ const LoginForm = () => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-  const handleLogin = (e) => {
-    // const emailValue = setEmail;
-    // const passwordValue = password;
+
+  const handleLogin = async (e) => {
     e.preventDefault();
-    if (!isLoggedIn) {
-      login(email, password);
-    }
+
+    await login({ email, password });
   };
 
   return (
@@ -73,6 +71,7 @@ const LoginForm = () => {
 };
 export default LoginForm;
 // Notes to myself
+//Setcookie?-logga ut sesson._id
 // <label className="form-check-label" htmlFor="exampleCheck1">
 // var for innan men enligt stckowerflow borde det vara htmlFor,stämmer?
 //stackoverflow.com/questions/59924585/im-getting-an-error-using-react-invalid-dom-property-for-did-you-mean-htm
