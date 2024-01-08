@@ -1,25 +1,53 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCustomerContext } from "../../../Context/customerContext/customerContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const LoginForm = () => {
-  const { login } = useCustomerContext();
+  const { register, login, isLoggedIn, logout } = useCustomerContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [toogleBtn, setToogleBtn] = useState("");
 
+  //FÖR ATT ÄNDRA PÅ KNAPPTEXT BEROENDE PÅ OM KUND ÄR I LOGGAD ELLER INTE
+  useEffect(() => {
+    setToogleBtn(isLoggedIn ? "Logout" : "Login");
+  }, [isLoggedIn]);
+
+  // TA EMOT EMAIL FRÅN FORMULÄRET
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
+
+  // TA EMOT LÖSENORD FRÅN FORMULÄRET
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
+  //REGISTRERA ANVÄNDAREN
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    await register({ email, password });
+  };
+
+  //LOGGAIN ANVÄNDAREN
   const handleLogin = async (e) => {
     e.preventDefault();
 
     await login({ email, password });
+    setToogleBtn("Logout");
   };
+
+  //LOGGAUT ANVÄNDAREN
+  const handleLogout = async (e) => {
+    e.preventDefault();
+
+    await logout();
+    setToogleBtn("Login");
+  };
+
+  const handleToogleBtn = isLoggedIn ? handleLogout : handleLogin;
 
   return (
     // form from bootstrap
@@ -62,9 +90,21 @@ const LoginForm = () => {
       </div>
 
       {/* skapa en annan knapp so komponent sedan? */}
-      <button type="submit" onClick={handleLogin} className="btn btn-primary">
-        Submit
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={handleToogleBtn}
+      >
+        {toogleBtn}
       </button>
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={handleRegister}
+      >
+        Registrera
+      </button>
+
       <p></p>
     </form>
   );
