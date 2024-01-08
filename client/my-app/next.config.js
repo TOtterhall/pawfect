@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["donlorino.com", "theoddpup.com", "bjaf.se"], // Lägg till domänen här
+    domains: ["bjaf.se"],
   },
 };
 
