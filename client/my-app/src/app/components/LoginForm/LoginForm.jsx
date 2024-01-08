@@ -4,7 +4,7 @@ import { useCustomerContext } from "../../../Context/customerContext/customerCon
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const LoginForm = () => {
-  const { login } = useCustomerContext();
+  const { register, login, isLoggedIn, logout } = useCustomerContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -19,6 +19,14 @@ const LoginForm = () => {
     e.preventDefault();
 
     await login({ email, password });
+    if (isLoggedIn) {
+      await logout();
+    }
+  };
+  const handleRegister = async (e) => {
+    e.preventDefault();
+
+    await register({ email, password });
   };
 
   return (
@@ -62,9 +70,17 @@ const LoginForm = () => {
       </div>
 
       {/* skapa en annan knapp so komponent sedan? */}
-      <button type="submit" onClick={handleLogin} className="btn btn-primary">
-        Submit
+      <button type="button" className="btn btn-primary" onClick={handleLogin}>
+        {!isLoggedIn ? "Login" : "Logout"}
       </button>
+      <button
+        type="button"
+        className="btn btn-primary"
+        onClick={handleRegister}
+      >
+        Registrera
+      </button>
+
       <p></p>
     </form>
   );
