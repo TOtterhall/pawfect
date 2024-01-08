@@ -88,7 +88,6 @@ const CustomerContextProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(customerData),
       });
 
       console.log(res);
@@ -106,8 +105,6 @@ const CustomerContextProvider = ({ children }) => {
     }
   };
 
-  // andra funktioner och useEffect
-
   return (
     <CustomerContext.Provider
       value={{
@@ -118,8 +115,6 @@ const CustomerContextProvider = ({ children }) => {
         setIsLoggedIn,
         register,
         logout,
-
-        // andra värden/funktioner
       }}
     >
       {children}
