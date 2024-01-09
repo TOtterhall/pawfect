@@ -5,7 +5,10 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 export default function Cart() {
   return (
     <div>
-      <FontAwesomeIcon icon={faCartShopping} />
+      {/* ändra färg på knapp sedan */}
+      <button className="btn btn-outline-success my-2 my-sm-0 " type="submit">
+        <FontAwesomeIcon icon={faCartShopping} />
+      </button>
     </div>
   );
 }
