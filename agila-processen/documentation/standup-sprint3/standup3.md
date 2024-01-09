@@ -11,6 +11,17 @@
 **Idag ska jag göra** Sätta SP på min kommande sprint. Plocka nya tasks.
 **Förklaring till beslut jag tagit** Idag fick jag merga sprint two till preleased eftersom ag uppstäckte att allt av någon anledning inte kommit med. Men nu ska allt vara uppdaterat.
 
+# Datum: 2024-01-09
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Satte SP på min kommande sprint. Plockade nya tasks. Skapade branch #Sprint-three samt # customer-register-client-setup. Skapade så att kund kan registrera sig samt även logga ut och in nu med hjälp av en tooglebutton.
+**Ett problem jag har** -
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** Vissa saker tar längre tid än vad man tänker...
+**Idag ska jag göra** Plocka fler tasks. Se över draw.io och börja strukturera upp client-side.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
