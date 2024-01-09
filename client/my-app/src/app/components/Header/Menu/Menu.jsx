@@ -4,16 +4,16 @@ import React from "react";
 export default function Menu() {
   return (
     <div>
-      <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-          <div class="bg-dark p-4">
-            <h4 class="text-white">Collapsed content</h4>
-            <span class="text-muted">Toggleable via the navbar brand.</span>
+      <div className="pos-f-t">
+        <div className="collapse" id="navbarToggleExternalContent">
+          <div className="bg-dark p-4">
+            <h4 className="text-white">Collapsed content</h4>
+            <span className="text-muted">Toggleable via the navbar brand.</span>
           </div>
         </div>
-        <nav class="navbar navbar-dark bg-dark">
+        <nav className="navbar navbar-dark bg-dark">
           <button
-            class="navbar-toggler"
+            className="navbar-toggler"
             type="button"
             data-toggle="collapse"
             data-target="#navbarToggleExternalContent"
@@ -21,7 +21,7 @@ export default function Menu() {
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span className="navbar-toggler-icon"></span>
           </button>
         </nav>
       </div>

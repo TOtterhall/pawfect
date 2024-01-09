@@ -1,7 +1,6 @@
 import React from "react";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
-
 import LoginForm from "../LoginForm/LoginForm";
 import Categories from "../Categories/Categories";
 import News from "../News/News";
@@ -20,7 +19,6 @@ const Main = () => {
       <Aboutus />
       <Info />
       <Newsletter />
-
       <Footer />
     </div>
   );

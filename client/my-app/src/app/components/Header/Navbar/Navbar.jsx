@@ -1,13 +1,15 @@
 import React from "react";
-import Menu from "../Menu/Menu";
+
 import SearchForm from "../SearchForm/SearchForm";
 import Logo from "../Logo/Logo";
+import Login from "../../Login/Login";
+import Cart from "../../Cart/Cart";
 export default function Navbar() {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <button
-          class="navbar-toggler"
+          className="navbar-toggler"
           type="button"
           data-toggle="collapse"
           data-target="#navbarTogglerDemo01"
@@ -15,36 +17,41 @@ export default function Navbar() {
           aria-expanded="false"
           aria-label="Toggle navigation"
         >
-          <span class="navbar-toggler-icon"></span>
+          <span className="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a class="navbar-brand" href="#">
+        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+          <a className="navbar-brand" href="#">
             Home
           </a>
-          <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link" href="#">
-                Home <span class="sr-only">(current)</span>
+          <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li className="nav-item active">
+              <a className="nav-link" href="#">
+                Home <span className="sr-only">(current)</span>
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">
+            <li className="nav-item">
+              <a className="nav-link" href="#">
                 Link
               </a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link disabled" href="#">
+            <li className="nav-item">
+              <a className="nav-link disabled" href="#">
                 Disabled
               </a>
             </li>
           </ul>
         </div>
+        <div>
+          <SearchForm />
+        </div>
+        <div>
+          <Logo />
+        </div>
+        <div>
+          <Login />
+        </div>
+        <Cart />
       </nav>
-      <SearchForm />
-      <div>
-        <Logo />
-      </div>
-      <Menu />
     </div>
   );
 }
