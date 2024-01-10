@@ -26,7 +26,7 @@
 
 ## Namn: Therese Otterhäll
 
-**Igår gjorde jag** Började strukturera upp client-side med fler komponenter och renderade ut på sidan. La till iconer för cart/login/hamburger/search. Gjorde lite research i bildrendering i Next.js.
+**Igår gjorde jag** Började strukturera upp client-side med fler komponenter och renderade ut på sidan. La till iconer för cart/login/hamburger/search. Gjorde lite research i bildrendering i Next.js. Ställde in 2 stegs auktorisering för github för att inte gå miste om mina projekt.
 **Ett problem jag har** Fastnade i hur jag skulle rendera ut bilder i min karusell. Måste läsa på mer dokumentation hur det fungerar i Next.js.
 **Jag behöver hjälp med** Inget speciellt men ska ta handledning idag med Anders för att stämma av om jag är på rätt spår.
 **Igår lärde jag mig** Mer om Next.js.
