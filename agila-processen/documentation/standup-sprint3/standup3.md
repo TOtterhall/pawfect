@@ -22,6 +22,17 @@
 **Idag ska jag göra** Plocka fler tasks. Se över draw.io och börja strukturera upp client-side.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-10
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Började strukturera upp client-side med fler komponenter och renderade ut på sidan. La till iconer för cart/login/hamburger/search. Gjorde lite research i bildrendering i Next.js.
+**Ett problem jag har** Fastnade i hur jag skulle rendera ut bilder i min karusell. Måste läsa på mer dokumentation hur det fungerar i Next.js.
+**Jag behöver hjälp med** Inget speciellt men ska ta handledning idag med Anders för att stämma av om jag är på rätt spår.
+**Igår lärde jag mig** Mer om Next.js.
+**Idag ska jag göra** Fortsätta att strukturera upp client-side /.
+**Förklaring till beslut jag tagit** Måste läsa på mer dokumentation och göra lite research hur det fungerar i Next.js men med tanke på att stylingen inte är betygsgrundande så avvaktar jag med det just nu för att få flow i projektet och komma vidare utan att ödsla tid.
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
