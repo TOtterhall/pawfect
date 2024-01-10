@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import LoginForm from "../LoginForm/LoginForm";
 import Categories from "../Categories/Categories";
 import News from "../News/News";
-import Shop from "../Shop/Shop";
+
 import Aboutus from "../Aboutus/Aboutus";
 import Info from "../Info/Info";
 import Newsletter from "../Newsletter/Newsletter";
@@ -25,7 +25,6 @@ const Main = () => {
       <AboutJumbo />
       <InfoJumbo />
       <SocialJumbo />
-      <Shop />
       <Aboutus />
       <Info />
       <Newsletter />

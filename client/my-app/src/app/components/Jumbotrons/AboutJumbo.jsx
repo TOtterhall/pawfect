@@ -1,7 +1,7 @@
 "use Client";
 
 import React from "react";
-
+import "./Jumbotrons.css";
 export default function AboutJumbo() {
   return (
     <div>

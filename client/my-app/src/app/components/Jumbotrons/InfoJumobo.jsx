@@ -1,11 +1,11 @@
 "use Client";
 
 import React from "react";
-
+import "./Jumbotrons.css";
 export default function InfoJumbo() {
   return (
     <div>
-      <div className="jumbotron">
+      <div className="jumbotron-Info">
         <h1 className="display-4">Info...</h1>
         <p className="lead">
           This is a simple hero unit, a simple jumbotron-style component for
