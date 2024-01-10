@@ -9,6 +9,10 @@ import Shop from "../Shop/Shop";
 import Aboutus from "../Aboutus/Aboutus";
 import Info from "../Info/Info";
 import Newsletter from "../Newsletter/Newsletter";
+import StoreJumbo from "../Jumbotrons/StoreJumbo";
+import AboutJumbo from "../Jumbotrons/AboutJumbo";
+import InfoJumbo from "../Jumbotrons/InfoJumobo";
+import SocialJumbo from "../Jumbotrons/SocialJumbo";
 const Main = () => {
   return (
     <div>
@@ -17,6 +21,10 @@ const Main = () => {
       <LoginForm />
       <Categories />
       <News />
+      <StoreJumbo />
+      <AboutJumbo />
+      <InfoJumbo />
+      <SocialJumbo />
       <Shop />
       <Aboutus />
       <Info />
