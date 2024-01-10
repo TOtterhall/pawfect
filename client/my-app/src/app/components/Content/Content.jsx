@@ -5,7 +5,7 @@ import Footer from "../Footer/Footer";
 import LoginForm from "../LoginForm/LoginForm";
 import Categories from "../Categories/Categories";
 import News from "../News/News";
-
+import Shop from "../Shop/Shop";
 import Aboutus from "../Aboutus/Aboutus";
 import Info from "../Info/Info";
 import Newsletter from "../Newsletter/Newsletter";
@@ -13,13 +13,14 @@ import StoreJumbo from "../Jumbotrons/StoreJumbo";
 import AboutJumbo from "../Jumbotrons/AboutJumbo";
 import InfoJumbo from "../Jumbotrons/InfoJumobo";
 import SocialJumbo from "../Jumbotrons/SocialJumbo";
-const Main = () => {
+const Content = () => {
   return (
     <div>
       <Header />
       <Carousel />
       <LoginForm />
       <Categories />
+      <Shop />
       <News />
       <StoreJumbo />
       <AboutJumbo />
@@ -33,4 +34,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Content;

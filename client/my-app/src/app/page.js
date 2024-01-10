@@ -1,27 +1,19 @@
-// "use client";
-// import React from "react";
-// import Main from "./components/Main/Main";
-
-// export default function Home() {
-//   return (
-//     <main>
-//       <Main />
-//     </main>
-//   );
-// }
-
 "use client";
 import React from "react";
-import Main from "./components/Main/Main";
+import Content from "./components/Content/Content";
+
 import ProductProvider from "../Context/productContext/productContext";
 import CustomerProvider from "../Context/customerContext/customerContext";
+
 export default function Home() {
   return (
     <ProductProvider>
       <CustomerProvider>
-        <>
-          <Main />
-        </>
+        <div>
+          <main>
+            <Content />
+          </main>
+        </div>
       </CustomerProvider>
     </ProductProvider>
   );
