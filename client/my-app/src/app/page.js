@@ -22,7 +22,11 @@ export default function Home() {
         <main>
           <Carousel />
           <LoginForm />
-          {/* //förstår inte om jag lägger in min /<Login/> här så får jag ut iconerna. researcha oom detta samtidigt som bilder. */}
+          {/* //förstår inte om jag lägger in min
+          /<Login/> 
+          här så får jag ut iconerna.
+          Researcha oom detta samtidigt som bilder.
+          har det med config att göra? */}
           <Login />
           <Categories />
           <News />
