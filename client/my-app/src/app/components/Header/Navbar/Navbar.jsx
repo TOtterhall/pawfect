@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import SearchForm from "../SearchForm/SearchForm";
 import Logo from "../Logo/Logo";
-import Login from "../../Login/Login";
+import Login from "../Login/Login";
 import Cart from "../../Cart/Cart";
 export default function Navbar() {
   return (
@@ -49,6 +49,7 @@ export default function Navbar() {
             </li>
           </ul>
         </div>
+
         <div>
           <SearchForm />
         </div>
@@ -58,7 +59,9 @@ export default function Navbar() {
         <div>
           <Login />
         </div>
-        <Cart />
+        <div>
+          <Cart />
+        </div>
       </nav>
     </div>
   );

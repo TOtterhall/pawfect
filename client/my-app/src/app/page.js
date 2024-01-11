@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import Carousel from "../../src/app/components/Carousel/Carousel";
+import Login from "./components/Header/Login/Login";
 import LoginForm from "../../src/app/components/LoginForm/LoginForm";
 import Categories from "../../src/app/components/Categories/Categories";
 import News from "../../src/app/components/News/News";
@@ -21,6 +22,8 @@ export default function Home() {
         <main>
           <Carousel />
           <LoginForm />
+          {/* //förstår inte om jag lägger in min /<Login/> här så får jag ut iconerna. researcha oom detta samtidigt som bilder. */}
+          <Login />
           <Categories />
           <News />
           <StoreJumbo />
