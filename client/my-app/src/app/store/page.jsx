@@ -8,10 +8,8 @@ export default function Store() {
   return (
     <ProductProvider>
       <CustomerProvider>
-        <main>
-          <div>Min butik</div>
-          <Shop />
-        </main>
+        <div>Min butik</div>
+        <Shop />
       </CustomerProvider>
     </ProductProvider>
   );
