@@ -4,6 +4,7 @@ import SearchForm from "../SearchForm/SearchForm";
 import Logo from "../Logo/Logo";
 import Login from "../Login/Login";
 import Cart from "../../Cart/Cart";
+import Menu from "../Menu/Menu";
 export default function Navbar() {
   return (
     <div>
@@ -52,7 +53,9 @@ export default function Navbar() {
             </li> */}
           </ul>
         </div>
-
+        <div>
+          <Menu />
+        </div>
         <div>
           <SearchForm />
         </div>
