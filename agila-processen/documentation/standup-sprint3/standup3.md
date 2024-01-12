@@ -44,6 +44,17 @@
 **Idag ska jag göra** Fortsätta att strukturera upp client-side och läsa dokumentation om Next.js13, försöka få till mall heriarkin så jag kan rendera ut "produktlistan" när man klickar på "butiken".
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-12
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Fortsätte att strukturera upp client-side och läste dokumentation om Next.js13, fick till mall heriarkin så att jag kan rendera ut "produktlistan" när man klickar på "butiken".
+**Ett problem jag har**
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** Mer om Next.js - mall heriarki.
+**Idag ska jag göra** Det som behövs till client så som drawers för cart,meny och login och om jag hinner "add to cart function".
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
