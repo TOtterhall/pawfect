@@ -6,7 +6,12 @@ const ProductSchema = new Schema(
     title: { type: String, required: true },
     price: { type: Number, required: true },
     image: { type: String, required: true },
+    description: { type: String, required: false },
+    color: { type: String, required: false },
+    size: { type: String, required: false },
+    category: { type: String, required: false },
     deleted: { type: Boolean, required: false, default: false },
+    // paymentoptions?egen?instock?
   },
   { versionKey: false }
 );
@@ -17,6 +22,13 @@ const AddProductValidationSchema = Joi.object({
   title: Joi.string().strict().required(),
   price: Joi.number().strict().required(),
   image: Joi.string().uri().allow("image/png", "image/jpeg", "image/svg"),
+  description: Joi.string().optional(),
+  color: Joi.string().optional(),
+  size: Joi.string().optional(),
+  //behöver ev göra en egen för kategorier här?
+  category: Joi.number().optional(),
+
+  // paymentoptions?egen?
 });
 
 const UpdateProductValidationSchema = AddProductValidationSchema.keys({
