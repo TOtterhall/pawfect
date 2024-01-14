@@ -18,11 +18,9 @@ export default function InfoJumbo() {
           content out within the larger container.
         </p>
         <p className="lead">
-          <a className="btn btn-primary btn-lg" href="#" role="button">
-            <Link className="nav-link" href="/info">
-              Info
-            </Link>
-          </a>
+          <Link className="nav-link btn-lg" href="/info">
+            Info
+          </Link>
         </p>
       </div>
     </div>

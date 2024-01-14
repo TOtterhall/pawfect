@@ -18,11 +18,9 @@ export default function AboutJumbo() {
           content out within the larger container.
         </p>
         <p className="lead">
-          <a className="btn btn-primary btn-lg" href="#" role="button">
-            <Link className="nav-link" href="/omoss">
-              Omoss
-            </Link>
-          </a>
+          <Link className="nav-link btn-lg" href="/omoss">
+            Omoss
+          </Link>
         </p>
       </div>
     </div>

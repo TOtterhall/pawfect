@@ -19,11 +19,9 @@ export default function StoreJumbo() {
         </p>
 
         <p className="lead">
-          <a className="btn btn-primary btn-lg" href="#" role="button">
-            <Link className="nav-link" href="/butik">
-              Till butiken
-            </Link>
-          </a>
+          <Link className="nav-link btn-lg" href="/butik">
+            Till butiken
+          </Link>
         </p>
       </div>
     </div>

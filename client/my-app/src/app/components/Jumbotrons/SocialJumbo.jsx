@@ -18,11 +18,9 @@ export default function SocialJumbo() {
           content out within the larger container.
         </p>
         <p className="lead">
-          <a className="btn btn-primary btn-lg" href="#" role="button">
-            <Link className="nav-link" href="/social">
-              Social
-            </Link>
-          </a>
+          <Link className="nav-link btn-lg" href="/social">
+            Social
+          </Link>
         </p>
       </div>
     </div>
