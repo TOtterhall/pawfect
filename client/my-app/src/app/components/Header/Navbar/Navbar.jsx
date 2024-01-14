@@ -1,9 +1,11 @@
+"use client";
 import React from "react";
 import Link from "next/link";
 import SearchForm from "../SearchForm/SearchForm";
 import Logo from "../Logo/Logo";
 import Login from "../Login/Login";
 import Cart from "../../Cart/Cart";
+import Menu from "../Menu/Menu";
 export default function Navbar() {
   return (
     <div>
@@ -20,36 +22,41 @@ export default function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <a className="navbar-brand" href="/">
+          {/* <a className="navbar-brand" href="/">
             Home
-          </a>
+          </a> */}
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item active">
-              <Link className="nav-link" href="/about">
+              <Link className="nav-link" href="/">
                 Home <span className="sr-only">(current)</span>
               </Link>
             </li>
             <li className="nav-item">
-              <Link href="/about">om oss2</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/about">
-                Om oss
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link" href="/store">
+              <Link className="nav-link" href="/butik">
                 Butik
               </Link>
             </li>
             <li className="nav-item">
+              <Link className="nav-link" href="/omoss">
+                Om oss
+              </Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" href="/kontakt">
+                Kontakta oss
+              </Link>
+            </li>
+
+            {/* <li className="nav-item">
               <a className="nav-link disabled" href="#">
                 Disabled
               </a>
-            </li>
+            </li> */}
           </ul>
         </div>
-
+        <div>
+          <Menu />
+        </div>
         <div>
           <SearchForm />
         </div>

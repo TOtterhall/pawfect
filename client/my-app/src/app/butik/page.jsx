@@ -8,7 +8,8 @@ export default function Store() {
   return (
     <ProductProvider>
       <CustomerProvider>
-        <div>Min butik</div>
+        <h1>Min butik</h1>
+        <div>Länka även från startsidan</div>
         <Shop />
       </CustomerProvider>
     </ProductProvider>
