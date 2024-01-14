@@ -10,9 +10,14 @@ const ProductContextProvider = ({ children }) => {
   const [products, setAllProducts] = useState([]);
 
   const getAllProducts = async () => {
-    const res = await fetch(`http://localhost:3080/api/products/`);
-    const products = await res.json();
-    setAllProducts(products);
+    try {
+      const res = await fetch(`http://localhost:3080/api/products`);
+      const products = await res.json();
+
+      setAllProducts(products);
+    } catch (error) {
+      console.log("Kan inte hämta alla produkter tyvärr.....", error);
+    }
   };
 
   // andra funktioner och useEffect
