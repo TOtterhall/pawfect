@@ -1,4 +1,4 @@
-export default function Contact() {
+export default function Kontakt() {
   return (
     <main>
       <h1>Kontakta oss</h1>

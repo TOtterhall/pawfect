@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./Jumbotrons.css";
+import Link from "next/link";
 export default function SocialJumbo() {
   return (
     <div>
@@ -18,7 +19,9 @@ export default function SocialJumbo() {
         </p>
         <p className="lead">
           <a className="btn btn-primary btn-lg" href="#" role="button">
-            Learn more
+            <Link className="nav-link" href="/social">
+              Social
+            </Link>
           </a>
         </p>
       </div>

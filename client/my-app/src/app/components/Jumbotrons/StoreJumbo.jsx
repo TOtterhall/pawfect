@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./Jumbotrons.css";
+import Link from "next/link";
 export default function StoreJumbo() {
   return (
     <div>
@@ -16,9 +17,12 @@ export default function StoreJumbo() {
           It uses utility classNamees for typography and spacing to space
           content out within the larger container.
         </p>
+
         <p className="lead">
           <a className="btn btn-primary btn-lg" href="#" role="button">
-            Learn more
+            <Link className="nav-link" href="/butik">
+              Till butiken
+            </Link>
           </a>
         </p>
       </div>

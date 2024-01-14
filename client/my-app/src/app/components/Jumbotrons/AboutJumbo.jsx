@@ -2,6 +2,7 @@
 
 import React from "react";
 import "./Jumbotrons.css";
+import Link from "next/link";
 export default function AboutJumbo() {
   return (
     <div>
@@ -18,7 +19,9 @@ export default function AboutJumbo() {
         </p>
         <p className="lead">
           <a className="btn btn-primary btn-lg" href="#" role="button">
-            Learn more
+            <Link className="nav-link" href="/omoss">
+              Omoss
+            </Link>
           </a>
         </p>
       </div>
