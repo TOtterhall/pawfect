@@ -1,12 +1,11 @@
 `use client`;
 import React from "react";
-// import Navbar from "../Main/Navbar";
+import Navbar from "./Navbar/Navbar";
 
 export default function Header() {
   return (
-    <div>
-      <h1>MyHeader</h1>
-      <p>Min navbar nedanför</p>
-    </div>
+    <>
+      <Navbar />
+    </>
   );
 }
