@@ -1,16 +1,19 @@
 const { Router } = require("express");
 const { ifmodelexist } = require("../middlewares");
 const {
+  addCategory,
   getAllCategories,
   getSpecificCategory,
 } = require("./category.controller");
-const { CategorySchema } = require("./category.model");
+// const { CategorySchema } = require("./category.model");
+const { CategoryValidationSchema } = require("./category.model");
 
 const categoryRouter = Router();
+categoryRouter.post("/categories", addCategory);
 categoryRouter.get("/categories", getAllCategories);
 categoryRouter.get(
-  "/categories/:id",
-  ifmodelexist(CategorySchema),
+  "/categories/:_id",
+  ifmodelexist(CategoryValidationSchema),
   getSpecificCategory
 );
 

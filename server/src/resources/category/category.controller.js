@@ -1,15 +1,18 @@
 const { CategoryModel } = require("./category.model");
 
-// //FUNCTION- ADD CATEGORY
-// async function addCategory(req, res, next) {
-//   try {
-//     const category = new CategoryModel(req.body);
-//     await category.save();
-//     res.status(201).json();
-//   } catch (err) {
-//     next(err);
-//   }
-// }
+//FUNCTION- ADD CATEGORY
+async function addCategory(req, res, next) {
+  try {
+    const { title, description } = req.body;
+    const category = new CategoryModel({ title, description });
+
+    await category.save();
+
+    res.status(201).json({ category });
+  } catch (err) {
+    next(err);
+  }
+}
 
 //FUNCTION- GET ALL CATEGORIES
 async function getAllCategories(req, res, next) {
@@ -38,7 +41,7 @@ async function getSpecificCategory(req, res, next) {
 }
 
 module.exports = {
-  //   addCategory,
+  addCategory,
   getAllCategories,
   getSpecificCategory,
 };
