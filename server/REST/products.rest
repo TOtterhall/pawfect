@@ -10,7 +10,7 @@ Content-Type: application/json
     "price":299,
     "image":"https://bjaf.se/cdn/shop/products/hunter_3608_46958_round_12.jpg-_cmyk_10.jpg?v=1698140619&width=1000",
     "color":"red",
-    "categories":"Bajspåsar"
+    "category":"Bajspåsar"
 
 
 }
