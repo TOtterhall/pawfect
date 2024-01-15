@@ -7,6 +7,7 @@ async function addProduct(req, res, next) {
     await product.save();
     if (req.body.categories) {
       const categoryId = [];
+
       for (const categoryTitle of req.body.categories) {
         let category = await CategoryModel.findOne({ title: categoryTitle });
         if (!category) {
