@@ -6,10 +6,13 @@ POST http://localhost:3080/api/products
 Content-Type: application/json
 
 {
-    "title":"Dragsele XXX",
-    "price":700,
+    "title":"Hundkoppel",
+    "price":299,
     "image":"https://bjaf.se/cdn/shop/products/hunter_3608_46958_round_12.jpg-_cmyk_10.jpg?v=1698140619&width=1000",
-    "color":"red"
+    "color":"red",
+    "categories":"Bajspåsar"
+
+
 }
 
 ### // GET ALL PRODUCTS
@@ -21,5 +24,5 @@ GET http://localhost:3080/api/products/659421c88866f6d4715be804
 ###
 
 ### // GET PRODUCTS BY ID(NOT existingproduct)
-GET http://localhost:3080/api/products/659421c88866f6d4715be803
+GET http://localhost:3080/api/products/659421c88866f6d4715be804
 ###

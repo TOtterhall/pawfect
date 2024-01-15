@@ -1,11 +1,33 @@
 const { ProductModel } = require("./product.model");
-
+const { CategoryModel } = require("../category/category.model");
 //FUNCTION- ADD PRODUCT
 async function addProduct(req, res, next) {
   try {
     const product = new ProductModel(req.body);
     await product.save();
-    res.status(201).json(product);
+    if (req.body.categories) {
+      const categoryId = [];
+      for (const categoryTitle of req.body.categories) {
+        let category = await CategoryModel.findOne({ title: categoryTitle });
+        if (!category) {
+          category = new CategoryModel({ title: categoryTitle });
+          await category.save();
+        }
+        categoryId.push(category._id);
+      }
+      product.categories = categoryId;
+    }
+    // const category = await CategoryModel.findOne({ title: nameOfTheCategory });
+    // if (!category) {
+    //   return res.status(404).json({
+    //     message:
+    //       "Kategorien kunde inte hittas i produkten.controller ... du får nosa vidare",
+    //   });
+    // }
+    // product.categories.push(category._id);
+    await product.save();
+
+    res.status(201).json({ product });
   } catch (err) {
     next(err);
   }
@@ -36,6 +58,22 @@ async function getSpecificProduct(req, res) {
     next(err);
   }
 }
+//FUNCTION- GET ALL PRODUCTS
+async function getProductsByCategory(req, res) {
+  try {
+    const categoryTitle = req.params.categorTitle;
+    const category = await CategoryModel.findOne({ title: categoryTitle });
+    if (!category) {
+      return res.status(404).json({ message: "kunde inte hitta kategorin" });
+    }
+    const products = await ProductModel.find({
+      categories: { $in: [category._id] },
+    });
+    res.status(200).json(products);
+  } catch (err) {
+    next(err);
+  }
+}
 //TODO
 //FUNCTION- UPDATE PRODUCT
 //FUNCTION- DELETE PRODUCT
@@ -45,4 +83,5 @@ module.exports = {
   addProduct,
   getAllProducts,
   getSpecificProduct,
+  getProductsByCategory,
 };
