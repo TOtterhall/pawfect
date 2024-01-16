@@ -1,12 +1,21 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import SearchForm from "../SearchForm/SearchForm";
 import Logo from "../Logo/Logo";
 import Login from "../Login/Login";
 import Cart from "../../Cart/Cart";
 import Menu from "../Menu/Menu";
+import Categories from "../../Categories/Categories";
 export default function Navbar() {
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  const openDrawer = () => {
+    setDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+  };
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,6 +45,31 @@ export default function Navbar() {
                 Butik
               </Link>
             </li>
+            <li>
+              <button
+                className="btn btn-outline-success my-2 my-sm-0 "
+                onClick={openDrawer}
+              >
+                open
+              </button>
+              {isDrawerOpen && (
+                <div>
+                  <div>
+                    <p>BUTIK</p>
+                    <ul>
+                      <li>Kategorierna ska renderas ut i en lista här...</li>
+                    </ul>
+                  </div>
+                  <button
+                    className="btn btn-outline-success my-2 my-sm-0 "
+                    onClick={closeDrawer}
+                  >
+                    X
+                  </button>
+                </div>
+              )}
+            </li>
+
             <li className="nav-item">
               <Link className="nav-link" href="/omoss">
                 Om oss
