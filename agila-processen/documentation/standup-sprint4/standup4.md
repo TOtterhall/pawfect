@@ -11,6 +11,17 @@
 **Idag ska jag göra** Starta sprint 4 och plocka nya tickets och påbörja de.
 **Förklaring till beslut jag tagit** Jag fortsatte på fredagen igår utan att köra en stand-up med tanke på att jag delade upp dagarna eftersom jag reste halva fredagen. Kändes som att jag effektiviserade arbetsflödet. Visste vad jag skulle göra.
 
+# Datum: 2024-01-16
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Starta sprint 4 och plockade nya tickets och påbörjade categorier på server side.
+**Ett problem jag har**
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** Mer om Next.js - bootstrap.
+**Idag ska jag göra** Fortsätta med categorier på server side.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
