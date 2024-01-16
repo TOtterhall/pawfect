@@ -8,19 +8,18 @@ const Categories = () => {
   }, []);
 
   return (
-    <div>
-      {categories.map((category) => (
-        <div key={category._id}>
-          <h2>{category.title}</h2>
-
-          <p>{category.description}</p>
-
-          <button className="btn btn-primary btn-lg" role="button">
-            {/* Lägg till komponent "addtocart istället,lägg all logik där" */}
-            Köp
-          </button>
+    <div class="modal-body">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            {categories.map((category) => (
+              <div key={category._id}>
+                <h2>{category.title}</h2>
+              </div>
+            ))}
+          </div>
         </div>
-      ))}
+      </div>
     </div>
   );
 };
