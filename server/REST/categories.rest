@@ -4,7 +4,7 @@ Content-Type: application/json
 
 {
     "title":"Lyxigt koppel",
-    "description":"tralalallala"
+    "description":"tralalallalaaaa"
 }
 ###
 GET http://localhost:3080/api/categories
@@ -12,3 +12,4 @@ GET http://localhost:3080/api/categories
 ### // GET CATEGORY BY ID(existingproduct)
 GET http://localhost:3080/api/categories/65a61b4aaeb187c25e04aa82
 ###
+// Eventuellt kolla om kategorin redan finns skapa inte en ny

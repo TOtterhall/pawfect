@@ -7,8 +7,8 @@ const ProductSchema = new Schema(
     price: { type: Number, required: true },
     image: { type: String, required: true },
     description: { type: String, required: false },
-    color: { type: String, required: false },
-    size: { type: String, required: false },
+    colors: { type: [String], required: false },
+    sizes: { type: [String], required: false },
     categories: {
       type: [Schema.Types.String],
       ref: "category",
@@ -28,8 +28,8 @@ const AddProductValidationSchema = Joi.object({
   price: Joi.number().strict().required(),
   image: Joi.string().uri().allow("image/png", "image/jpeg", "image/svg"),
   description: Joi.string().optional(),
-  color: Joi.string().optional(),
-  size: Joi.string().optional(),
+  colors: Joi.array().min(1),
+  sizes: Joi.array().min(1),
   categories: Joi.array().min(1),
 
   // paymentoptions?egen?

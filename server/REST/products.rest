@@ -6,11 +6,13 @@ POST http://localhost:3080/api/products
 Content-Type: application/json
 
 {
-    "title":"Hundkoppel",
+    "title":"Bajspåshållare",
     "price":299,
     "image":"https://bjaf.se/cdn/shop/products/hunter_3608_46958_round_12.jpg-_cmyk_10.jpg?v=1698140619&width=1000",
-    "color":"red",
-    "categories":["Lyxigt koppel"]
+    "description":"skriv något om produkten",
+    "colors":["red","svart","blå"],
+    "sizes": ["medium","large","25kg"],
+    "categories":["Halsband"]
 
 
 }
