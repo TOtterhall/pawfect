@@ -2,17 +2,18 @@
 ###//===========PRODUCTS===========//
 ###//==============================//
 ### // CREATE PRODUCTS
+
 POST http://localhost:3080/api/products
 Content-Type: application/json
 
 {
-    "title":"Bajspåshållare",
-    "price":299,
-    "image":"https://bjaf.se/cdn/shop/products/hunter_3608_46958_round_12.jpg-_cmyk_10.jpg?v=1698140619&width=1000",
-    "description":"skriv något om produkten",
-    "colors":["red","svart","blå"],
-    "sizes": ["medium","large","25kg"],
-    "categories":["Halsband"]
+    "title":"FLEXIKOPPEL GIANT",
+    "price":459,
+    "image":"https://www.tinybuddy.se/assets/products/21409_940x.jpg?1647434784",
+    "description":"Rejält, extra stort och stabilt koppel från Flexi.En säker, stark och kromad karbinhake.",
+    "colors":["Svart"],
+    "sizes": ["M","L","XL"],
+    "categories":["Hundkoppel"]
 
 
 }
