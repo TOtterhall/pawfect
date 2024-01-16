@@ -9,7 +9,7 @@ const ProductSchema = new Schema(
     description: { type: String, required: false },
     color: { type: String, required: false },
     size: { type: String, required: false },
-    category: {
+    categories: {
       type: [Schema.Types.String],
       ref: "category",
       required: false,
@@ -30,7 +30,7 @@ const AddProductValidationSchema = Joi.object({
   description: Joi.string().optional(),
   color: Joi.string().optional(),
   size: Joi.string().optional(),
-  category: Joi.array().min(1),
+  categories: Joi.array().min(1),
 
   // paymentoptions?egen?
 });

@@ -14,7 +14,7 @@ async function addProduct(req, res, next) {
           category = new CategoryModel({ title: categoryTitle });
           await category.save();
         }
-        categoryId.push(category._id);
+        categoryId.push(category.title);
       }
       product.categories = categoryId;
     }

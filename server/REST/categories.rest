@@ -8,7 +8,7 @@ Content-Type: application/json
 }
 ###
 GET http://localhost:3080/api/categories
-
+//kolla denna varför knas??
 ### // GET CATEGORY BY ID(existingproduct)
 GET http://localhost:3080/api/categories/65a54176cabf46c3c374f24c
 ###
