@@ -11,6 +11,7 @@ export default function Store() {
       <ProductProvider>
         <CustomerProvider>
           <h1>Min butik</h1>
+
           <div>Länka även från startsidan</div>
           <Shop />
         </CustomerProvider>
