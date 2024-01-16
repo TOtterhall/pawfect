@@ -3,12 +3,12 @@ POST http://localhost:3080/api/categories
 Content-Type: application/json
 
 {
-    "title":"Sängar",
+    "title":"Lyxigt koppel",
     "description":"tralalallala"
 }
 ###
 GET http://localhost:3080/api/categories
 //kolla denna varför knas??
 ### // GET CATEGORY BY ID(existingproduct)
-GET http://localhost:3080/api/categories/65a54176cabf46c3c374f24c
+GET http://localhost:3080/api/categories/65a61b4aaeb187c25e04aa82
 ###
