@@ -1,12 +1,24 @@
 "use client";
-
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-export default function Menu() {
+// import { useCategoryContext } from "../../../../Context/categoryContext/categoryContext";
+const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  // const { categories, getAllCategories } = useCategoryContext();
+  // useEffect(() => {
+  //   getAllCategories();
+  // }, []);
+  const openDrawer = () => {
+    setDrawerOpen(true);
+  };
+
+  const closeDrawer = () => {
+    setDrawerOpen(false);
+  };
   const toogleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
@@ -20,9 +32,10 @@ export default function Menu() {
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
                 <Link className="nav-link  text-white" href="/">
-                  Home <span className="sr-only">(current)</span>
+                  Hem <span className="sr-only">(current)</span>
                 </Link>
               </li>
+
               <li className="nav-item">
                 <Link className="nav-link  text-white" href="/butik">
                   Butik
@@ -86,16 +99,41 @@ export default function Menu() {
                   Kontakta oss
                 </Link>
               </li>
+              <li>
+                <button
+                  className="btn btn-outline-success my-2 my-sm-0 "
+                  onClick={openDrawer}
+                >
+                  open
+                </button>
+                {isDrawerOpen && (
+                  <div>
+                    <div>
+                      <p>BUTIK</p>
+                      <div class="modal-body">
+                        <div class="container-fluid">
+                          <div class="row">
+                            <div class="col-md-4">hej</div>
+                          </div>
+                        </div>
+                      </div>
+                      <button>knapp</button>
+                    </div>
 
-              {/* <li classNameName="nav-item">
-              <a classNameName="nav-link disabled" href="#">
-                Disabled
-              </a>
-            </li> */}
+                    <button
+                      className="btn btn-outline-success my-2 my-sm-0 "
+                      onClick={closeDrawer}
+                    >
+                      X
+                    </button>
+                  </div>
+                )}
+              </li>
             </ul>
           </div>
         </nav>
       </div>
     </div>
   );
-}
+};
+export default Menu;

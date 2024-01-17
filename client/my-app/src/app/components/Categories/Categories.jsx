@@ -1,4 +1,3 @@
-"use client";
 import React, { useEffect } from "react";
 import { useCategoryContext } from "../../../Context/categoryContext/categoryContext";
 const Categories = () => {

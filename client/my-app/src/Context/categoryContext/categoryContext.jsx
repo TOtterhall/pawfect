@@ -6,7 +6,7 @@ export const useCategoryContext = () => {
   return useContext(CategoryContext);
 };
 
-const CategoryContextProvider = ({ children }) => {
+export const CategoryContextProvider = ({ children }) => {
   const [categories, setAllcategories] = useState([]);
 
   const getAllCategories = async () => {
