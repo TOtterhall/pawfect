@@ -14,31 +14,33 @@ import InfoJumbo from "../../src/app/components/Jumbotrons/InfoJumobo";
 import SocialJumbo from "../../src/app/components/Jumbotrons/SocialJumbo";
 import ProductProvider from "../Context/productContext/productContext";
 import CustomerProvider from "../Context/customerContext/customerContext";
-
+import CategoryProvider from "../Context/categoryContext/categoryContext";
 export default function Home() {
   return (
-    <ProductProvider>
-      <CustomerProvider>
-        <main>
-          <Carousel />
-          <LoginForm />
-          {/* //förstår inte om jag lägger in min
+    <CategoryProvider>
+      <ProductProvider>
+        <CustomerProvider>
+          <main>
+            <Carousel />
+            <LoginForm />
+            {/* //förstår inte om jag lägger in min
           /<Login/> 
           här så får jag ut iconerna.
           Researcha oom detta samtidigt som bilder.
           har det med config att göra? */}
-          <Login />
-          <Categories />
-          <News />
-          <StoreJumbo />
-          <AboutJumbo />
-          <InfoJumbo />
-          <SocialJumbo />
-          <Aboutus />
-          <Info />
-          <Newsletter />
-        </main>
-      </CustomerProvider>
-    </ProductProvider>
+            <Login />
+            <Categories />
+            <News />
+            <StoreJumbo />
+            <AboutJumbo />
+            <InfoJumbo />
+            <SocialJumbo />
+            <Aboutus />
+            <Info />
+            <Newsletter />
+          </main>
+        </CustomerProvider>
+      </ProductProvider>
+    </CategoryProvider>
   );
 }

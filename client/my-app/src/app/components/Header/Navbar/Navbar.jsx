@@ -6,7 +6,7 @@ import Logo from "../Logo/Logo";
 import Login from "../Login/Login";
 import Cart from "../../Cart/Cart";
 import Menu from "../Menu/Menu";
-import Categories from "../../Categories/Categories";
+
 export default function Navbar() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const openDrawer = () => {
