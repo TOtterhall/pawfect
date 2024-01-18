@@ -33,6 +33,17 @@
 **Idag ska jag göra** Fortsätta med categorier på client side.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-18
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Fortsatte med categorier på client side.
+**Ett problem jag har** Fortfarande med strukturen... men hoppas på att få kläm på det snart.
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** -
+**Idag ska jag göra** Fortsätta med categorier på client side vill ha ut min lista med kategorier i menyn.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
