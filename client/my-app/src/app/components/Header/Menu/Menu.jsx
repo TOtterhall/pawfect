@@ -105,7 +105,7 @@ const Menu = () => {
                   open
                 </button>
                 {isDrawerOpen && (
-                  <div>
+                  <div className="modal-slide slide-in-left">
                     <div>
                       <p>BUTIK</p>
                       <div class="modal-body">

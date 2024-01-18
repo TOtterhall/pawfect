@@ -7,18 +7,12 @@ const Categories = () => {
   }, []);
 
   return (
-    <div class="modal-body">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-4">
-            {categories.map((category) => (
-              <div key={category._id}>
-                <h2>{category.title}</h2>
-              </div>
-            ))}
-          </div>
+    <div className="col-md-4">
+      {categories.map((category) => (
+        <div key={category._id}>
+          <h2>{category.title}</h2>
         </div>
-      </div>
+      ))}
     </div>
   );
 };
