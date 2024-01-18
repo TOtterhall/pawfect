@@ -4,14 +4,12 @@ import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
-// import { useCategoryContext } from "../../../../Context/categoryContext/categoryContext";
+import Categories from "../../Categories/Categories";
+
 const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  // const { categories, getAllCategories } = useCategoryContext();
-  // useEffect(() => {
-  //   getAllCategories();
-  // }, []);
+
   const openDrawer = () => {
     setDrawerOpen(true);
   };
@@ -113,7 +111,12 @@ const Menu = () => {
                       <div class="modal-body">
                         <div class="container-fluid">
                           <div class="row">
-                            <div class="col-md-4">hej</div>
+                            <div class="col-md-4">
+                              {" "}
+                              <li>
+                                <Categories />
+                              </li>
+                            </div>
                           </div>
                         </div>
                       </div>
