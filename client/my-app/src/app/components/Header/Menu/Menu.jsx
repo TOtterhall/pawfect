@@ -122,12 +122,12 @@ const Menu = () => {
                               <li className="p-2 g-col-6">
                                 <Categories />
                               </li>
+                              <container clasName=" card p-2 g-col-6">
+                                <div className="p-2 g-col-6">Bild 1</div>
+                                <div>Bild 2</div>
+                                <div>Bild 3</div>
+                              </container>
                             </div>
-                          </div>
-                          <div clasName=" card p-2 g-col-6">
-                            <div className="p-2 g-col-6">Bild 1</div>
-                            <div>Bild 2</div>
-                            <div>Bild 3</div>
                           </div>
                         </div>
                       </div>

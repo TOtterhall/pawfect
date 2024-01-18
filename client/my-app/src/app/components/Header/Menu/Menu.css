@@ -8,6 +8,14 @@
   height: 100%;
   z-index: 9990;
 }
-.image-container {
-  background-color: rgb(169, 27, 212);
+.modal-slide h1 {
+  background-color: rgb(43, 128, 122);
+  margin-top: 5rem;
+  margin-left: 10%;
+}
+.modal-slide li {
+  background-color: rgb(58, 161, 202);
+}
+.modal-slide container div {
+  background-color: red;
 }
