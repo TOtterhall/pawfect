@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import Categories from "../../Categories/Categories";
-
+import "./Menu.css";
 const Menu = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -107,28 +107,31 @@ const Menu = () => {
                 {isDrawerOpen && (
                   <div className="modal-slide slide-in-left">
                     <div>
-                      <p>BUTIK</p>
-                      <div class="modal-body">
-                        <div class="container-fluid">
-                          <div class="row">
-                            <div class="col-md-4">
+                      <button
+                        className="btn btn-outline-success position-absolute top-0 end-0 "
+                        onClick={closeDrawer}
+                      >
+                        X
+                      </button>
+                      <h1>BUTIK</h1>
+                      <div className="modal-body">
+                        <div className="container-fluid">
+                          <div className="row">
+                            <div className="p-2 g-col-6">
                               {" "}
-                              <li>
+                              <li className="p-2 g-col-6">
                                 <Categories />
                               </li>
                             </div>
                           </div>
+                          <div clasName=" card p-2 g-col-6">
+                            <div className="p-2 g-col-6">Bild 1</div>
+                            <div>Bild 2</div>
+                            <div>Bild 3</div>
+                          </div>
                         </div>
                       </div>
-                      <button>knapp</button>
                     </div>
-
-                    <button
-                      className="btn btn-outline-success my-2 my-sm-0 "
-                      onClick={closeDrawer}
-                    >
-                      X
-                    </button>
                   </div>
                 )}
               </li>

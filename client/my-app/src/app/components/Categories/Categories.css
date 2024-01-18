@@ -1,4 +1,4 @@
-#col-md-4 {
-  background-color: rgb(31, 187, 104) !important;
+.modal-body {
+  background-color: rgb(31, 187, 104);
   color: aliceblue;
 }

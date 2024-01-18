@@ -29,7 +29,6 @@ export default function Home() {
           Researcha oom detta samtidigt som bilder.
           har det med config att göra? */}
             <Login />
-            <Categories />
             <News />
             <StoreJumbo />
             <AboutJumbo />
