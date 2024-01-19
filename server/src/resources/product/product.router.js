@@ -22,6 +22,6 @@ productRouter.get(
   ifmodelexist(UpdateProductValidationSchema),
   getSpecificProduct
 );
-productRouter.get("/products/category/:categoryTitle", getProductsByCategory);
+productRouter.get("/products/categories/:categoryTitle", getProductsByCategory);
 
 module.exports = { productRouter };

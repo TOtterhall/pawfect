@@ -14,7 +14,7 @@ async function addProduct(req, res, next) {
           category = new CategoryModel({ title: categoryTitle });
           await category.save();
         }
-        categoryId.push(category.title);
+        categoryId.push(category._id);
       }
       product.categories = categoryId;
     }
@@ -59,22 +59,24 @@ async function getSpecificProduct(req, res) {
     next(err);
   }
 }
-//FUNCTION- GET ALL PRODUCTS
+//FUNCTION- GET SPECIFIK PRODUCT(CATEGORY)
 async function getProductsByCategory(req, res) {
   try {
-    const categoryTitle = req.params.categorTitle;
-    const category = await CategoryModel.findOne({ title: categoryTitle });
-    if (!category) {
-      return res.status(404).json({ message: "kunde inte hitta kategorin" });
-    }
+    const categoryTitle = req.params.categoryTitle;
     const products = await ProductModel.find({
-      categories: { $in: [category._id] },
+      categories: { $in: [categoryTitle] },
     });
+    if (!products) {
+      return res
+        .status(404)
+        .json({ message: "Produkten kunde inte hittas... du får nosa vidare" });
+    }
     res.status(200).json(products);
   } catch (err) {
     next(err);
   }
 }
+
 //TODO
 //FUNCTION- UPDATE PRODUCT
 //FUNCTION- DELETE PRODUCT
