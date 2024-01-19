@@ -44,7 +44,18 @@
 **Idag ska jag göra** Fortsätta med categorier på client side vill ha ut min lista med kategorier i menyn.
 **Förklaring till beslut jag tagit**
 
-**Frågor jag har:**
+# Datum: 2024-01-19
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Fortsatte med categorier på client side ordnade så modalen öppnas när man trycker på open,som sedan sen då ska stå "butik" kategorierna renderas nu ut i en lista där samt att den går att stänga på X.
+**Ett problem jag har** -
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** -
+**Idag ska jag göra** Varje unik kategori ska kunna klickas på och ta kunden till sidan med produkterna som har den kategorin. Påbörja -> När kunden klickat på specifik produkt så ska denne komma till en detaljsida för produkten och vid klick på "köp" så ska den produkten läggas i kundvagnen/cart.
+**Förklaring till beslut jag tagit**
+
+**Frågor jag har:** Struktur rätt?
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
 OBS! Ta kort på veckan från toogle...
