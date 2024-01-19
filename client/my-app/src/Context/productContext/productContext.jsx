@@ -20,12 +20,29 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
+  const getProductsByCategory = async (categoryTitle) => {
+    try {
+      console.log(
+        `Fetchar produkter från produktcontext med categoriId:${categoryTitle}`
+      );
+      const res = await fetch(
+        `http://localhost:3080/api/products/categories/${categoryTitle}`
+      );
+      const products = await res.json();
+      console.log("ProductsmedKategoriContext:", products);
+      setAllProducts(products);
+    } catch (error) {
+      console.log("Kan inte hämta alla produkter tyvärr.....", error);
+    }
+  };
+
   // andra funktioner och useEffect
 
   return (
     <ProductContext.Provider
       value={{
         getAllProducts,
+        getProductsByCategory,
         products,
         // andra värden/funktioner
       }}
