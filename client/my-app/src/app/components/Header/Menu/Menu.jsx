@@ -123,7 +123,7 @@ const Menu = () => {
                                 <Categories />
                               </li>
                               <container clasName=" card p-2 g-col-6">
-                                <div className="p-2 g-col-6">Bild 1</div>
+                                <div className="">Bild 1</div>
                                 <div>Bild 2</div>
                                 <div>Bild 3</div>
                               </container>

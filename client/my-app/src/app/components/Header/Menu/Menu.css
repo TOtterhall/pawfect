@@ -18,4 +18,6 @@
 }
 .modal-slide container div {
   background-color: red;
+  width: 100%;
+  margin-left: 100%;
 }
