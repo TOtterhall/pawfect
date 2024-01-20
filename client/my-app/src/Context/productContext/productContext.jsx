@@ -8,6 +8,7 @@ export const useProductContext = () => {
 
 const ProductContextProvider = ({ children }) => {
   const [products, setAllProducts] = useState([]);
+  const [productCategory, setAllCategories] = useState([]);
 
   const getAllProducts = async () => {
     try {
@@ -20,7 +21,7 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  const getProductsByCategory = async (categoryTitle) => {
+  const getProductsByCategory = async () => {
     try {
       console.log(
         `Fetchar produkter från produktcontext med categoriId:${categoryTitle}`
@@ -28,9 +29,11 @@ const ProductContextProvider = ({ children }) => {
       const res = await fetch(
         `http://localhost:3080/api/products/categories/${categoryTitle}`
       );
-      const products = await res.json();
-      console.log("ProductsmedKategoriContext:", products);
-      setAllProducts(products);
+      const productCategory = await res.json();
+      console.log("ProductsmedKategoriContext:", productCategory);
+
+      setAllCategories(productCategory);
+      console.log(productCategory);
     } catch (error) {
       console.log("Kan inte hämta alla produkter tyvärr.....", error);
     }
@@ -43,6 +46,7 @@ const ProductContextProvider = ({ children }) => {
       value={{
         getAllProducts,
         getProductsByCategory,
+        productCategory,
         products,
         // andra värden/funktioner
       }}

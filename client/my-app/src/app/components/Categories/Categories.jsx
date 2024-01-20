@@ -3,6 +3,7 @@ import { useCategoryContext } from "../../../Context/categoryContext/categoryCon
 import Link from "next/link";
 const Categories = () => {
   const { categories, getAllCategories } = useCategoryContext();
+
   useEffect(() => {
     getAllCategories();
   }, []);
@@ -19,7 +20,8 @@ const Categories = () => {
               <div key={category._id}>
                 <Link
                   className="nav-link"
-                  href={`/category/${encodeURIComponent(category.title)}`}
+                  href="/category/[categoryTitle]"
+                  as={`/category/${encodeURIComponent(category.title)}`}
                 >
                   <h2>{category.title}</h2>
                 </Link>

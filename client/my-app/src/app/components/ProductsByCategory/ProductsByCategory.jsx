@@ -2,40 +2,33 @@
 import React, { useEffect } from "react";
 import { useProductContext } from "../../../Context/productContext/productContext";
 import { useCategoryContext } from "../../../Context/categoryContext/categoryContext";
-
-const ProductsByCategory = () => {
+const categoryByCategory = () => {
   const { categories, getAllCategories } = useCategoryContext();
-  const { products, getProductsByCategory } = useProductContext();
-  // useEffect(() => {
-  //   console.log("Categories från useEffectEtt:", categories);
-  //   getAllCategories();
-  // }, []);
+  const { productCategory, getProductsByCategory } = useProductContext();
+
   useEffect(() => {
     getAllCategories();
-    if (categories.title === products.category) {
-      getProductsByCategory();
+  }, []);
+
+  useEffect(() => {
+    getProductsByCategory();
+  }, []);
+  useEffect(() => {
+    if (categories._id === productCategory.categories._id) {
+      const selectedCategory = categories.find(
+        (categories) => categories.title === categories._id
+      );
+      console.log(categories);
+      console.log(productCategory);
+      if (selectedCategory) {
+        getProductsByCategory(productCategory);
+        console.log(productCategory);
+      }
     }
-  }, [products]);
-  // useEffect(() => {
-  //   console.log("Categories:", categories);
-  //   if (categories.length > 0) {
-  //     getProductsByCategory(categories[0].title);
-  //   }
-  // }, [categories, getProductsByCategory]);
-
-  // console.log("Products från useEffect:", products);
-  // useEffect(() => {
-  //   getAllCategories();
-  // }, [categories.title]);
-  // console.log(categories.title);
-  // useEffect(() => {
-  //   getProductsByCategory();
-  // }, [products]);
-  // console.log(products);
-
+  }, [categories, productCategory]);
   return (
     <div>
-      {products.map((product) => (
+      {productCategory.map((product) => (
         <div key={product._id}>
           <h2>{product.title}</h2>
 
@@ -56,4 +49,4 @@ const ProductsByCategory = () => {
   );
 };
 
-export default ProductsByCategory;
+export default categoryByCategory;

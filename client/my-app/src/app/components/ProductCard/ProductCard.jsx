@@ -12,6 +12,7 @@ const ProductCard = () => {
       {products.map((product) => (
         <div key={product._id}>
           <h2>{product.title}</h2>
+          <h2>{product.category}</h2>
 
           <p>{product.price}</p>
           <img

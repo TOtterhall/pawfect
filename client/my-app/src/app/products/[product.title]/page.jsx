@@ -5,8 +5,7 @@ import ProductsByCategory from "../../components/ProductsByCategory/ProductsByCa
 import ProductProvider from "../../../Context/productContext/productContext";
 import CustomerProvider from "../../../Context/customerContext/customerContext";
 import CategoryProvider from "../../../Context/categoryContext/categoryContext";
-import Shop from "../../components/Shop/Shop";
-import Link from "next/link";
+
 export default function ProductListByCategory() {
   return (
     <CategoryProvider>
@@ -18,7 +17,7 @@ export default function ProductListByCategory() {
 
             {/* <Link
               className="nav-link"
-              href="/products/[productTitle]"
+              href="/products/[categoryTitle]"
               as={`/products/${encodeURIComponent(products.title)}`}
             >
               <ProductsByCategory products={products.title} />
@@ -29,3 +28,16 @@ export default function ProductListByCategory() {
     </CategoryProvider>
   );
 }
+
+// "use Client";
+// import React from "react";
+// import ProductList from "../ProductList/ProductList";
+
+// export default function ProductTitle() {
+//   return (
+//     <div>
+//       <div>tets från Shop</div>
+//       <ProductList />
+//     </div>
+//   );
+// }
