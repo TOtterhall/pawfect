@@ -32,3 +32,4 @@ GET http://localhost:3080/api/products/659421c88866f6d4715be804
 ### // GET PRODUCTS BY CATEGORY
 GET http://localhost:3080/api/products/categories/Hundkoppel
 ###
+GET http://localhost:3080/api/products/categories/${categoryTitle}

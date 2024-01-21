@@ -21,13 +21,13 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  const getProductsByCategory = async () => {
+  const getProductsByCategory = async (categoryTitle) => {
     try {
       console.log(
         `Fetchar produkter från produktcontext med categoriId:${categoryTitle}`
       );
       const res = await fetch(
-        `http://localhost:3080/api/products/categories/${categoryTitle}`
+        `http://localhost:3080/api/products/categories/"${categoryTitle}"`
       );
       const productCategory = await res.json();
       console.log("ProductsmedKategoriContext:", productCategory);

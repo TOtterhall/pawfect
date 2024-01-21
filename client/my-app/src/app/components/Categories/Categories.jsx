@@ -1,16 +1,22 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useCategoryContext } from "../../../Context/categoryContext/categoryContext";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+
 const Categories = () => {
   const { categories, getAllCategories } = useCategoryContext();
+
+  const router = useRouter();
 
   useEffect(() => {
     getAllCategories();
   }, []);
 
-  // const handleClick =(categoryId) => {
-  //   console.log
-  // }
+  const handleClick = (categoryTitle) => {
+    router.push(`/products/${encodeURIComponent(categoryTitle)}`);
+    console.log(categoryTitle);
+  };
+
   return (
     <div className="modal-body">
       <div className="container-fluid">
@@ -20,10 +26,12 @@ const Categories = () => {
               <div key={category._id}>
                 <Link
                   className="nav-link"
-                  href="/category/[categoryTitle]"
-                  as={`/category/${encodeURIComponent(category.title)}`}
+                  href="/products/[categoryTitle]"
+                  as={`/products/${encodeURIComponent(category.title)}`}
                 >
-                  <h2>{category.title}</h2>
+                  <h2 onClick={() => handleClick(category.titel)}>
+                    {category.title}
+                  </h2>
                 </Link>
               </div>
             ))}

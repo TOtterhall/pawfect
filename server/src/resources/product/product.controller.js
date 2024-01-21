@@ -62,9 +62,8 @@ async function getSpecificProduct(req, res) {
 //FUNCTION- GET SPECIFIK PRODUCT(CATEGORY)
 async function getProductsByCategory(req, res) {
   try {
-    const categoryTitle = req.params.categoryTitle;
     const products = await ProductModel.find({
-      categories: { $in: [categoryTitle] },
+      categories: { $in: [req.params.categoryTitle] },
     });
     if (!products) {
       return res
