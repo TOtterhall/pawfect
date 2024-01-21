@@ -41,6 +41,7 @@ export const CartContextProvider = ({ children }) => {
         addToCart,
         cartItems,
         cartQuantity,
+        inCart,
         // andra värden/funktioner
       }}
     >

@@ -6,7 +6,7 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useCartContext } from "../../../Context/cartContext/cartContext";
 export default function Cart() {
-  const { cartItems } = useCartContext();
+  const { inCart } = useCartContext();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const openDrawer = () => {
     setDrawerOpen(true);
@@ -36,9 +36,9 @@ export default function Cart() {
                   {" "}
                   <ul>
                     {/* <li>lista</li> */}
-                    {cartItems.map((item) => (
-                      <li className="p-2 g-col-6" key={item.proudct._id}>
-                        <h3>{item.proudct.title}</h3>
+                    {inCart.map((item) => (
+                      <li className="p-2 g-col-6" key={item.product._id}>
+                        <p>{item.product.title}</p>
                         <p>Quantity: {item.quantity}</p>
                       </li>
                     ))}
