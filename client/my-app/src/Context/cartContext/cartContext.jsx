@@ -9,43 +9,45 @@ export const useCartContext = () => {
 
 export const CartContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-  const [cartQuantity, setCartQuantity] = useState(0);
+  const [cartQuantity, updatedCartQuantity] = useState(0);
   const [inCart, setInCart] = useState([]);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     setInCart(cart);
-    updateCartQuantity(cart);
+    updatedCartQuantity(cart);
   }, []);
 
   const addToCart = (product, quantity) => {
-    const existingCartItem = cartItems.findIndex(
+    const existingCartItemIndex = cartItems.findIndex(
       (item) => item.product._id === product._id
     );
-    if (existingCartItem !== -1) {
-      const updatedCartItems = [...cartItems];
-      updatedCartItems[existingCartItem].quantity += quantity;
-      setCartItems(updatedCartItems, () => {
+
+    if (existingCartItemIndex !== -1) {
+      setCartItems((prevItems) => {
+        const updatedCartItems = [...prevItems];
+        updatedCartItems[existingCartItemIndex].quantity += quantity;
+
         localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-        updateCartQuantity(updatedCartItems);
+        updatedCartQuantity(updatedCartItems);
+
+        return updatedCartItems;
       });
     } else {
       const cartItem = {
         product: product,
         quantity: quantity,
       };
-      setCartItems((prevItems) => [...prevItems, cartItem]);
-    }
 
-    localStorage.setItem("cart", JSON.stringify(cartItems));
-    updateCartQuantity(cartItems);
-  };
-  const updateCartQuantity = (cart) => {
-    const totalQuantity = cart.reduce(
-      (total, cartItem) => total + cartItem.quantity,
-      0
-    );
-    setCartQuantity(totalQuantity);
+      setCartItems((prevItems) => {
+        const updatedCartItems = [...prevItems, cartItem];
+
+        localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+        updatedCartQuantity(updatedCartItems);
+
+        return updatedCartItems;
+      });
+    }
   };
   // andra funktioner och useEffect
 
