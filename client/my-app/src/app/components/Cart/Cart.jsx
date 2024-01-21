@@ -1,9 +1,12 @@
+"use client";
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useCartContext } from "../../../Context/cartContext/cartContext";
 export default function Cart() {
+  const { cartItems } = useCartContext();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const openDrawer = () => {
     setDrawerOpen(true);
@@ -25,11 +28,24 @@ export default function Cart() {
       {/* Drawer */}
       {isDrawerOpen && (
         <div>
-          <div>
-            <p>MIN Cart</p>
-            <ul>
-              <li>Produkterna ska renderas ut i en lista här...</li>
-            </ul>
+          <p>MIN Cart</p>
+          <div className="modal-body">
+            <div className="container-fluid">
+              <div className="row">
+                <div className="p-2 g-col-6">
+                  {" "}
+                  <ul>
+                    {/* <li>lista</li> */}
+                    {cartItems.map((item) => (
+                      <li className="p-2 g-col-6" key={item.proudct._id}>
+                        <h3>{item.proudct.title}</h3>
+                        <p>Quantity: {item.quantity}</p>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </div>
           </div>
           <button
             className="btn btn-outline-success my-2 my-sm-0 "
