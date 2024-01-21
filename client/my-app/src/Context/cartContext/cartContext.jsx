@@ -17,14 +17,28 @@ export const CartContextProvider = ({ children }) => {
     setInCart(cart);
     updateCartQuantity(cart);
   }, []);
+
   const addToCart = (product, quantity) => {
-    const cartItem = {
-      product: product,
-      quantity: quantity,
-    };
-    setCartItems((prevItems) => [...prevItems, cartItem]);
-    localStorage.setItem("cart", JSON.stringify([...cartItems, cartItem]));
-    updateCartQuantity([...cartItems, cartItem]);
+    const existingCartItem = cartItems.findIndex(
+      (item) => item.product._id === product._id
+    );
+    if (existingCartItem !== -1) {
+      const updatedCartItems = [...cartItems];
+      updatedCartItems[existingCartItem].quantity += quantity;
+      setCartItems(updatedCartItems, () => {
+        localStorage.setItem("cart", JSON.stringify(updatedCartItems));
+        updateCartQuantity(updatedCartItems);
+      });
+    } else {
+      const cartItem = {
+        product: product,
+        quantity: quantity,
+      };
+      setCartItems((prevItems) => [...prevItems, cartItem]);
+    }
+
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+    updateCartQuantity(cartItems);
   };
   const updateCartQuantity = (cart) => {
     const totalQuantity = cart.reduce(

@@ -35,7 +35,6 @@ export default function Cart() {
                 <div className="p-2 g-col-6">
                   {" "}
                   <ul>
-                    {/* <li>lista</li> */}
                     {inCart.map((item) => (
                       <li className="p-2 g-col-6" key={item.product._id}>
                         <p>{item.product.title}</p>
