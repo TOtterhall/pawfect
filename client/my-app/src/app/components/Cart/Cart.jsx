@@ -5,8 +5,9 @@ import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useCartContext } from "../../../Context/cartContext/cartContext";
+import CheckOutBtn from "../Buttons/CheckOutBtn";
 export default function Cart() {
-  const { cartItems, totalCost } = useCartContext();
+  const { cartItems } = useCartContext();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
 
   const openDrawer = () => {
@@ -56,6 +57,7 @@ export default function Cart() {
             </div>
           </div>
           <p>Totalt:{calculateTotal}</p>
+          <CheckOutBtn />
           <button
             className="btn btn-outline-success my-2 my-sm-0 "
             onClick={closeDrawer}

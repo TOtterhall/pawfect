@@ -9,6 +9,7 @@ import Menu from "../Menu/Menu";
 
 import CategoryProvider from "../../../../Context/categoryContext/categoryContext";
 import CartProvider from "../../../../Context/cartContext/cartContext";
+import CustomerProvider from "../../../../Context/customerContext/customerContext";
 
 export default function Navbar() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -20,51 +21,53 @@ export default function Navbar() {
     setDrawerOpen(false);
   };
   return (
-    <CartProvider>
-      <CategoryProvider>
-        <div>
-          <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#navbarTogglerDemo01"
-              aria-controls="navbarTogglerDemo01"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div>
-              {/* <a classNameName="navbar-brand" href="/">
+    <CustomerProvider>
+      <CartProvider>
+        <CategoryProvider>
+          <div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon"></span>
+              </button>
+              <div>
+                {/* <a classNameName="navbar-brand" href="/">
             Home
           </a> */}
-              <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li>
-                  <div>
-                    <Menu />
-                  </div>
-                </li>
-              </ul>
-            </div>
+                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li>
+                    <div>
+                      <Menu />
+                    </div>
+                  </li>
+                </ul>
+              </div>
 
-            <div>
-              <SearchForm />
-            </div>
-            <div>
-              <Link className="nav-link" href="/">
-                <Logo />
-              </Link>
-            </div>
-            <div>
-              <Login />
-            </div>
-            <div>
-              <Cart />
-            </div>
-          </nav>
-        </div>
-      </CategoryProvider>
-    </CartProvider>
+              <div>
+                <SearchForm />
+              </div>
+              <div>
+                <Link className="nav-link" href="/">
+                  <Logo />
+                </Link>
+              </div>
+              <div>
+                <Login />
+              </div>
+              <div>
+                <Cart />
+              </div>
+            </nav>
+          </div>
+        </CategoryProvider>
+      </CartProvider>
+    </CustomerProvider>
   );
 }

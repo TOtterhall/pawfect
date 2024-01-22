@@ -10,6 +10,7 @@ export const useCustomerContext = () => {
 const CustomerContextProvider = ({ children }) => {
   const [customers, setAllCustomers] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [token, setToken] = useState(null);
 
   const getAllCustomers = async () => {
     try {
@@ -38,7 +39,12 @@ const CustomerContextProvider = ({ children }) => {
       console.log(res);
 
       if (res.ok) {
+        const data = await res.json();
+        const { token } = data;
+        setToken(token);
+        console.log(token);
         setIsLoggedIn(true);
+        localStorage.setItem("token", token);
         console.log("Ny kund registrerad");
       } else {
         console.log("Kan inte registrera dig, fel tassavtryck");
@@ -67,7 +73,14 @@ const CustomerContextProvider = ({ children }) => {
       console.log(res);
 
       if (res.ok) {
+        const data = await res.json();
+        const { token } = data;
+        setToken(token);
+        console.log(token);
         setIsLoggedIn(true);
+
+        localStorage.setItem("token", token);
+        console.log("Token stored in localStorage:", token);
         console.log("inloggning lyckades från context");
       } else {
         register();
@@ -116,6 +129,7 @@ const CustomerContextProvider = ({ children }) => {
         setIsLoggedIn,
         register,
         logout,
+        token,
       }}
     >
       {children}
