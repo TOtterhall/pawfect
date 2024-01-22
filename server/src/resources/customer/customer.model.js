@@ -15,8 +15,8 @@ const CustomerSchema = new Schema({
 });
 
 //MODELL
-// const CustomerModel = model.customer || model("customer", CustomerSchema);
-const CustomerModel = models.user || model("customer", CustomerSchema);
+const CustomerModel = models.customer || model("customer", CustomerSchema);
+
 //VALLIDATION
 const CustomerValidationSchema = Joi.object({
   email: Joi.string().email().strict().required(),

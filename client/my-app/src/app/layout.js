@@ -1,6 +1,7 @@
 import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
-
+import CartProvider from "../Context/cartContext/cartContext";
+import ProductProvider from "../Context/productContext/productContext";
 //Components
 
 import Footer from "./components/Footer/Footer";
@@ -24,11 +25,15 @@ export default function RootLayout({ children }) {
         ></script>
       </head>
       <body className={inter.className}>
-        <Header />
+        <CartProvider>
+          <ProductProvider>
+            <Header />
 
-        <main>{children}</main>
+            <main>{children}</main>
 
-        <Footer />
+            <Footer />
+          </ProductProvider>
+        </CartProvider>
       </body>
     </html>
   );
