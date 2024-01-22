@@ -41,20 +41,6 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  // const getProductsById = async (productId) => {
-  //   try {
-  //     const res = await fetch(
-  //       `http://localhost:3080/api/products/"${productId}"`
-  //     );
-  //     const product = await res.json();
-  //     console.log("ProductsmedIdContext:", product);
-
-  //     setAllProducts([product]);
-  //     console.log(productId);
-  //   } catch (error) {
-  //     console.log("Kan inte hämta alla produkter tyvärr.....", error);
-  //   }
-  // };
   const getProductsById = async (productId) => {
     try {
       const res = await fetch(
@@ -69,11 +55,8 @@ const ProductContextProvider = ({ children }) => {
       return product;
     } catch (error) {
       console.log("Kan inte hämta produkten med ID", error);
-      // eller hantera fel på annat sätt
     }
   };
-
-  // andra funktioner och useEffect
 
   return (
     <ProductContext.Provider
@@ -84,7 +67,6 @@ const ProductContextProvider = ({ children }) => {
         productCategory,
         products,
         product,
-        // andra värden/funktioner
       }}
     >
       {children}

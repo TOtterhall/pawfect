@@ -10,15 +10,25 @@ export const useCartContext = () => {
 export const CartContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartQuantity, updatedCartQuantity] = useState(0);
-  const [inCart, setInCart] = useState([]);
+  const [totalCost, setTotalCost] = useState(0);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    setInCart(cart);
+    setCartItems(cart);
     updatedCartQuantity(cart);
+
+    // const cost = cart.reduce((total, item) => {
+    //   return total + item.product * item.quantity;
+    // }, 0);
+    // setTotalCost(cost);
   }, []);
 
   const addToCart = (product, quantity) => {
+    if (!product || !product._id) {
+      console.error("Invalid product or product ID");
+      return;
+    }
+
     const existingCartItemIndex = cartItems.findIndex(
       (item) => item.product._id === product._id
     );
@@ -26,10 +36,15 @@ export const CartContextProvider = ({ children }) => {
     if (existingCartItemIndex !== -1) {
       setCartItems((prevItems) => {
         const updatedCartItems = [...prevItems];
-        updatedCartItems[existingCartItemIndex].quantity += quantity;
+        updatedCartItems[existingCartItemIndex].quantity = quantity;
 
         localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-        updatedCartQuantity(updatedCartItems);
+
+        const newCartQuantity = updatedCartItems.reduce(
+          (total, item) => total + item.quantity,
+          0
+        );
+        updatedCartQuantity(newCartQuantity);
 
         return updatedCartItems;
       });
@@ -43,7 +58,11 @@ export const CartContextProvider = ({ children }) => {
         const updatedCartItems = [...prevItems, cartItem];
 
         localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-        updatedCartQuantity(updatedCartItems);
+        const newCartQuantity = updatedCartItems.reduce(
+          (total, item) => total + item.quantity,
+          0
+        );
+        updatedCartQuantity(newCartQuantity);
 
         return updatedCartItems;
       });
@@ -57,7 +76,7 @@ export const CartContextProvider = ({ children }) => {
         addToCart,
         cartItems,
         cartQuantity,
-        inCart,
+        totalCost,
         // andra värden/funktioner
       }}
     >

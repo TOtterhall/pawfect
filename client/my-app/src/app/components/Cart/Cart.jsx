@@ -6,8 +6,9 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useCartContext } from "../../../Context/cartContext/cartContext";
 export default function Cart() {
-  const { inCart } = useCartContext();
+  const { cartItems, totalCost } = useCartContext();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+
   const openDrawer = () => {
     setDrawerOpen(true);
   };
@@ -15,6 +16,7 @@ export default function Cart() {
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
+
   return (
     <>
       {/* ändra färg på knapp sedan */}
@@ -35,7 +37,7 @@ export default function Cart() {
                 <div className="p-2 g-col-6">
                   {" "}
                   <ul>
-                    {inCart.map((item) => (
+                    {cartItems.map((item) => (
                       <li className="p-2 g-col-6" key={item.product._id}>
                         <p>{item.product.title}</p>
                         <p>Quantity: {item.quantity}</p>
@@ -46,6 +48,7 @@ export default function Cart() {
               </div>
             </div>
           </div>
+          <p>Totalt:{totalCost}</p>
           <button
             className="btn btn-outline-success my-2 my-sm-0 "
             onClick={closeDrawer}

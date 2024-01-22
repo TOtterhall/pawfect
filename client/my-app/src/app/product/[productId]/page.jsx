@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import BtnAddToCart from "../../components/Buttons/AddToCart";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useProductContext } from "../../../Context/productContext/productContext";
@@ -20,15 +21,12 @@ export default function ProductListByTitle() {
     }
   }, [productId]);
 
-  // if (!productId) {
-  //   return <p>Produkten hittades inte.</p>;
-  // }
-
   return (
     <CategoryProvider>
       <CustomerProvider>
         <div>
           <h1>Detaljsida för produkter</h1>
+
           {product ? (
             <div>
               <h2>{product.title}</h2>
@@ -37,6 +35,7 @@ export default function ProductListByTitle() {
               <h2>{product.sizes}</h2>
               <h2>{product.categories}</h2>
               <p>{product.price}</p>
+              <BtnAddToCart product={product} />
               <img
                 src={product.image}
                 alt={product.title}
