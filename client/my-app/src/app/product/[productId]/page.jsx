@@ -31,7 +31,7 @@ export default function ProductListByTitle() {
           <h1>Detaljsida för produkter</h1>
           {product ? (
             <div>
-              <h2>{product.tit}</h2>
+              <h2>{product.title}</h2>
               <p>{product.description}</p>
               <h2>{product.colors}</h2>
               <h2>{product.sizes}</h2>

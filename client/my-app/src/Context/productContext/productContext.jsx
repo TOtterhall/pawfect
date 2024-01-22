@@ -66,6 +66,7 @@ const ProductContextProvider = ({ children }) => {
       setProduct(product);
 
       console.log(product);
+      return product;
     } catch (error) {
       console.log("Kan inte hämta produkten med ID", error);
       // eller hantera fel på annat sätt
