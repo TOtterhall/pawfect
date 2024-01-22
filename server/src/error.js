@@ -5,7 +5,7 @@ const errorHandler = (error, req, res, next) => {
   }
 
   //Mongose validation error
-  if (error instanceof MongoServerError.StricrModeError) {
+  if (error instanceof MongoServerError.StrictModeError) {
     return res.status(400).json(error.message);
   }
 

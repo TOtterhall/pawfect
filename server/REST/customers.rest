@@ -7,7 +7,7 @@ POST http://localhost:3080/api/customers/register
 Content-Type: application/json
 
 {
-    "email":"testAdmin@gmail.com",
+    "email":"t@gmail.com",
     "password":"admin1234",
     "firstName":"Therese",
     "lastName":"testar bara",
@@ -22,8 +22,8 @@ POST http://localhost:3080/api/customers/login
 Content-Type: application/json
 
 {
-    "email":"Tessan@gmail.com",
-    "password":"Tessan1234"
+    "email":"te@gmail.com",
+    "password":"admin1234"
    
 }
 

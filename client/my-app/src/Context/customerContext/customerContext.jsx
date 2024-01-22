@@ -1,3 +1,4 @@
+"use client";
 import { useState, createContext, useContext } from "react";
 
 export const CustomerContext = createContext();
@@ -9,6 +10,7 @@ export const useCustomerContext = () => {
 const CustomerContextProvider = ({ children }) => {
   const [customers, setAllCustomers] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [token, setToken] = useState(null);
 
   const getAllCustomers = async () => {
     try {
@@ -37,8 +39,14 @@ const CustomerContextProvider = ({ children }) => {
       console.log(res);
 
       if (res.ok) {
-        setIsLoggedIn(true);
+        const data = await res.json();
+        const { token } = data;
+        setToken(token);
+        console.log(token);
+
+        localStorage.setItem("token", token);
         console.log("Ny kund registrerad");
+        setIsLoggedIn(true);
       } else {
         console.log("Kan inte registrera dig, fel tassavtryck");
       }
@@ -66,8 +74,16 @@ const CustomerContextProvider = ({ children }) => {
       console.log(res);
 
       if (res.ok) {
-        setIsLoggedIn(true);
+        const data = await res.json();
+        const { token } = data;
+        setToken(token);
+        console.log(token);
+
+        localStorage.setItem("token", token);
+
+        console.log("Token stored in localStorage:", token);
         console.log("inloggning lyckades från context");
+        setIsLoggedIn(true);
       } else {
         register();
         console.log(
@@ -93,6 +109,7 @@ const CustomerContextProvider = ({ children }) => {
       console.log(res);
 
       if (res.ok) {
+        localStorage.removeItem("token");
         setIsLoggedIn(false);
         console.log("Du är nu utloggad från context");
       } else {
@@ -115,6 +132,7 @@ const CustomerContextProvider = ({ children }) => {
         setIsLoggedIn,
         register,
         logout,
+        token,
       }}
     >
       {children}
