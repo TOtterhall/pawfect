@@ -2,20 +2,9 @@
 import React from "react";
 import { useCustomerContext } from "../../../Context/customerContext/customerContext";
 const CheckOutBtn = () => {
-  const { isLoggedIn } = useCustomerContext();
-  //   const [quantity, setQuantity] = useState(1);
-
-  //   const increment = () => {
-  //     setQuantity((prevQuantity) => prevQuantity + 1);
-  //   };
-
-  //   const decrement = () => {
-  //     if (quantity > 1) {
-  //       setQuantity((prevQuantity) => prevQuantity - 1);
-  //     }
-  //   };
   const handleCheckOut = () => {
-    if (isLoggedIn) {
+    const token = localStorage.getItem("token");
+    if (token) {
       console.log("Inloggad navigera till checkout sidan");
     } else {
       console.log("Loggain/Registerara dig först");

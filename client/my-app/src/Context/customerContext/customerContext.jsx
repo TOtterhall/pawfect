@@ -43,9 +43,10 @@ const CustomerContextProvider = ({ children }) => {
         const { token } = data;
         setToken(token);
         console.log(token);
-        setIsLoggedIn(true);
+
         localStorage.setItem("token", token);
         console.log("Ny kund registrerad");
+        setIsLoggedIn(true);
       } else {
         console.log("Kan inte registrera dig, fel tassavtryck");
       }
@@ -77,11 +78,12 @@ const CustomerContextProvider = ({ children }) => {
         const { token } = data;
         setToken(token);
         console.log(token);
-        setIsLoggedIn(true);
 
         localStorage.setItem("token", token);
+
         console.log("Token stored in localStorage:", token);
         console.log("inloggning lyckades från context");
+        setIsLoggedIn(true);
       } else {
         register();
         console.log(
@@ -107,6 +109,7 @@ const CustomerContextProvider = ({ children }) => {
       console.log(res);
 
       if (res.ok) {
+        localStorage.removeItem("token");
         setIsLoggedIn(false);
         console.log("Du är nu utloggad från context");
       } else {

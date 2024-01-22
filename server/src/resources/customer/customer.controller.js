@@ -29,6 +29,7 @@ async function registerCustomer(req, res, next) {
       { expiresIn: "4h" }
     );
     await customer.save();
+    req.session.customerId = customer._id;
     res.status(201).json({ customer, token });
   } catch (err) {
     console.log(err);
@@ -70,7 +71,7 @@ async function loginCustomer(req, res, next) {
       "bytnamnsedanpånyckeln",
       { expiresIn: "4h" }
     );
-
+    req.session.customerId = customer._id;
     return res.status(200).json({ customer, token });
   } catch (err) {
     console.log(err);
@@ -98,7 +99,15 @@ async function logoutCustomer(req, res, next) {
     next(err);
   }
 }
-
+//FUNCTION AUTHORIZE
+// async function authorize(req, res, next) {
+//   if (!req.session._id) {
+//     return res
+//       .status(401)
+//       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
+//   }
+//   res.status(200).json(req.session);
+// }
 // //FUNCTION LOGOUT
 // async function logoutCustomer(req, res, next) {
 //   try {

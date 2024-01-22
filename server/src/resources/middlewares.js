@@ -1,6 +1,21 @@
 // MIDDLEWARES
-//ADMIN
-//VALLIDERING
+//ADMIN fixa mer med admin
+// function admin(joiSchema) {
+//   return (req, res, next) => {
+//     const isAdmin = joiSchema.validate(req.session._id);
+//     if (!isAdmin.error) return next();
+//     res.status(400).json(isAdmin.error.message);
+//   };
+// }
+
+//AUTH
+function authenticated(joiSchema) {
+  return (req, res, next) => {
+    const autenticateToken = joiSchema.validate(req.headers);
+    if (!autenticateToken.error) return next();
+    res.status(400).json(autenticateToken.error.message);
+  };
+}
 //MODEL EXIST
 
 function ifmodelexist(Model) {
@@ -19,4 +34,4 @@ function validate(joiSchema) {
     res.status(400).json(validation.error.message);
   };
 }
-module.exports = { validate, ifmodelexist };
+module.exports = { authenticated, validate, ifmodelexist };
