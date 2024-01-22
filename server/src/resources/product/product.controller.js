@@ -45,7 +45,7 @@ async function getAllProducts(req, res) {
 }
 
 //FUNCTION- GET SPECIFIK PRODUCT(ID)
-async function getSpecificProduct(req, res) {
+async function getSpecificProduct(req, res, next) {
   try {
     const productId = req.params._id;
     const product = await ProductModel.findById(productId);

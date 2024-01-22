@@ -19,7 +19,7 @@ export default function ProductListByCategory() {
             <h1>Min butik</h1>
             <h1>Mina produkter baserade på kategorier:</h1>
 
-            <ProductsByCategory categoryTitle={categoryTitle} />
+            {/* <ProductsByCategory categoryTitle={categoryTitle} /> */}
           </div>
         </CustomerProvider>
       </ProductProvider>
