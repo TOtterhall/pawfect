@@ -48,6 +48,7 @@ async function getAllProducts(req, res) {
 async function getSpecificProduct(req, res, next) {
   try {
     const productId = req.params._id;
+    console.log(productId);
     const product = await ProductModel.findById(productId);
     if (!product) {
       return res

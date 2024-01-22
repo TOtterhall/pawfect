@@ -10,6 +10,7 @@ export const useProductContext = () => {
 const ProductContextProvider = ({ children }) => {
   const [products, setAllProducts] = useState([]);
   const [productCategory, setAllCategories] = useState([]);
+  const [product, setProduct] = useState();
 
   const getAllProducts = async () => {
     try {
@@ -62,11 +63,12 @@ const ProductContextProvider = ({ children }) => {
       const product = await res.json();
       console.log("ProductsmedIdContext:", product);
 
-      setAllProducts([product]);
-      console.log(productId);
+      setProduct(product);
+
+      console.log(product);
     } catch (error) {
       console.log("Kan inte hämta produkten med ID", error);
-      setAllProducts([]); // eller hantera fel på annat sätt
+      // eller hantera fel på annat sätt
     }
   };
 
@@ -80,6 +82,7 @@ const ProductContextProvider = ({ children }) => {
         getProductsById,
         productCategory,
         products,
+        product,
         // andra värden/funktioner
       }}
     >

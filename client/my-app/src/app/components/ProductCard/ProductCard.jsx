@@ -6,14 +6,21 @@ import Link from "next/link";
 
 import { useRouter } from "next/navigation";
 const ProductCard = () => {
-  const { products, getAllProducts } = useProductContext();
+  const { products, getAllProducts, getProductsById } = useProductContext();
   const router = useRouter();
   useEffect(() => {
     getAllProducts();
   }, []);
-  const handleProductClick = (productId) => {
-    console.log("Product ID clicked:", productId);
-    router.push(`/product/${productId}`);
+  const handleProductClick = async (productId) => {
+    try {
+      console.log("Product ID clicked:", productId);
+
+      await getProductsById(productId);
+
+      router.push(`/product/${productId}`);
+    } catch (error) {
+      console.error("Ett fel uppstod vid hantering av produktklick:", error);
+    }
   };
   return (
     <div>

@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { useProductContext } from "../../../Context/productContext/productContext";
 import CustomerProvider from "../../../Context/customerContext/customerContext";
@@ -9,25 +10,19 @@ export default function ProductListByTitle() {
   const router = useRouter();
   const productId = router.query?._id || null;
   console.log(productId);
-  const [product, setProduct] = useState(null);
-  const { getProductsById } = useProductContext();
+  const { product, getProductsById } = useProductContext();
 
   useEffect(() => {
-    const fetchProduct = async () => {
-      try {
-        if (productId) {
-          const fetchedProduct = await getProductsById(productId);
-          setProduct(fetchedProduct);
-        } else {
-          setProduct(null);
-        }
-      } catch (error) {
-        console.error("Kan inte fetcha produkten med ID", error);
-        setProduct(null);
-      }
-    };
-    fetchProduct();
-  }, [getProductsById, productId]);
+    if (productId) {
+      getProductsById(productId).then((result) => {
+        console.log("Result from getProductsById:", result);
+      });
+    }
+  }, [productId]);
+
+  // if (!productId) {
+  //   return <p>Produkten hittades inte.</p>;
+  // }
 
   return (
     <CategoryProvider>
@@ -36,7 +31,7 @@ export default function ProductListByTitle() {
           <h1>Detaljsida för produkter</h1>
           {product ? (
             <div>
-              <h2>{product.title}</h2>
+              <h2>{product.tit}</h2>
               <p>{product.description}</p>
               <h2>{product.colors}</h2>
               <h2>{product.sizes}</h2>
