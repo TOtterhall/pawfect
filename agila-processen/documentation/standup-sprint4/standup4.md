@@ -55,6 +55,17 @@
 **Idag ska jag göra** Varje unik kategori ska kunna klickas på och ta kunden till sidan med produkterna som har den kategorin. Påbörja -> När kunden klickat på specifik produkt så ska denne komma till en detaljsida för produkten och vid klick på "köp" så ska den produkten läggas i kundvagnen/cart.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-22
+
+## Namn: Therese Otterhäll
+
+**Fredag/Lördag/söndag gjorde jag** Får ut listan med kategorier men har suttit timmar med att försöka hämta produkterna baserat på kategorier. Men lämnar det som bugg för måste komma vidare. Har påbörat när kunden klickat på specifik produkt så ska denne komma till en detaljsida för produkten och vid klick på "köp" så ska den produkten läggas i kundvagnen/cart. Retrospective.
+**Ett problem jag har** Ja med att hämta produkterna baserade på kategorierna.
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** -
+**Idag ska jag göra** Fortsätta med add to cart och påbörja stripe order.
+**Förklaring till beslut jag tagit** Jag har tagit beslut att inte stänga sprint 4 förrän idag. Dåå jag har fått lägga om vilka dagar jag har kunnat sitta. Med tanke på att företaget där jag skulle göra praktik hörde av sig så fick jag åka in på möte med ett annat företag. Vilket tog mer än en halv dag. Så sprint 4 räknar jag med att stänga idag.
+
 **Frågor jag har:** Struktur rätt?
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
