@@ -16,6 +16,12 @@ export default function Cart() {
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
+  //Kalkylera vad summan blir beroende på antal produkter
+  //Kalkylera vad summan blir pris * quantfity = total
+  const calculateTotal = cartItems.reduce(
+    (total, item) => total + item.product.price * item.quantity,
+    0
+  );
 
   return (
     <>
@@ -40,6 +46,7 @@ export default function Cart() {
                     {cartItems.map((item) => (
                       <li className="p-2 g-col-6" key={item.product._id}>
                         <p>{item.product.title}</p>
+                        <p>{item.product.price}</p>
                         <p>Quantity: {item.quantity}</p>
                       </li>
                     ))}
@@ -48,7 +55,7 @@ export default function Cart() {
               </div>
             </div>
           </div>
-          <p>Totalt:{totalCost}</p>
+          <p>Totalt:{calculateTotal}</p>
           <button
             className="btn btn-outline-success my-2 my-sm-0 "
             onClick={closeDrawer}
