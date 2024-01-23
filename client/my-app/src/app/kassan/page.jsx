@@ -1,3 +1,25 @@
+"use client";
+import React from "react";
+import CheckOutBtn from "../components/Buttons/CheckOutBtn";
+export default function checkout() {
+  return (
+    <div>
+      <h1>KASSA</h1>
+      <h1>FORTSÄTT SHOPPA</h1>
+      <div>Din beställning</div>
+      <p>Delsumma</p>
+      <p>Moms?</p>
+      <p>Frakt</p>
+      <p>Rabatt</p>
+      <h1>FORM</h1>
+      <p>Din info</p>
+      <p>Adress</p>
+      <p>Telefon</p>
+      <CheckOutBtn />
+    </div>
+  );
+}
+
 // import React from "react";
 // import { loadStripe } from "@stripe/stripe-js";
 

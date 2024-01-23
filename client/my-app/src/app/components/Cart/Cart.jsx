@@ -1,11 +1,16 @@
 "use client";
+
+//skapa cards som lägger sig i kassan och inkludera + && - för att kunna ändra i varukorgen
+//Lägga till knapp för att fortsätta shoppa...
+//cart ska automatiskt uppdatera sig...???utan att behöva uppdatera sidan.
 import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useCartContext } from "../../../Context/cartContext/cartContext";
-import CheckOutBtn from "../Buttons/CheckOutBtn";
+
+import BtnGoToCheckout from "../Buttons/GoToCheckout";
 export default function Cart() {
   const { cartItems } = useCartContext();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
@@ -37,7 +42,7 @@ export default function Cart() {
       {/* Drawer */}
       {isDrawerOpen && (
         <div>
-          <p>MIN Cart</p>
+          <h4>DIN VARUKORG</h4>
           <div className="modal-body">
             <div className="container-fluid">
               <div className="row">
@@ -57,7 +62,7 @@ export default function Cart() {
             </div>
           </div>
           <p>Totalt:{calculateTotal}</p>
-          <CheckOutBtn />
+          <BtnGoToCheckout />
           <button
             className="btn btn-outline-success my-2 my-sm-0 "
             onClick={closeDrawer}
