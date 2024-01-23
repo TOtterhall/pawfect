@@ -43,6 +43,7 @@ export default function Cart() {
       {isDrawerOpen && (
         <div>
           <h4>DIN VARUKORG</h4>
+          <div>slide som åker här med text om säker betalning</div>
           <div className="modal-body">
             <div className="container-fluid">
               <div className="row">
@@ -63,6 +64,8 @@ export default function Cart() {
           </div>
           <p>Totalt:{calculateTotal}</p>
           <BtnGoToCheckout />
+          <p>Du kanske gillar detta också?</p>
+          <p>Images???</p>
           <button
             className="btn btn-outline-success my-2 my-sm-0 "
             onClick={closeDrawer}
