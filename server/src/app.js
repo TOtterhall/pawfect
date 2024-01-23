@@ -57,9 +57,9 @@ app.post("/create-checkout-session", async (req, res) => {
       ],
       mode: "payment",
       //Skapa en sida /confirm
-      success_url: `${CLIENT_URL}`,
+      success_url: `${CLIENT_URL}/orderbekraftelse`,
 
-      cancel_url: `${CLIENT_URL}`,
+      cancel_url: `${CLIENT_URL}/misslyckadbetalning`,
     });
     //vad ??? tillbaka sessionen ex sessionsobj..fyll på?
     res.status(200).json({ url: session.url });
