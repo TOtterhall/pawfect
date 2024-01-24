@@ -69,18 +69,17 @@ import CustomerProvider from "../../../Context/customerContext/customerContext";
 import CategoryProvider from "../../../Context/categoryContext/categoryContext";
 //När jag uppdaterar sidan så hittas inte produkten???
 export default function ProductListByTitle() {
-  const router = useRouter();
-  const productId = router.query?._id || null;
-  console.log(productId);
-  const { product, getProductsById } = useProductContext();
+  // const router = useRouter();
+  // const productId = router.query?._id || null;
+  // console.log(productId);
+  const { product, getProductById } = useProductContext();
 
   useEffect(() => {
-    if (productId) {
-      getProductsById(productId).then((result) => {
-        console.log("Result from getProductsById:", result);
-      });
-    }
-  }, [productId]);
+    getProductById(product._id).then((result) => {
+      console.log("Result from getProductsById:", result);
+      console.log(product._id);
+    });
+  }, []);
 
   return (
     <CategoryProvider>
