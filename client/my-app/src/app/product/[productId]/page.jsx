@@ -74,13 +74,29 @@ export default function ProductListByTitle() {
   // console.log(productId);
   const { product, getProductById } = useProductContext();
 
+  // useEffect(() => {
+  //   getProductById(product._id).then((productId) => {
+  //     console.log("Result from getProductsById:", productId);
+  //     console.log(product);
+  //   });
+  // }, []);
+  // useEffect(() => {
+  //   // Kontrollera om product._id finns och är definierat innan du anropar getProductById
+  //   if (product && product._id) {
+  //     getProductById(product._id).then((productId) => {
+  //       console.log("Result from getProductsById:", productId);
+  //       console.log(product);
+  //     });
+  //   }
+  // }, []);
   useEffect(() => {
-    getProductById(product._id).then((result) => {
-      console.log("Result from getProductsById:", result);
-      console.log(product._id);
-    });
+    if (product && product._id) {
+      getProductById(product._id).then((productId) => {
+        console.log("Result from getProductsById:", productId);
+        console.log(product);
+      });
+    }
   }, []);
-
   return (
     <CategoryProvider>
       <CustomerProvider>

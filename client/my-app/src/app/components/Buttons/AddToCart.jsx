@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useCartContext } from "../../../Context/cartContext/cartContext";
 const BtnAddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
+
   const [quantity, setQuantity] = useState(1);
 
   const increment = () => {
@@ -16,6 +17,9 @@ const BtnAddToCart = ({ product }) => {
   };
   const handleAddToCart = () => {
     addToCart(product, quantity);
+    if (addToCart) {
+      console.log("if add to cart");
+    }
     console.log(product);
     console.log(quantity);
     console.log("Du har klickat på knappen add to cart");

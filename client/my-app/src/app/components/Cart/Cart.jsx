@@ -3,7 +3,7 @@
 //skapa cards som lägger sig i kassan och inkludera + && - för att kunna ändra i varukorgen
 //Lägga till knapp för att fortsätta shoppa...
 //cart ska automatiskt uppdatera sig...???utan att behöva uppdatera sidan.
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -13,8 +13,12 @@ import { useCartContext } from "../../../Context/cartContext/cartContext";
 import BtnGoToCheckout from "../Buttons/GoToCheckout";
 export default function Cart() {
   const { cartItems } = useCartContext();
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
 
+  const [isDrawerOpen, setDrawerOpen] = useState(false);
+  useEffect(() => {
+    // This will be triggered whenever cartItems or cartQuantity changes
+    console.log(cartItems);
+  }, [cartItems]);
   const openDrawer = () => {
     setDrawerOpen(true);
   };
@@ -50,11 +54,11 @@ export default function Cart() {
                 <div className="p-2 g-col-6">
                   {" "}
                   <ul>
-                    {cartItems.map((item) => (
-                      <li className="p-2 g-col-6" key={item.product._id}>
-                        <p>{item.product.title}</p>
-                        <p>{item.product.price}</p>
-                        <p>Quantity: {item.quantity}</p>
+                    {cartItems.map((cartItem) => (
+                      <li className="p-2 g-col-6" key={cartItem.product._id}>
+                        <p>{cartItem.product.title}</p>
+                        <p>{cartItem.product.price}</p>
+                        <p>Quantity: {cartItem.quantity}</p>
                       </li>
                     ))}
                   </ul>

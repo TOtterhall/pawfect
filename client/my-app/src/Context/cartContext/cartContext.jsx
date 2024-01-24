@@ -10,17 +10,11 @@ export const useCartContext = () => {
 export const CartContextProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
   const [cartQuantity, updatedCartQuantity] = useState(0);
-  const [totalCost, setTotalCost] = useState(0);
 
   useEffect(() => {
     const cart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartItems(cart);
     updatedCartQuantity(cart);
-
-    // const cost = cart.reduce((total, item) => {
-    //   return total + item.product * item.quantity;
-    // }, 0);
-    // setTotalCost(cost);
   }, []);
 
   const addToCart = (product, quantity) => {
@@ -29,14 +23,14 @@ export const CartContextProvider = ({ children }) => {
       return;
     }
 
-    const existingCartItemIndex = cartItems.findIndex(
+    const existingCartItem = cartItems.findIndex(
       (item) => item.product._id === product._id
     );
 
-    if (existingCartItemIndex !== -1) {
+    if (existingCartItem !== -1) {
       setCartItems((prevItems) => {
         const updatedCartItems = [...prevItems];
-        updatedCartItems[existingCartItemIndex].quantity = quantity;
+        updatedCartItems[existingCartItem].quantity = quantity;
 
         localStorage.setItem("cart", JSON.stringify(updatedCartItems));
 
@@ -45,7 +39,8 @@ export const CartContextProvider = ({ children }) => {
           0
         );
         updatedCartQuantity(newCartQuantity);
-
+        console.log("Updated Cart Items:", updatedCartItems);
+        console.log("New Cart Quantity:", newCartQuantity);
         return updatedCartItems;
       });
     } else {
@@ -63,7 +58,8 @@ export const CartContextProvider = ({ children }) => {
           0
         );
         updatedCartQuantity(newCartQuantity);
-
+        console.log("Updated Cart Items:", updatedCartItems);
+        console.log("New Cart Quantity:", newCartQuantity);
         return updatedCartItems;
       });
     }
@@ -76,7 +72,7 @@ export const CartContextProvider = ({ children }) => {
         addToCart,
         cartItems,
         cartQuantity,
-        totalCost,
+
         // andra värden/funktioner
       }}
     >
