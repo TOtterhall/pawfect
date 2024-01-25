@@ -22,6 +22,17 @@
 **Idag ska jag göra** Se över buggar och så att allt fungerar som det ska. Ordna så att jag mappar ut alla cartItems i checkout istället för en hårdkodad produkt. Se över min projektbeskrivning för att se om jag missat något. Mitt mål för dagen är att allt ska fungera som planerat.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-25
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Påbörjade att se över buggar eller fel. Tanken var att jag skulle mappa ut alla cartItems i checkout istället för en hårdkodad produkt. Men fastnade i att cartItems lägger sig i cart men när jag klickar på cart så uppdaterar sidan sig inte. Fastnade i detta och kom inte vidare så påbörjade presentation i Canva.
+**Ett problem jag har** CartItems lägger sig i cart men när jag klickar på cart så uppdaterar sidan sig inte.
+**Jag behöver hjälp med** Måste ta hjälp om jag inte kommer vidare med cart idag.
+**Igår lärde jag mig** console.log sönder saker
+**Idag ska jag göra** Se till att cart uppdateras!
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
