@@ -10,18 +10,21 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import BtnGoToCheckout from "../Buttons/GoToCheckout";
-import { useCartContext } from "@/Context/cartContext/cartContext";
+// import { useCartContext } from "@/Context/cartContext/cartContext";
 export default function Cart() {
-  const { cart } = useCartContext();
+  // const { cart } = useCartContext();
   const [isDrawerOpen, setDrawerOpen] = useState(false);
-  // const [cart, setCart] = useState([]);
+  // //MED DENNA SÅ TRIGGAS CART VARJE GÅNG JAG TRYCKER PÅ KNAPPEN
+  const [cart, setCart] = useState([]);
   console.log(cart);
-  // useEffect(() => {
-  //   setCart(JSON.parse(localStorage.getItem("cart")));
-  // }, [isDrawerOpen]);
   useEffect(() => {
-    console.log(cart);
-  }, []);
+    setCart(JSON.parse(localStorage.getItem("cart")));
+  }, [isDrawerOpen]);
+
+  //MED DENNA SÅ MÅSTE JAG MANUELLT UPPDATERA SIDAN?
+  // useEffect(() => {
+  //   console.log(cart);
+  // }, []);
 
   const openDrawer = () => {
     setDrawerOpen(true);

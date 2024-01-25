@@ -48,6 +48,7 @@ export const CartContextProvider = ({ children }) => {
 
     console.log(cart);
   };
+  // MIN GAMMLA KOD - SPARA SÅLÄNGE
   // useEffect(() => {
   //   const cart = JSON.parse(localStorage.getItem("cart")) || [];
   //   setCartItems(cartItems);
@@ -114,7 +115,6 @@ export const CartContextProvider = ({ children }) => {
     <CartContext.Provider
       value={{
         addToCart,
-
         cart,
         // andra värden/funktioner
       }}
