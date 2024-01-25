@@ -64,9 +64,14 @@ import React from "react";
 import BtnAddToCart from "../../components/Buttons/AddToCart";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useProductContext } from "../../../Context/productContext/productContext";
+import {
+  ProductContext,
+  useProductContext,
+} from "../../../Context/productContext/productContext";
 import CustomerProvider from "../../../Context/customerContext/customerContext";
 import CategoryProvider from "../../../Context/categoryContext/categoryContext";
+import CartProvider from "../../../Context/cartContext/cartContext";
+import ProductProvider from "../../../Context/productContext/productContext";
 //När jag uppdaterar sidan så hittas inte produkten???
 export default function ProductListByTitle() {
   // const router = useRouter();
@@ -100,6 +105,8 @@ export default function ProductListByTitle() {
   return (
     <CategoryProvider>
       <CustomerProvider>
+        <ProductProvider />
+        <CartProvider />
         <div>
           <h1>Detaljsida för produkter</h1>
 
@@ -126,6 +133,8 @@ export default function ProductListByTitle() {
             </p>
           )}
         </div>
+        <CartProvider />
+        <ProductProvider />
       </CustomerProvider>
     </CategoryProvider>
   );

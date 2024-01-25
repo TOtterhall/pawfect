@@ -5,7 +5,7 @@ import ProductProvider from "../Context/productContext/productContext";
 import CustomerProvider from "../Context/customerContext/customerContext";
 import CategoryProvider from "../Context/categoryContext/categoryContext";
 //Components
-
+import { useCartContext } from "../Context/cartContext/cartContext";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
@@ -17,6 +17,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // const { cartItems, cartQuantity } = useCartContext([]);
+  // const [cart, setCart] = useState({ items: [], quantity: 0 });
+
+  // useEffect(() => {
+  //   console.log(cartItems);
+  //   console.log(cartQuantity);
+  //   setCart({ items: cartItems, quantity: cartQuantity });
+  // }, [cartItems, cartQuantity]);
   return (
     <html lang="en">
       <head>
@@ -28,8 +36,8 @@ export default function RootLayout({ children }) {
         <script src="https://js.stripe.com/v3/"></script>
       </head>
       <body className={inter.className}>
-        <CartProvider>
-          <ProductProvider>
+        <ProductProvider>
+          <CartProvider>
             <CustomerProvider>
               <CategoryProvider>
                 <Header />
@@ -39,8 +47,8 @@ export default function RootLayout({ children }) {
                 <Footer />
               </CategoryProvider>
             </CustomerProvider>
-          </ProductProvider>
-        </CartProvider>
+          </CartProvider>
+        </ProductProvider>
       </body>
     </html>
   );
