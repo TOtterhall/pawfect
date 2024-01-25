@@ -2,11 +2,14 @@
 import React from "react";
 // import { useCustomerContext } from "../../../Context/customerContext/customerContext";
 import { loadStripe } from "@stripe/stripe-js";
-const stripePromise = loadStripe(
-  `pk_test_51ObgWZB4OKIOfmBbp4HuOGz818qIcEtz5AQkd11AIsY7HPqZPR96QacXX6auyEqYhW2q9NPNZrT0395oTkrBx94h00U0G27s4y`
-);
+import { useCartContext } from "@/Context/cartContext/cartContext";
+
+// const stripePromise = loadStripe(
+//   `pk_test_51ObgWZB4OKIOfmBbp4HuOGz818qIcEtz5AQkd11AIsY7HPqZPR96QacXX6auyEqYhW2q9NPNZrT0395oTkrBx94h00U0G27s4y`
+// );
 
 const CheckOutBtn = () => {
+  const { cart } = useCartContext();
   const handleCheckOut = async () => {
     const response = await fetch(
       "http://localhost:3080/create-checkout-session",
@@ -15,7 +18,7 @@ const CheckOutBtn = () => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({}),
+        body: JSON.stringify({ cart }),
       }
     );
     if (!response.ok) {

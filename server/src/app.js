@@ -28,33 +28,21 @@ app.use(
 const CLIENT_URL = "http://localhost:3000";
 //POST
 app.post("/create-checkout-session", async (req, res) => {
-  //Inga krav på validering, bara krav på krypteralösenordet,fokus Stripe.
-  //Man kan om man vill hantera felhantering
   try {
     const session = await stripe.checkout.sessions.create({
-      // Vill mappa ut alla mina produkter...hårdkodat för att testa stripe
-      //   line_items: req.body.map((item) => {
-      //     return {
-      //       price: item.product,
-      //       quantity: item.quantity,
-      //     };
-      //   }),
-
-      line_items: [
-        {
-          //pricedata är produktdata
+      line_items: req.body.cart.map((item) => {
+        return {
           price_data: {
             currency: "sek",
             product_data: {
-              name: "hundhalsband",
-              description: "bästa halsbandet ever...",
+              name: item.product.title,
+              description: "Product description...",
             },
-
-            unit_amount: "24900",
+            unit_amount: item.product.price * 100,
           },
-          quantity: 2,
-        },
-      ],
+          quantity: item.quantity,
+        };
+      }),
       mode: "payment",
       //Skapa en sida /confirm
       success_url: `${CLIENT_URL}/orderbekraftelse`,

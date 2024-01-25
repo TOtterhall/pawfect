@@ -1,12 +1,24 @@
 "use client";
 import React from "react";
 import CheckOutBtn from "../components/Buttons/CheckOutBtn";
+import { useCartContext } from "@/Context/cartContext/cartContext";
+//FIXA IORDNING VAD SOM SKA VARA MED I KASSAN!!!!!!!!
+//BARA INLOGGADE ANVÄNDARE????
+//INLOGGADE ANVÄNDARE SKA KUNNA SE SINA ORDRAR JÖ!!!
 export default function checkout() {
+  const { cart } = useCartContext();
+  console.log("Cart in Checkout:", cart);
   return (
     <div>
       <h1>KASSA</h1>
       <h1>FORTSÄTT SHOPPA</h1>
       <div>Din beställning</div>
+      {cart.map((item) => (
+        <div key={item.product._id}>
+          <p>{item.product.title}</p>
+          <p>Quantity: {item.quantity}</p>
+        </div>
+      ))}
       <p>Delsumma</p>
       <p>Moms?</p>
       <p>Frakt</p>
