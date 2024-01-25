@@ -60,7 +60,7 @@
 
 //När jag uppdaterar sidan så hittas inte produkten???Usestate samma som härromdagen skicka produkt....
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BtnAddToCart from "../../components/Buttons/AddToCart";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
@@ -73,32 +73,16 @@ import CategoryProvider from "../../../Context/categoryContext/categoryContext";
 import CartProvider from "../../../Context/cartContext/cartContext";
 import ProductProvider from "../../../Context/productContext/productContext";
 //När jag uppdaterar sidan så hittas inte produkten???
+
 export default function ProductListByTitle() {
-  // const router = useRouter();
-  // const productId = router.query?._id || null;
-  // console.log(productId);
+  // const { product, getProductById, getAllProducts } = useProductContext();
   const { product, getProductById } = useProductContext();
 
-  // useEffect(() => {
-  //   getProductById(product._id).then((productId) => {
-  //     console.log("Result from getProductsById:", productId);
-  //     console.log(product);
-  //   });
-  // }, []);
-  // useEffect(() => {
-  //   // Kontrollera om product._id finns och är definierat innan du anropar getProductById
-  //   if (product && product._id) {
-  //     getProductById(product._id).then((productId) => {
-  //       console.log("Result from getProductsById:", productId);
-  //       console.log(product);
-  //     });
-  //   }
-  // }, []);
   useEffect(() => {
     if (product && product._id) {
       getProductById(product._id).then((productId) => {
         console.log("Result from getProductsById:", productId);
-        console.log(product);
+        console.log(productId);
       });
     }
   }, []);
@@ -111,7 +95,7 @@ export default function ProductListByTitle() {
           <h1>Detaljsida för produkter</h1>
 
           {product ? (
-            <div>
+            <div key={product._id}>
               <h2>{product.title}</h2>
               <p>{product.description}</p>
               <h2>{product.colors}</h2>
