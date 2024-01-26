@@ -1,34 +1,101 @@
+//När jag uppdaterar sidan så hittas inte produkten???
+// "use client";
+// import React, { useState } from "react";
+// import BtnAddToCart from "../../components/Buttons/AddToCart";
+// import { useEffect } from "react";
+// import { useRouter } from "next/navigation";
+// import { useProductContext } from "../../../Context/productContext/productContext";
+// import CustomerProvider from "../../../Context/customerContext/customerContext";
+// import CategoryProvider from "../../../Context/categoryContext/categoryContext";
+
+// export default function ProductListByTitle() {
+//   const router = useRouter();
+//   const productId = router.query?._id || null;
+//   console.log(productId);
+//   const { getProductsById } = useProductContext();
+//   const [product, setProduct] = useState();
+
+//   useEffect(() => {
+//     if (productId) {
+//       getProductsById(productId).then((result) => {
+//         console.log("Result from getProductsById:", result);
+//         setProduct(result);
+//       });
+//     }
+//   }, [productId, getProductsById]);
+
+//   return (
+//     <CategoryProvider>
+//       <CustomerProvider>
+//         <div>
+//           <h1>Detaljsida för produkter</h1>
+
+//           {product ? (
+//             <div>
+//               <h2>{product.title}</h2>
+//               <p>{product.description}</p>
+//               <h2>{product.colors}</h2>
+//               <h2>{product.sizes}</h2>
+//               <h2>{product.categories}</h2>
+//               <p>{product.price}</p>
+//               <BtnAddToCart product={product} />
+//               <img
+//                 src={product.image}
+//                 alt={product.title}
+//                 width={100}
+//                 height={250}
+//               />
+//             </div>
+//           ) : (
+//             <p>
+//               Hittar ingen produkt med detta ID LÄNKA TILL EN ROLIG 404:A
+//               SIDA...?
+//             </p>
+//           )}
+//         </div>
+//       </CustomerProvider>
+//     </CategoryProvider>
+//   );
+// }
+
+//När jag uppdaterar sidan så hittas inte produkten???Usestate samma som härromdagen skicka produkt....
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import BtnAddToCart from "../../components/Buttons/AddToCart";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
-import { useProductContext } from "../../../Context/productContext/productContext";
+import {
+  ProductContext,
+  useProductContext,
+} from "../../../Context/productContext/productContext";
 import CustomerProvider from "../../../Context/customerContext/customerContext";
 import CategoryProvider from "../../../Context/categoryContext/categoryContext";
+import CartProvider from "../../../Context/cartContext/cartContext";
+import ProductProvider from "../../../Context/productContext/productContext";
+//När jag uppdaterar sidan så hittas inte produkten???
 
 export default function ProductListByTitle() {
-  const router = useRouter();
-  const productId = router.query?._id || null;
-  console.log(productId);
-  const { product, getProductsById } = useProductContext();
+  // const { product, getProductById, getAllProducts } = useProductContext();
+  const { product, getProductById } = useProductContext();
 
   useEffect(() => {
-    if (productId) {
-      getProductsById(productId).then((result) => {
-        console.log("Result from getProductsById:", result);
+    if (product && product._id) {
+      getProductById(product._id).then((productId) => {
+        console.log("Result from getProductsById:", productId);
+        console.log(productId);
       });
     }
-  }, [productId]);
-
+  }, []);
   return (
     <CategoryProvider>
       <CustomerProvider>
+        <ProductProvider />
+        <CartProvider />
         <div>
           <h1>Detaljsida för produkter</h1>
 
           {product ? (
-            <div>
+            <div key={product._id}>
               <h2>{product.title}</h2>
               <p>{product.description}</p>
               <h2>{product.colors}</h2>
@@ -44,9 +111,14 @@ export default function ProductListByTitle() {
               />
             </div>
           ) : (
-            <p>Hittar ingen produkt med detta ID</p>
+            <p>
+              Hittar ingen produkt med detta ID LÄNKA TILL EN ROLIG 404:A
+              SIDA...?
+            </p>
           )}
         </div>
+        <CartProvider />
+        <ProductProvider />
       </CustomerProvider>
     </CategoryProvider>
   );

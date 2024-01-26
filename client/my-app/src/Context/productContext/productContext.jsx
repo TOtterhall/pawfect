@@ -57,6 +57,22 @@ const ProductContextProvider = ({ children }) => {
       console.log("Kan inte hämta produkten med ID", error);
     }
   };
+  const getProductById = async (productId) => {
+    try {
+      const res = await fetch(
+        `http://localhost:3080/api/products/${productId}`
+      );
+      const product = await res.json();
+      console.log("ProductsmedIdContext:", product);
+
+      setProduct(product);
+
+      console.log(product);
+      return product;
+    } catch (error) {
+      console.log("Kan inte hämta produkten med ID", error);
+    }
+  };
 
   return (
     <ProductContext.Provider
@@ -64,6 +80,7 @@ const ProductContextProvider = ({ children }) => {
         getAllProducts,
         getProductsByCategory,
         getProductsById,
+        getProductById,
         productCategory,
         products,
         product,

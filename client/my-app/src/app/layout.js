@@ -2,8 +2,10 @@ import { Inter } from "next/font/google";
 import "bootstrap/dist/css/bootstrap.css";
 import CartProvider from "../Context/cartContext/cartContext";
 import ProductProvider from "../Context/productContext/productContext";
+import CustomerProvider from "../Context/customerContext/customerContext";
+import CategoryProvider from "../Context/categoryContext/categoryContext";
 //Components
-
+import { useCartContext } from "../Context/cartContext/cartContext";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
@@ -15,6 +17,14 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  // const { cartItems, cartQuantity } = useCartContext([]);
+  // const [cart, setCart] = useState({ items: [], quantity: 0 });
+
+  // useEffect(() => {
+  //   console.log(cartItems);
+  //   console.log(cartQuantity);
+  //   setCart({ items: cartItems, quantity: cartQuantity });
+  // }, [cartItems, cartQuantity]);
   return (
     <html lang="en">
       <head>
@@ -23,17 +33,22 @@ export default function RootLayout({ children }) {
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossOrigin="anonymous"
         ></script>
+        <script src="https://js.stripe.com/v3/"></script>
       </head>
       <body className={inter.className}>
-        <CartProvider>
-          <ProductProvider>
-            <Header />
+        <ProductProvider>
+          <CartProvider>
+            <CustomerProvider>
+              <CategoryProvider>
+                <Header />
 
-            <main>{children}</main>
+                <main>{children}</main>
 
-            <Footer />
-          </ProductProvider>
-        </CartProvider>
+                <Footer />
+              </CategoryProvider>
+            </CustomerProvider>
+          </CartProvider>
+        </ProductProvider>
       </body>
     </html>
   );

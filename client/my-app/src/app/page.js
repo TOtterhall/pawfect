@@ -1,10 +1,9 @@
 "use client";
 import React from "react";
 import Carousel from "../../src/app/components/Carousel/Carousel";
-import Login from "./components/Header/Login/Login";
+
 import LoginForm from "../../src/app/components/LoginForm/LoginForm";
-import Cart from "../../src/app/components/Cart/Cart";
-import Categories from "../../src/app/components/Categories/Categories";
+
 import News from "../../src/app/components/News/News";
 import Aboutus from "../../src/app/components/Aboutus/Aboutus";
 import Info from "../../src/app/components/Info/Info";
@@ -31,8 +30,7 @@ export default function Home() {
           här så får jag ut iconerna.
           Researcha oom detta samtidigt som bilder.
           har det med config att göra? */}
-              <Cart />
-              <Login />
+
               <News />
               <StoreJumbo />
               <AboutJumbo />

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import SearchForm from "../SearchForm/SearchForm";
 import Logo from "../Logo/Logo";
@@ -10,9 +10,17 @@ import Menu from "../Menu/Menu";
 import CategoryProvider from "../../../../Context/categoryContext/categoryContext";
 import CartProvider from "../../../../Context/cartContext/cartContext";
 import CustomerProvider from "../../../../Context/customerContext/customerContext";
-
+import { useCartContext } from "../../../../Context/cartContext/cartContext";
 export default function Navbar() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
+  // const { cartItems, cartQuantity } = useCartContext([]);
+  // const [cart, setCart] = useState({ items: [], quantity: 0 });
+
+  // useEffect(() => {
+  //   console.log(cartItems);
+  //   console.log(cartQuantity);
+  //   setCart({ items: cartItems, quantity: cartQuantity });
+  // }, [cartItems, cartQuantity]);
   const openDrawer = () => {
     setDrawerOpen(true);
   };

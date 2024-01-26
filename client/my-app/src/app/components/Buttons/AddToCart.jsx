@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { useCartContext } from "../../../Context/cartContext/cartContext";
 const BtnAddToCart = ({ product }) => {
   const { addToCart } = useCartContext();
+
   const [quantity, setQuantity] = useState(1);
 
   const increment = () => {
@@ -16,9 +17,10 @@ const BtnAddToCart = ({ product }) => {
   };
   const handleAddToCart = () => {
     addToCart(product, quantity);
-    console.log(product);
-    console.log(quantity);
-    console.log("Du har klickat på knappen add to cart");
+
+    // console.log(product);
+    // console.log(quantity);
+    // console.log("Du har klickat på knappen add to cart");
   };
   return (
     <div>
@@ -34,7 +36,7 @@ const BtnAddToCart = ({ product }) => {
       <button
         className="btn btn-primary btn-lg"
         role="button"
-        onClick={() => handleAddToCart(quantity)}
+        onClick={() => handleAddToCart()}
       >
         Köp
       </button>
