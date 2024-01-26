@@ -1,8 +1,8 @@
 "use client";
 import React from "react";
-// import { useCustomerContext } from "../../../Context/customerContext/customerContext";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCartContext } from "@/Context/cartContext/cartContext";
+import { useCustomerContext } from "@/Context/customerContext/customerContext";
 
 const stripePromise = loadStripe(
   `pk_test_51ObgWZB4OKIOfmBbp4HuOGz818qIcEtz5AQkd11AIsY7HPqZPR96QacXX6auyEqYhW2q9NPNZrT0395oTkrBx94h00U0G27s4y`
@@ -10,6 +10,8 @@ const stripePromise = loadStripe(
 
 const CheckOutBtn = () => {
   const { cart } = useCartContext();
+  const { auth } = useCustomerContext();
+
   const handleCheckOut = async () => {
     const response = await fetch(
       "http://localhost:3080/create-checkout-session",
@@ -18,7 +20,8 @@ const CheckOutBtn = () => {
         headers: {
           "Content-Type": "application/json ",
         },
-        body: JSON.stringify({ cart }),
+
+        body: JSON.stringify({ cart, customerId: auth.customerId }),
       }
     );
     if (!response.ok) {

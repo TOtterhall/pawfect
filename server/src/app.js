@@ -29,18 +29,21 @@ const CLIENT_URL = "http://localhost:3000";
 //POST
 app.post("/create-checkout-session", async (req, res) => {
   try {
+    const { cart } = req.body;
+    const customerId = req.session.customerId;
+    //KOLLA MER PÅ VAD JAG VILL SKICKA MED && RADE KASSAN VID SLUTFÖRT KÖP
     const session = await stripe.checkout.sessions.create({
-      line_items: req.body.cart.map((item) => {
+      customer: customerId,
+      line_items: cart.map((cartItem) => {
         return {
           price_data: {
             currency: "sek",
             product_data: {
-              name: item.type,
-              description: "Product description...",
+              name: cartItem.product.title,
             },
-            unit_amount: item.product.price * 100,
+            unit_amount: cartItem.product.price * 100,
           },
-          quantity: item.quantity,
+          quantity: cartItem.quantity,
         };
       }),
       mode: "payment",
