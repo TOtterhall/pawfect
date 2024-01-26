@@ -104,7 +104,9 @@ const LoginForm = () => {
       >
         Registrera
       </button>
-
+      <button type="button" className="btn btn-primary" onClick={handleLogout}>
+        Logout
+      </button>
       <p></p>
     </form>
   );

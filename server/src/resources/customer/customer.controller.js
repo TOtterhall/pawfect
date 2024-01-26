@@ -89,8 +89,9 @@ async function logoutCustomer(req, res, next) {
     //   });
     // }
 
-    res.clearCookie("jwtToken");
+    // res.clearCookie("jwtToken");
     req.session = null;
+    console.log(req.session);
     res
       .status(200)
       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
@@ -100,14 +101,12 @@ async function logoutCustomer(req, res, next) {
   }
 }
 //FUNCTION AUTHORIZE
-// async function authorize(req, res, next) {
-//   if (!req.session._id) {
-//     return res
-//       .status(401)
-//       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
-//   }
-//   res.status(200).json(req.session);
-// }
+async function authorize(req, res, next) {
+  if (!req.session.customerId) {
+    return res.status(401).json({ message: "Du e inte AUTH" });
+  }
+  res.status(200).json(req.session);
+}
 // //FUNCTION LOGOUT
 // async function logoutCustomer(req, res, next) {
 //   try {
@@ -144,4 +143,4 @@ async function logoutCustomer(req, res, next) {
 //-auth/autherize
 //Ta bort console.log
 //Lägga till bättre beskrivningar?
-module.exports = { registerCustomer, loginCustomer, logoutCustomer };
+module.exports = { registerCustomer, loginCustomer, logoutCustomer, authorize };

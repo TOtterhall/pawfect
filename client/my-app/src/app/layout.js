@@ -17,14 +17,6 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  // const { cartItems, cartQuantity } = useCartContext([]);
-  // const [cart, setCart] = useState({ items: [], quantity: 0 });
-
-  // useEffect(() => {
-  //   console.log(cartItems);
-  //   console.log(cartQuantity);
-  //   setCart({ items: cartItems, quantity: cartQuantity });
-  // }, [cartItems, cartQuantity]);
   return (
     <html lang="en">
       <head>

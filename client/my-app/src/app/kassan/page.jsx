@@ -4,14 +4,15 @@ import CheckOutBtn from "../components/Buttons/CheckOutBtn";
 import RegisterForm from "../components/Buttons/Register";
 import { useCartContext } from "@/Context/cartContext/cartContext";
 import { useCustomerContext } from "@/Context/customerContext/customerContext";
+import LoginForm from "../components/LoginForm/LoginForm";
 //FIXA IORDNING VAD SOM SKA VARA MED I KASSAN!!!!!!!!
 //BARA INLOGGADE ANVÄNDARE????
 //INLOGGADE ANVÄNDARE SKA KUNNA SE SINA ORDRAR JÖ!!!
 export default function checkout() {
   const { cart } = useCartContext();
-  const { isLoggedIn } = useCustomerContext();
-  console.log("Cart in Checkout:", cart);
-  console.log("Cart in Checkout:", cart);
+  const { auth } = useCustomerContext();
+  console.log("Cart in Checkout:", auth);
+
   return (
     <div>
       <h1>KASSA</h1>
@@ -31,7 +32,8 @@ export default function checkout() {
       <p>Din info</p>
       <p>Adress</p>
       <p>Telefon</p>
-      <div>{isLoggedIn ? <CheckOutBtn /> : <RegisterForm />}</div>
+
+      {auth ? <CheckOutBtn /> : <LoginForm />}
     </div>
   );
 }

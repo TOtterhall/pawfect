@@ -1,5 +1,5 @@
 "use client";
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 
 export const CustomerContext = createContext();
 
@@ -10,7 +10,28 @@ export const useCustomerContext = () => {
 const CustomerContextProvider = ({ children }) => {
   const [customers, setAllCustomers] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState("");
+  // const [auth, setAuth] = useState("");
+  // const[customer ,setInloggedCustomer]=[false]
+  useEffect(() => {
+    getAuth();
+  }, []);
+  const getAuth = async () => {
+    try {
+      const res = await fetch(`http://localhost:3080/api/customers/authorize`, {
+        method: "GET",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const auth = await res.json();
+      console.log(auth);
+    } catch (error) {
+      console.log("Kan inte hämta alla användarna.....", error);
+    }
+  };
 
   const getAllCustomers = async () => {
     try {
@@ -46,7 +67,9 @@ const CustomerContextProvider = ({ children }) => {
 
         localStorage.setItem("token", token);
         console.log("Ny kund registrerad");
-        setIsLoggedIn(true);
+        if (token) {
+          setIsLoggedIn(true);
+        }
       } else {
         console.log("Kan inte registrera dig, fel tassavtryck");
       }
@@ -68,6 +91,7 @@ const CustomerContextProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(customerData),
       });
 
@@ -83,9 +107,7 @@ const CustomerContextProvider = ({ children }) => {
 
         console.log("Token stored in localStorage:", token);
         console.log("inloggning lyckades från context");
-        setIsLoggedIn(true);
       } else {
-        register();
         console.log(
           "Kan inte logga in DU i context...Du måste registrera dig först"
         );
@@ -104,6 +126,7 @@ const CustomerContextProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
       });
 
       console.log(res);
@@ -133,6 +156,8 @@ const CustomerContextProvider = ({ children }) => {
         register,
         logout,
         token,
+        // auth,
+        // getAuth,
       }}
     >
       {children}

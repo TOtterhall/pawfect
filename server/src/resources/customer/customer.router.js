@@ -5,6 +5,7 @@ const {
   registerCustomer,
   loginCustomer,
   logoutCustomer,
+  authorize,
 } = require("./customer.controller");
 const { CustomerValidationSchema } = require("./customer.model");
 
@@ -20,4 +21,5 @@ customerRouter.post(
   loginCustomer
 );
 customerRouter.post("/customers/logout", logoutCustomer);
+customerRouter.get("/customers/authorize", authorize);
 module.exports = { customerRouter };
