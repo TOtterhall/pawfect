@@ -11,11 +11,12 @@ const CustomerContextProvider = ({ children }) => {
   const [customers, setAllCustomers] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
-  // const [auth, setAuth] = useState("");
-  // const[customer ,setInloggedCustomer]=[false]
+  const [auth, setAuth] = useState("");
+
   useEffect(() => {
     getAuth();
   }, []);
+
   const getAuth = async () => {
     try {
       const res = await fetch(`http://localhost:3080/api/customers/authorize`, {
@@ -26,8 +27,9 @@ const CustomerContextProvider = ({ children }) => {
         },
         credentials: "include",
       });
-      const auth = await res.json();
-      console.log(auth);
+      const authData = await res.json();
+      setAuth(authData);
+      console.log(authData);
     } catch (error) {
       console.log("Kan inte hämta alla användarna.....", error);
     }
@@ -64,12 +66,8 @@ const CustomerContextProvider = ({ children }) => {
         const { token } = data;
         setToken(token);
         console.log(token);
-
-        localStorage.setItem("token", token);
         console.log("Ny kund registrerad");
-        if (token) {
-          setIsLoggedIn(true);
-        }
+        setIsLoggedIn(true);
       } else {
         console.log("Kan inte registrera dig, fel tassavtryck");
       }
@@ -101,6 +99,7 @@ const CustomerContextProvider = ({ children }) => {
         const data = await res.json();
         const { token } = data;
         setToken(token);
+        setAuth(data);
         console.log(token);
 
         localStorage.setItem("token", token);
@@ -156,7 +155,7 @@ const CustomerContextProvider = ({ children }) => {
         register,
         logout,
         token,
-        // auth,
+        auth,
         // getAuth,
       }}
     >
