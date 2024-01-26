@@ -4,9 +4,9 @@ import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCartContext } from "@/Context/cartContext/cartContext";
 
-// const stripePromise = loadStripe(
-//   `pk_test_51ObgWZB4OKIOfmBbp4HuOGz818qIcEtz5AQkd11AIsY7HPqZPR96QacXX6auyEqYhW2q9NPNZrT0395oTkrBx94h00U0G27s4y`
-// );
+const stripePromise = loadStripe(
+  `pk_test_51ObgWZB4OKIOfmBbp4HuOGz818qIcEtz5AQkd11AIsY7HPqZPR96QacXX6auyEqYhW2q9NPNZrT0395oTkrBx94h00U0G27s4y`
+);
 
 const CheckOutBtn = () => {
   const { cart } = useCartContext();
@@ -16,7 +16,7 @@ const CheckOutBtn = () => {
       {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json ",
         },
         body: JSON.stringify({ cart }),
       }
