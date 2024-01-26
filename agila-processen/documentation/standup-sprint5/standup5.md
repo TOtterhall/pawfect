@@ -33,6 +33,17 @@
 **Idag ska jag göra** Se till att cart uppdateras!
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-26
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Några grå hårstrån senare.... efter ett jäkla slit flera dagar. Förstod inte varför och kanske inte fortfarande varför jag inte får ut min cart när jag klickar på varukorgen som jag satt i ett state i cartcontext. Tog hjälp av en klasskompis idag, men vi kom fram till samma resultat. Är osäker på om det är rätt så kommer skicka en prtScr till Anders för att bolla. Tror att jag lyckats lokalisera det till att det beror på "varukorgs" knappen. Men har fått det att fungera. Samt skickade in cartItems istället för en hårdkodad produkt till stripe.
+**Ett problem jag har**
+**Jag behöver hjälp med**
+**Igår lärde jag mig** Det är skönt att prata kod med någon annan för att få en tydligare blick.
+**Idag ska jag göra** Idag tänker jag att jag ska ordna och strukturera ordrarna.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
