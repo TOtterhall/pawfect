@@ -6,6 +6,8 @@ const { errorHandler } = require("./error");
 const { productRouter } = require("./resources/product/product.router");
 const { customerRouter } = require("./resources/customer/customer.router");
 const { categoryRouter } = require("./resources/category/category.router");
+const { orderRouter } = require("./resources/order/order.router");
+
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const cookieParser = require("cookie-parser");
 //Also need to add errorhandler
@@ -53,17 +55,20 @@ app.post("/create-checkout-session", async (req, res) => {
       cancel_url: `${CLIENT_URL}/misslyckadbetalning`,
     });
     //vad ??? tillbaka sessionen ex sessionsobj..fyll på?
+
     res.status(200).json({ url: session.url });
   } catch (error) {
     console.log(error.message);
     res.status(400).json("det gick inte alls bra det här du...");
   }
 });
+
 //Routes
 
 app.use("/api", productRouter);
 app.use("/api", customerRouter);
 app.use("/api", categoryRouter);
+app.use("/api", orderRouter);
 app.use((req, res) => {
   console.log("!404!");
   res.status(404).json("missing resource");

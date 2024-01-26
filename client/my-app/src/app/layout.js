@@ -4,6 +4,7 @@ import CartProvider from "../Context/cartContext/cartContext";
 import ProductProvider from "../Context/productContext/productContext";
 import CustomerProvider from "../Context/customerContext/customerContext";
 import CategoryProvider from "../Context/categoryContext/categoryContext";
+import OrderProvider from "../Context/orderContext/orderContext.jsx";
 //Components
 import { useCartContext } from "../Context/cartContext/cartContext";
 import Footer from "./components/Footer/Footer";
@@ -28,19 +29,21 @@ export default function RootLayout({ children }) {
         <script src="https://js.stripe.com/v3/"></script>
       </head>
       <body className={inter.className}>
-        <ProductProvider>
-          <CartProvider>
-            <CustomerProvider>
-              <CategoryProvider>
-                <Header />
+        <OrderProvider>
+          <ProductProvider>
+            <CartProvider>
+              <CustomerProvider>
+                <CategoryProvider>
+                  <Header />
 
-                <main>{children}</main>
+                  <main>{children}</main>
 
-                <Footer />
-              </CategoryProvider>
-            </CustomerProvider>
-          </CartProvider>
-        </ProductProvider>
+                  <Footer />
+                </CategoryProvider>
+              </CustomerProvider>
+            </CartProvider>
+          </ProductProvider>
+        </OrderProvider>
       </body>
     </html>
   );

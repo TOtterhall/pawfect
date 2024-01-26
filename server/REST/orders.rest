@@ -1,0 +1,15 @@
+GET http://localhost:3080/api/orders
+###
+POST http://localhost:3080/api/orders/createorders
+Content-Type: application/json
+
+
+
+{
+  "customerId": "testarbara",
+  "cart": [
+    { "product": { "_id": "mockProductId1", "price": 10 }, "quantity": 2 },
+    { "product": { "_id": "mockProductId2", "price": 20 }, "quantity": 1 }
+  ]
+}
+###
