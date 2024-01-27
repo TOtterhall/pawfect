@@ -3,18 +3,18 @@
 import { useEffect, useState } from "react";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Golden from "../../../../public/assets/carousel/golden_dog.jpg";
-import Dalmatines from "../../../../public/assets/carousel/dalmatine_dogs.jpg";
-import Aussie from "../../../../public/assets/carousel/aussie_dog.jpg";
+// import Golden from "../../../../../public/assets/carousel/golden_dog.jpg";
+// import Dalmatines from "../../../../public/assets/carousel/dalmatine_dogs.jpg";
+// import Aussie from "../../../../public/assets/carousel/aussie_dog.jpg";
 
 export default function Carousel() {
-  const [currentSlide, setCurrentSlide] = useState(0);
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentSlide((prevSlide) => (prevSlide === 2 ? 0 : prevSlide));
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
+  // const [currentSlide, setCurrentSlide] = useState(0);
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     setCurrentSlide((prevSlide) => (prevSlide === 2 ? 0 : prevSlide));
+  //   }, 3000);
+  //   return () => clearInterval(interval);
+  // }, []);
   return (
     <div>
       <div>RENDERA UT KARUSELL</div>
