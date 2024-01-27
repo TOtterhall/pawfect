@@ -73,7 +73,7 @@ import CategoryProvider from "../../../Context/categoryContext/categoryContext";
 import CartProvider from "../../../Context/cartContext/cartContext";
 import ProductProvider from "../../../Context/productContext/productContext";
 //När jag uppdaterar sidan så hittas inte produkten???
-
+//KRÄVS STYLING && KOLLA IGENOM?
 export default function ProductListByTitle() {
   // const { product, getProductById, getAllProducts } = useProductContext();
   const { product, getProductById } = useProductContext();
@@ -93,22 +93,31 @@ export default function ProductListByTitle() {
         <CartProvider />
         <div>
           <h1>Detaljsida för produkter</h1>
-
           {product ? (
-            <div key={product._id}>
-              <h2>{product.title}</h2>
-              <p>{product.description}</p>
-              <h2>{product.colors}</h2>
-              <h2>{product.sizes}</h2>
-              <h2>{product.categories}</h2>
-              <p>{product.price}</p>
-              <BtnAddToCart product={product} />
-              <img
-                src={product.image}
-                alt={product.title}
-                width={100}
-                height={250}
-              />
+            <div className="container">
+              <div className="row">
+                <div className="col-4">
+                  <div className="card-img">
+                    <img
+                      src={product.image}
+                      alt={product.title}
+                      width={200}
+                      height={250}
+                    />
+                  </div>
+                </div>
+                <div className="col-4">
+                  <div className="card-details">
+                    <h2>{product.title}</h2>
+                    <p>{product.description}</p>
+                    <h2>{product.colors}</h2>
+                    <h2>{product.sizes}</h2>
+                    <h2>{product.categories}</h2>
+                    <p>{product.price}</p>
+                    <BtnAddToCart product={product} />
+                  </div>
+                </div>
+              </div>
             </div>
           ) : (
             <p>

@@ -6,7 +6,7 @@ export default function Store() {
   return (
     <main>
       <h1>Min butik</h1>
-      <h1>Mina produkter:</h1>
+      <h1>Alla mina produkter:</h1>
       <Shop />
     </main>
   );

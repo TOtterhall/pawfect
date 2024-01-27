@@ -20,17 +20,19 @@ const ProductCard = () => {
       console.error("Ett fel uppstod vid hantering av produktklick:", error);
     }
   };
+
+  //MAP THRUE ALL MY PRODUCTS AND RENDER PRODUCTCARD FOR EACH ONE
   return (
     <div>
       {products.map((product) => (
-        <div key={product._id} onClick={() => handleProductClick(product._id)}>
-          <h2>{product.title}</h2>
-          <p>{product.description}</p>
-          <h2>{product.colors}</h2>
-          <h2>{product.sizes}</h2>
-          <h2>{product.categories}</h2>
-          <p>{product.price}</p>
+        <div
+          key={product._id}
+          onClick={() => handleProductClick(product._id)}
+          className="card"
+          style={{ width: "16rem" }}
+        >
           <img
+            className="card-img-top"
             src={product.image}
             alt={product.title}
             width={100}
