@@ -1,7 +1,5 @@
-"use Client";
-
 import React from "react";
 
-export default function Aboutus() {
-  return <div>Aboutus</div>;
+export default function About() {
+  return <div>About</div>;
 }

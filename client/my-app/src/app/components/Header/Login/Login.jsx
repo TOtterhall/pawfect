@@ -31,8 +31,7 @@ export default function Login() {
         <div>
           <div>
             <p>MIN LOGINFORM</p>
-            {/*  Få in drawern från höger till vänster */}
-            {/* <LoginForm /> */}
+            <LoginForm />
           </div>
           <button
             className="btn btn-outline-success my-2 my-sm-0 "
