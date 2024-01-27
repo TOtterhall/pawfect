@@ -49,6 +49,46 @@ const Menu = () => {
                   Kontakta oss
                 </Link>
               </li>
+              <li>
+                <button
+                  className="btn btn-outline-success my-2 my-sm-0 "
+                  onClick={openDrawer}
+                >
+                  open
+                </button>
+                {isDrawerOpen && (
+                  <div className="modal-slide slide-in-left">
+                    <div>
+                      <button
+                        className="btn btn-outline-success position-absolute top-0 end-0 "
+                        onClick={closeDrawer}
+                      >
+                        X
+                      </button>
+                      <h1>BUTIK</h1>
+                      <div className="modal-body">
+                        <div className="container-fluid">
+                          <div className="row">
+                            <div className="p-2 g-col-6">
+                              {" "}
+                              <ul>
+                                <li className="p-2 g-col-6">
+                                  <Categories />
+                                </li>
+                              </ul>
+                              <div className=" card p-2 g-col-6">
+                                <div className="">Bild 1</div>
+                                <div>Bild 2</div>
+                                <div>Bild 3</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
+              </li>
             </ul>
           </div>
         </div>

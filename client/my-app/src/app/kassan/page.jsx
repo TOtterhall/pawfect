@@ -15,25 +15,36 @@ export default function checkout() {
 
   return (
     <div>
-      <h1>KASSA</h1>
-      <h1>FORTSÄTT SHOPPA</h1>
-      <div>Din beställning</div>
-      {cart.map((item) => (
-        <div key={item.product._id}>
-          <p>{item.product.title}</p>
-          <p>Quantity: {item.quantity}</p>
+      <div className="container">
+        <div className="row">
+          <h1>KASSAN</h1>
+          <h1>FORTSÄTT SHOPPA</h1>
+          <div>Din beställning</div>
+          {cart.map((cartItem) => (
+            <div
+              className="col-xs-12 col-md-6 col-lg-4"
+              key={cartItem.product._id}
+            >
+              <div className="card mb-3">
+                <img
+                  src={cartItem.product.image}
+                  alt={cartItem.product.title}
+                  className="card-img-top"
+                />
+                <div className="card-body">
+                  <h5 className="card-title">{cartItem.product.title}</h5>
+                  <p className="card-text">
+                    Price: {cartItem.product.price}sek
+                  </p>
+                  <p className="card-text">Quantity: {cartItem.quantity}st</p>
+                </div>
+              </div>
+            </div>
+          ))}
         </div>
-      ))}
-      <p>Delsumma</p>
-      <p>Moms?</p>
-      <p>Frakt</p>
-      <p>Rabatt</p>
-      <h1>FORM</h1>
-      <p>Din info</p>
-      <p>Adress</p>
-      <p>Telefon</p>
-
-      {auth ? <CheckOutBtn /> : <LoginForm />}
+        <h1>FORM</h1>
+        {auth ? <CheckOutBtn /> : <LoginForm />}
+      </div>
     </div>
   );
 }
