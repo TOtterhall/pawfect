@@ -4,7 +4,7 @@ import Link from "next/link";
 import SearchForm from "../SearchForm/SearchForm";
 import Logo from "../Logo/Logo";
 import Login from "../Login/Login";
-import Cart from "../../Cart/Cart";
+import Cart from "../Cart/Cart";
 import Menu from "../Menu/Menu";
 
 import CategoryProvider from "../../../../Context/categoryContext/categoryContext";
@@ -12,22 +12,6 @@ import CartProvider from "../../../../Context/cartContext/cartContext";
 import CustomerProvider from "../../../../Context/customerContext/customerContext";
 import { useCartContext } from "../../../../Context/cartContext/cartContext";
 export default function Navbar() {
-  const [isDrawerOpen, setDrawerOpen] = useState(false);
-  // const { cartItems, cartQuantity } = useCartContext([]);
-  // const [cart, setCart] = useState({ items: [], quantity: 0 });
-
-  // useEffect(() => {
-  //   console.log(cartItems);
-  //   console.log(cartQuantity);
-  //   setCart({ items: cartItems, quantity: cartQuantity });
-  // }, [cartItems, cartQuantity]);
-  const openDrawer = () => {
-    setDrawerOpen(true);
-  };
-
-  const closeDrawer = () => {
-    setDrawerOpen(false);
-  };
   return (
     <CustomerProvider>
       <CartProvider>
@@ -46,9 +30,6 @@ export default function Navbar() {
                 <span className="navbar-toggler-icon"></span>
               </button>
               <div>
-                {/* <a classNameName="navbar-brand" href="/">
-            Home
-          </a> */}
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                   <li>
                     <div>

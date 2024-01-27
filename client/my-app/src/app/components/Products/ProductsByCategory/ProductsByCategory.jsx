@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { useProductContext } from "../../../Context/productContext/productContext";
+import { useProductContext } from "../../../../Context/productContext/productContext";
 const ProductsByCategory = ({ categoryTitle }) => {
   const { products, getAllProducts } = useProductContext();
   useEffect(() => {

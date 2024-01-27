@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect } from "react";
-import { useProductContext } from "../../../Context/productContext/productContext";
+import { useProductContext } from "../../../../Context/productContext/productContext";
 //KOLLA OM DET GÅR ATT GÖRA PÅ ANNAT SÄTT...?FÖR ATT RENDERA UT PRODUCT MED ID PÅ SPECIFIK SIDA
 import { useRouter } from "next/navigation";
 const ProductCard = () => {

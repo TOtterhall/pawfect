@@ -3,7 +3,7 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import Login from "../components/Header/Login/Login";
-import LoginForm from "../components/Header/LoginForm/LoginForm";
+import LoginForm from "../components/Header/Login/LoginForm/LoginForm";
 import { useCustomerContext } from "@/Context/customerContext/customerContext";
 
 const stripePromise = loadStripe(

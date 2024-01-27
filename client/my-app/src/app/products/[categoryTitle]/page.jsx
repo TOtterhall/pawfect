@@ -2,7 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 
-import ProductsByCategory from "../../components/ProductsByCategory/ProductsByCategory";
+import ProductsByCategory from "../../components/Products/ProductsByCategory/ProductsByCategory";
 import ProductProvider from "../../../Context/productContext/productContext";
 import CustomerProvider from "../../../Context/customerContext/customerContext";
 import CategoryProvider from "../../../Context/categoryContext/categoryContext";
