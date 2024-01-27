@@ -44,6 +44,17 @@
 **Idag ska jag göra** Idag tänker jag att jag ska ordna och strukturera ordrarna.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-27
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** När jag loggade in kund så upptäckte jag att den hämtade kunden men den satte aldrig någon kaka. Så fick strukterera om i koden både ppå server och klient. Nu sätts kakakan och den kollar hela tiden om en kund är inloggad. Gjorde även om hur cart skickas in till sstripe på både server och klient. Påbörjade att försöka få tillbaka ordrarna från stripe efter att kund genomfört köp.
+**Ett problem jag har** Mitt största problem just nu är stressen över att hinna klart.
+**Jag behöver hjälp med**
+**Igår lärde jag mig**
+**Idag ska jag göra** Idag tänker jag att jag ska ordna sidorna och strukturera ordrarna.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
