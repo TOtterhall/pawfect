@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
-import LoginForm from "../../LoginForm/LoginForm";
+import LoginForm from "../LoginForm/LoginForm";
 
 export default function Login() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);

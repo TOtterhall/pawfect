@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { useCustomerContext } from "../../../Context/customerContext/customerContext";
+import { useCustomerContext } from "../../../../Context/customerContext/customerContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const LoginForm = () => {

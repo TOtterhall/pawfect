@@ -4,7 +4,7 @@ import CheckOutBtn from "../components/Buttons/CheckOutBtn";
 import RegisterForm from "../components/Buttons/Register";
 import { useCartContext } from "@/Context/cartContext/cartContext";
 import { useCustomerContext } from "@/Context/customerContext/customerContext";
-import LoginForm from "../components/LoginForm/LoginForm";
+import LoginForm from "../components/Header/LoginForm/LoginForm";
 //FIXA IORDNING VAD SOM SKA VARA MED I KASSAN!!!!!!!!
 //BARA INLOGGADE ANVÄNDARE????
 //INLOGGADE ANVÄNDARE SKA KUNNA SE SINA ORDRAR JÖ!!!
