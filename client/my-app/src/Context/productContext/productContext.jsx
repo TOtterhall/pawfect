@@ -9,7 +9,6 @@ export const useProductContext = () => {
 
 const ProductContextProvider = ({ children }) => {
   const [products, setAllProducts] = useState([]);
-  const [productCategory, setAllCategories] = useState([]);
   const [product, setProduct] = useState();
 
   const getAllProducts = async () => {
@@ -23,23 +22,25 @@ const ProductContextProvider = ({ children }) => {
     }
   };
 
-  const getProductsByCategory = async (categoryTitle) => {
-    try {
-      console.log(
-        `Fetchar produkter från produktcontext med categoriId:${categoryTitle}`
-      );
-      const res = await fetch(
-        `http://localhost:3080/api/products/categories/"${categoryTitle}"`
-      );
-      const productCategory = await res.json();
-      console.log("ProductsmedKategoriContext:", productCategory);
+  // const getProductsByCategory = async (categoryTitle) => {
+  //   try {
+  //     console.log(
+  //       `Fetchar produkter från produktcontext med categoriId:${categoryTitle}`
+  //     );
+  //     const res = await fetch(
+  //       `http://localhost:3080/api/products/categories/${encodeURIComponent(
+  //         categoryTitle
+  //       )}`
+  //     );
+  //     const productCategories = await res.json();
+  //     console.log("ProductsmedKategoriContext:", productCategories);
 
-      setAllCategories(productCategory);
-      console.log(productCategory);
-    } catch (error) {
-      console.log("Kan inte hämta alla produkter tyvärr.....", error);
-    }
-  };
+  //     setAllCategories(productCategories);
+  //     console.log(productCategories);
+  //   } catch (error) {
+  //     console.log("Kan inte hämta alla produkter tyvärr.....", error);
+  //   }
+  // };
 
   const getProductsById = async (productId) => {
     try {
@@ -78,10 +79,10 @@ const ProductContextProvider = ({ children }) => {
     <ProductContext.Provider
       value={{
         getAllProducts,
-        getProductsByCategory,
+
         getProductsById,
         getProductById,
-        productCategory,
+
         products,
         product,
       }}

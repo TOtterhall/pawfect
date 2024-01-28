@@ -21,14 +21,11 @@ export const CategoryContextProvider = ({ children }) => {
     }
   };
 
-  // andra funktioner och useEffect
-
   return (
     <CategoryContext.Provider
       value={{
         getAllCategories,
         categories,
-        // andra värden/funktioner
       }}
     >
       {children}
