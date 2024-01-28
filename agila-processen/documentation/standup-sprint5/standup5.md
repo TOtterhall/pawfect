@@ -55,6 +55,17 @@
 **Idag ska jag göra** Idag tänker jag att jag ska ordna sidorna och strukturera ordrarna.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-28
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Strukturerade upp komponenterna och sidorna, kom inte vidare med att hämta ordrarna så jag gjorde lite styling för att komma vidare.
+**Ett problem jag har** Fortfarande stressen över att hinna klart, och hoppas på att kunna hämta kunders lagda ordrar.
+**Jag behöver hjälp med**
+**Igår lärde jag mig** Att jag ska strukturera upp bättre på en gång bland komponenter och sidor det blir så mycket mer lättarbetat då.
+**Idag ska jag göra** Lägga till mer styling, arbeta på presentationen i Canva och eventuellt rendera ut ordrarna om jag hinner, ska iallafall titta på det.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
