@@ -10,13 +10,15 @@ async function getOrders(req, res) {
     next(err);
   }
 }
-//FUNCTION- testar att skapa en order
+//FUNCTION- testar att skapa en ny order
 const createOrder = async (req, res, next) => {
   try {
-    // const customer = await OrderModel.find({ customer: customerId }).populate(
-    //   "customer"
-    // );
-    const order = new OrderModel(req.body);
+    const { customer, cart } = req.body;
+    const order = new OrderModel({
+      customer,
+      cart,
+      orderNumber: Math.floor(Math.random() * 1000000),
+    });
 
     await order.save();
     res.status(201).json(order);
@@ -24,6 +26,21 @@ const createOrder = async (req, res, next) => {
     next(err);
   }
 };
+
+//FUNCTION- testar att skapa en order
+// const createOrder = async (req, res, next) => {
+//   try {
+//     // const customer = await OrderModel.find({ customer: customerId }).populate(
+//     //   "customer"
+//     // );
+//     const order = new OrderModel(req.body);
+
+//     await order.save();
+//     res.status(201).json(order);
+//   } catch (err) {
+//     next(err);
+//   }
+// };
 
 //FUNCTION- GET ALL ORDERS
 async function getCustomerOrders(req, res) {
