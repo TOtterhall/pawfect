@@ -1,3 +1,4 @@
+//CREATE AN ORDER
 ###
 POST http://localhost:3080/api/orders/createorder
 Content-Type: application/json
@@ -12,25 +13,7 @@ Content-Type: application/json
   ]
 }
 
-
 ###
-
-
+//GET SPECIFIC CUSTOMER ALL ORDERS
 GET http://localhost:3080/api/orders/65aed5e33cb3c2eaff05b7be
 ###
-# POST http://localhost:3080/api/orders/placeorder
-# Content-Type: application/json
-
-# ###
-# POST http://localhost:3080/api/orders/placeorder
-# Content-Type: application/json
-
-# {
-#   "customer": "65aed5e33cb3c2eaff05b7be"
-
-# }
-
-
-# ###
-
-# GET http://localhost:3080/api/orders/65aed5e33cb3c2eaff05b7be
