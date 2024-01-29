@@ -1,7 +1,12 @@
 import { useOrderContext } from "@/Context/orderContext/orderContext.jsx";
 import React from "react";
+// const { order, createOrder } = useOrderContext();
 
+// const handleCheckOut = async () => {
+//   try {
+//     await createOrder();
 export default function Orderconfirm() {
+  //skapa useeffect med function i create order
   return (
     <div>
       <h1>WOW- DITT KÖP LYCKADES</h1>
