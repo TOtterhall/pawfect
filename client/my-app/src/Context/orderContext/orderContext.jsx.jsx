@@ -14,25 +14,6 @@ const OrderContextProvider = ({ children }) => {
   const { auth } = useCustomerContext();
   const { cart } = useCartContext();
 
-  // const [orderData, setOrder] = useState([]);
-  //   const [successOrder, setSuccessOrder] = useState(null);
-  // useEffect(() => {
-  //   getAllOrders();
-  // }, []);
-  // const getAllOrders = async () => {
-  //   try {
-  //     const res = await fetch(`http://localhost:3080/api/orders`);
-  //     const orders = await res.json();
-  //     console.log(orders);
-  //     setAllOrders(orders);
-  //   } catch (error) {
-  //     console.log("Kan inte hämta alla produkter tyvärr.....", error);
-  //   }
-  // };
-  // useEffect(() => {
-  //   createOrder();
-  // });
-
   const createOrder = async () => {
     try {
       console.log(auth);
@@ -50,9 +31,9 @@ const OrderContextProvider = ({ children }) => {
       if (res.ok) {
         const orderData = await res.json();
 
-        console.log("Ny kund Order registrerad");
+        console.log("Ny Order registrerad");
         setOrder(orderData);
-        //töm localstorage sen?
+        localStorage.removeItem("cart");
       } else {
         console.log("Kan inte registrera din order, fel tassavtryck");
       }

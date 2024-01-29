@@ -1,46 +1,45 @@
 "use client";
 import React from "react";
 import { useEffect, useState } from "react";
-import { loadStripe } from "@stripe/stripe-js";
-import Login from "../components/Header/Login/Login";
 import LoginForm from "../components/Header/Login/LoginForm/LoginForm";
 import { useCustomerContext } from "@/Context/customerContext/customerContext";
+// import { useOrderContext } from "@/Context/orderContext/orderContext.jsx";
 
-const stripePromise = loadStripe(
-  `pk_test_51ObgWZB4OKIOfmBbp4HuOGz818qIcEtz5AQkd11AIsY7HPqZPR96QacXX6auyEqYhW2q9NPNZrT0395oTkrBx94h00U0G27s4y`
-);
 export default function OrderList() {
   const { auth } = useCustomerContext();
   const [orders, setOrders] = useState([]);
   useEffect(() => {
-    const AllOrders = async () => {
+    const allCustomerOrders = async () => {
+      const customerId = auth.customerId;
       try {
-        const stripe = await stripePromise;
-        const response = await fetch("/stripe/order/list", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-
-          body: JSON.stringify({ customerId: auth.customerId }),
-        });
+        const response = await fetch(
+          `http://localhost:3080/api/orders/${customerId}`,
+          {
+            method: "GET",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            credentials: "include",
+          }
+        );
 
         if (response.ok) {
-          const ordersData = await response.json();
-          setOrders(ordersData);
+          const orderData = await response.json();
+          setOrders(orderData);
+          console.log(orderData);
         } else {
           console.error(
-            "Fel vid hämtning av ordrar från Stripe:",
+            "Fel vid hämtning av ordrar från ordersidan...:",
             response.statusText
           );
         }
       } catch (error) {
-        console.error("Fel vid hämtning av ordrar från Stripe:", error);
+        console.error("Fel vid hämtning av ordrar från Ordersidan:", error);
       }
     };
 
-    AllOrders(auth.customerId);
-  }, []);
+    allCustomerOrders(auth.customerId);
+  }, [auth.costomerId]);
 
   return (
     <div>
@@ -48,9 +47,7 @@ export default function OrderList() {
       <LoginForm />
       <ul>
         {orders.map((order) => (
-          <li key={order.id}>
-            Order id: {order.id},Belopp:{order.amount / 100}kr
-          </li>
+          <li key={order._id}>Order id: {order._id}kr</li>
         ))}
       </ul>
     </div>
