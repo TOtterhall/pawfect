@@ -18,7 +18,7 @@ export default function OrderList() {
       <LoginForm />
       <ul>
         {orders.map((order) => (
-          <li key={order._id}>Order id: {order._id}kr</li>
+          <li key={order._id}>Order nummer: {order.orderNumber}</li>
         ))}
       </ul>
     </div>
