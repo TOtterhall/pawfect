@@ -66,6 +66,17 @@
 **Idag ska jag göra** Lägga till mer styling, arbeta på presentationen i Canva och eventuellt rendera ut ordrarna om jag hinner, ska iallafall titta på det.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-29
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** La till mer styling, arbetade på presentationen i Canva och skapade ordrar från servern som fungerade i min .REST påbörjade att skapa ordrarna innan jag skickar till Stripe.
+**Ett problem jag har** Fortfarande stressen över att hinna klart, och hoppas på att kunna hämta kunders lagda ordrar.
+**Jag behöver hjälp med**
+**Igår lärde jag mig**
+**Idag ska jag göra** Mer styling samt skapa ordrar som sparas från klienten innan jag skapar ordern i Stripe.
+**Förklaring till beslut jag tagit** Fortsätter sista sprinten denna veckan, dock var det enligt plan men vill ändå förtydliga.
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
