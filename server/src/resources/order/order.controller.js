@@ -44,7 +44,7 @@ const createOrder = async (req, res, next) => {
 
 //FUNCTION- GET ALL ORDERS
 async function getCustomerOrders(req, res) {
-  const customerId = req.params.customerId;
+  const customerId = req.session._id;
   try {
     const orders = await OrderModel.find({ customer: customerId }).populate(
       "customer"

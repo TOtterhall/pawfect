@@ -1,71 +1,76 @@
-// "use client";
-// import { useState, createContext, useContext, useEffect } from "react";
+"use client";
+import { useState, createContext, useContext, useEffect } from "react";
+import { useCartContext } from "../cartContext/cartContext";
+import { useCustomerContext } from "../customerContext/customerContext";
 
-// export const OrderContext = createContext();
+export const OrderContext = createContext();
 
-// export const useOrderContext = () => {
-//   return useContext(OrderContext);
-// };
+export const useOrderContext = () => {
+  return useContext(OrderContext);
+};
 
-// const OrderContextProvider = ({ children }) => {
-//   const [orders, setAllOrders] = useState([]);
-//   const [orderData, setOrder] = useState([]);
-//   //   const [successOrder, setSuccessOrder] = useState(null);
-//   useEffect(() => {
-//     getAllOrders();
-//   }, []);
-//   const getAllOrders = async () => {
-//     try {
-//       const res = await fetch(`http://localhost:3080/api/orders`);
-//       const orders = await res.json();
-//       console.log(orders);
-//       setAllOrders(orders);
-//     } catch (error) {
-//       console.log("Kan inte hämta alla produkter tyvärr.....", error);
-//     }
-//   };
-//   useEffect(() => {
-//     createOrder();
-//   });
-//   const createOrder = async ({ customer }) => {
-//     const order = { customer: customer._id };
-//     console.log(order);
-//     try {
-//       const res = await fetch("http://localhost:3080/api/orders/placeorder", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify(order),
-//       });
+const OrderContextProvider = ({ children }) => {
+  const [order, setOrder] = useState([]);
+  const { auth } = useCustomerContext();
+  const { cart } = useCartContext();
 
-//       console.log(res);
+  // const [orderData, setOrder] = useState([]);
+  //   const [successOrder, setSuccessOrder] = useState(null);
+  // useEffect(() => {
+  //   getAllOrders();
+  // }, []);
+  // const getAllOrders = async () => {
+  //   try {
+  //     const res = await fetch(`http://localhost:3080/api/orders`);
+  //     const orders = await res.json();
+  //     console.log(orders);
+  //     setAllOrders(orders);
+  //   } catch (error) {
+  //     console.log("Kan inte hämta alla produkter tyvärr.....", error);
+  //   }
+  // };
+  // useEffect(() => {
+  //   createOrder();
+  // });
 
-//       if (res.ok) {
-//         const orderData = await res.json();
+  const createOrder = async () => {
+    try {
+      console.log(auth);
+      console.log(cart);
+      const res = await fetch("http://localhost:3080/api/orders/createorder", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ customer: auth.customerId, cart: cart }),
+      });
 
-//         console.log("Ny kund Order registrerad");
-//         setOrder(orderData);
-//       } else {
-//         console.log("Kan inte registrera din order, fel tassavtryck");
-//       }
-//     } catch (error) {
-//       console.error("Kan inte skapa en order åt DIG.....", error);
-//     }
-//   };
+      console.log(res);
 
-//   return (
-//     <OrderContext.Provider
-//       value={{
-//         getAllOrders,
-//         orders,
-//         createOrder,
-//         orderData,
-//       }}
-//     >
-//       {children}
-//     </OrderContext.Provider>
-//   );
-// };
+      if (res.ok) {
+        const orderData = await res.json();
 
-// export default OrderContextProvider;
+        console.log("Ny kund Order registrerad");
+        setOrder(orderData);
+        //töm localstorage sen?
+      } else {
+        console.log("Kan inte registrera din order, fel tassavtryck");
+      }
+    } catch (error) {
+      console.error("Kan inte skapa en order åt DIG.....", error);
+    }
+  };
+
+  return (
+    <OrderContext.Provider
+      value={{
+        createOrder,
+        order,
+      }}
+    >
+      {children}
+    </OrderContext.Provider>
+  );
+};
+
+export default OrderContextProvider;

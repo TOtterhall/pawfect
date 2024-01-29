@@ -11,7 +11,7 @@ const CustomerContextProvider = ({ children }) => {
   const [customers, setAllCustomers] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [token, setToken] = useState("");
-  const [auth, setAuth] = useState("");
+  const [auth, setAuth] = useState(false);
 
   useEffect(() => {
     getAuth();
@@ -28,6 +28,9 @@ const CustomerContextProvider = ({ children }) => {
         credentials: "include",
       });
       const authData = await res.json();
+      if (authData.message == "Du e inte AUTH") {
+        setAuth(false);
+      }
       setAuth(authData);
       console.log(authData);
     } catch (error) {

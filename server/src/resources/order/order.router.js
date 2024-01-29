@@ -20,5 +20,5 @@ orderRouter.post(
   createOrder
 );
 
-orderRouter.get("/orders/:customer._Id", getCustomerOrders);
+orderRouter.get("/orders/:customerId", getCustomerOrders);
 module.exports = { orderRouter };
