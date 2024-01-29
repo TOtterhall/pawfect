@@ -1,16 +1,19 @@
 const { OrderModel } = require("../order/order.model");
 
 //FUNCTION- GET ALL ORDERS
-async function getOrders(req, res) {
-  const order = { customer: req.session._id };
-  try {
-    const orders = await OrderModel.find(order).populate("customer");
-    res.status(200).json(orders);
-  } catch (err) {
-    next(err);
-  }
-}
-//FUNCTION- testar att skapa en ny order
+// async function getOrders(req, res) {
+//   const customerOrders = { customer: req.params._id };
+//   try {
+//     const orders = await OrderModel.findById(customerOrders).populate(
+//       "customer"
+//     );
+//     res.status(200).json([orders]);
+//   } catch (err) {
+//     next(err);
+//   }
+// }
+
+//FUNCTION- CREATE ORDER
 const createOrder = async (req, res, next) => {
   try {
     const { customer, cart } = req.body;
@@ -27,30 +30,17 @@ const createOrder = async (req, res, next) => {
   }
 };
 
-//FUNCTION- testar att skapa en order
-// const createOrder = async (req, res, next) => {
-//   try {
-//     // const customer = await OrderModel.find({ customer: customerId }).populate(
-//     //   "customer"
-//     // );
-//     const order = new OrderModel(req.body);
-
-//     await order.save();
-//     res.status(201).json(order);
-//   } catch (err) {
-//     next(err);
-//   }
-// };
-
 //FUNCTION- GET ALL ORDERS
-async function getCustomerOrders(req, res) {
-  const customerId = req.session._id;
+async function getCustomerOrders(req, res, next) {
+  const customerId = req.session.customerId;
+  console.log("Session:", req.session.customerId);
+  console.log(customerId);
   try {
     const orders = await OrderModel.find({ customer: customerId }).populate(
       "customer"
     );
 
-    if (!orders || orders.lengt === 0) {
+    if (!orders) {
       return res
         .status(404)
         .json({ message: "Ordern kunde inte hittas... du får nosa vidare" });
@@ -61,7 +51,6 @@ async function getCustomerOrders(req, res) {
   }
 }
 module.exports = {
-  getOrders,
   createOrder,
   getCustomerOrders,
 };

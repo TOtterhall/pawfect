@@ -1,18 +1,23 @@
 ###
-POST http://localhost:3080/api/orders/placeorder
+POST http://localhost:3080/api/orders/createorder
 Content-Type: application/json
 
 {
-  "customer": "65aed5e33cb3c2eaff05b7be"
-
+  
+  "customer": "65aed5e33cb3c2eaff05b7be",
+  "cart": [
+    {"product": "65a65393a97b953852648036", "quantity": 2, "price": 280 },
+    {"product": "65a65523a97b953852648040", "quantity": 1, "price": 66 }
+    
+  ]
 }
 
 
 ###
 
 
-# GET http://localhost:3080/api/orders
-# ###
+GET http://localhost:3080/api/orders/65aed5e33cb3c2eaff05b7be
+###
 # POST http://localhost:3080/api/orders/placeorder
 # Content-Type: application/json
 

@@ -1,24 +1,19 @@
 const { Router } = require("express");
 const { validate } = require("../middlewares");
-const {
-  getOrders,
-  createOrder,
-  getCustomerOrders,
-} = require("./order.controller");
+const { createOrder, getCustomerOrders } = require("./order.controller");
 const { OrderValidationSchema } = require("./order.model");
+// const {
+//   OrderValidationSchema,
+//   UpdateOrderValidationSchema,
+// } = require("./order.model");
+
 const orderRouter = Router();
 
-orderRouter.get("/orders", getOrders);
-orderRouter.post(
-  "/orders/placeorder",
+orderRouter.post("/orders/createorder", createOrder);
 
-  createOrder
+orderRouter.get(
+  "/orders/:customerId",
+
+  getCustomerOrders
 );
-orderRouter.post(
-  "/orders/createorder",
-
-  createOrder
-);
-
-orderRouter.get("/orders/:customerId", getCustomerOrders);
 module.exports = { orderRouter };
