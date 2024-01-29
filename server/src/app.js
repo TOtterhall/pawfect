@@ -32,7 +32,9 @@ const CLIENT_URL = "http://localhost:3000";
 app.post("/create-checkout-session", async (req, res) => {
   try {
     const { cart } = req.body;
+
     const customerId = req.session.customerId;
+
     //KOLLA MER PÅ VAD JAG VILL SKICKA MED && RADE KASSAN VID SLUTFÖRT KÖP
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
@@ -50,19 +52,26 @@ app.post("/create-checkout-session", async (req, res) => {
       }),
       mode: "payment",
       //Skapa en sida /confirm
-      success_url: `${CLIENT_URL}/orderbekraftelse`,
+      success_url: `${CLIENT_URL}/orderbekraftelse?session_id={CHECKOUT_SESSION_ID}`,
 
       cancel_url: `${CLIENT_URL}/misslyckadbetalning`,
     });
     //vad ??? tillbaka sessionen ex sessionsobj..fyll på?
-
+    // const orderNumber = req.session.console.log(orderNumber);
     res.status(200).json({ url: session.url });
   } catch (error) {
     console.log(error.message);
     res.status(400).json("det gick inte alls bra det här du...");
   }
 });
+// app.get("/order/success", async (req, res) => {
+//   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
+//   const customer = await stripe.customers.retrieve(session.customer);
 
+//   res.send(
+//     `<html><body><h1>Thanks for your order, ${customer.email}!</h1></body></html>`
+//   );
+// });
 //Routes
 
 app.use("/api", productRouter);

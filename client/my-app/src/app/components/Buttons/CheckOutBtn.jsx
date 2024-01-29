@@ -3,6 +3,7 @@ import React from "react";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCartContext } from "@/Context/cartContext/cartContext";
 import { useCustomerContext } from "@/Context/customerContext/customerContext";
+import { useOrderContext } from "@/Context/orderContext/orderContext.jsx";
 
 const stripePromise = loadStripe(
   `pk_test_51ObgWZB4OKIOfmBbp4HuOGz818qIcEtz5AQkd11AIsY7HPqZPR96QacXX6auyEqYhW2q9NPNZrT0395oTkrBx94h00U0G27s4y`
@@ -11,27 +12,35 @@ const stripePromise = loadStripe(
 const CheckOutBtn = () => {
   const { cart } = useCartContext();
   const { auth } = useCustomerContext();
+  const { order, createOrder } = useOrderContext();
 
   const handleCheckOut = async () => {
-    const response = await fetch(
-      "http://localhost:3080/create-checkout-session",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json ",
-        },
+    try {
+      await createOrder();
+      const response = await fetch(
+        "http://localhost:3080/create-checkout-session",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json ",
+          },
 
-        body: JSON.stringify({ cart, customerId: auth.customerId }),
+          body: JSON.stringify({
+            // cart,
+            customer: auth,
+          }),
+        }
+      );
+      if (!response.ok) {
+        return;
       }
-    );
-    if (!response.ok) {
-      return;
+
+      const { url } = await response.json();
+      window.location = url;
+    } catch (error) {
+      console.error("Error i checkouten", error);
     }
-
-    const { url } = await response.json();
-    window.location = url;
   };
-
   return (
     <div>
       <button

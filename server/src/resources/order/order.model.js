@@ -13,48 +13,22 @@ const OrderSchema = new Schema(
       ref: "customer",
       required: true,
     },
-    products: [
-      {
-        product: {
-          type: Schema.Types.ObjectId,
-          ref: "product",
-          required: true,
-        },
-        quantity: { type: Number, required: true },
-        price: { type: Number, default: 0 },
-      },
-    ],
+    // price: { type: Number, required: true },
   },
   { versionKey: false }
 );
 
 const OrderModel = models.order || model("order", OrderSchema);
-const AddOrderValidationSchema = Joi.object({
-  customer: Joi.object({
-    customerId: Joi.string().strict().required(), // Assuming customer ID is a string
-    // Add other customer fields here if needed
-  })
-    .strict()
-    .required(),
-  products: Joi.array()
-    .items(
-      Joi.object({
-        productId: Joi.string().strict().required(), // Assuming product ID is a string
-        quantity: Joi.number().strict().required(),
-        price: Joi.number().strict().required(),
-      })
-    )
-    .min(1)
-    .required(),
+const OrderValidationSchema = Joi.object({
+  customer: Joi.string().strict().required(),
+  // price: Joi.number().strict().required(),
 });
-
-const UpdatedOrderValidationSchema = AddOrderValidationSchema.keys({
+const UpdateOrderValidationSchema = OrderValidationSchema.keys({
   _id: Joi.string().strict().required(),
 });
-
 module.exports = {
   OrderModel,
   OrderSchema,
-  AddOrderValidationSchema,
-  UpdatedOrderValidationSchema,
+  OrderValidationSchema,
+  UpdateOrderValidationSchema,
 };
