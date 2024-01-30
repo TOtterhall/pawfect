@@ -32,9 +32,7 @@ export default function Cart() {
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
-  {
-    /* Calkulate the total cost */
-  }
+
   //Kalkylera vad summan blir beroende på antal produkter
   //Kalkylera vad summan blir pris * quantfity = total
   const calculateTotal = cart.reduce(
@@ -54,8 +52,8 @@ export default function Cart() {
       </button>
       {/* Drawer */}
       {isDrawerOpen && cart.length > 0 && (
-        <div className="cart-container ">
-          <div className="combined-modal-styles">
+        <div className="cart-container">
+          <div className="cartDrawer">
             <button
               className="btn btn-outline-success position-absolute top-0 end-0 "
               onClick={closeDrawer}
@@ -64,15 +62,13 @@ export default function Cart() {
             </button>
             {/* Content Cart in Drawer IF Drawer is open*/}
 
-            <h4 className="modal-header ">DIN VARUKORG</h4>
+            <h4 className="modal-header">DIN VARUKORG</h4>
+
             <div className="modal-body">
               <div className="container">
                 <div className="row">
                   {cart.map((cartItem) => (
-                    <div
-                      className="col-xs-12 col-md-6 col-lg-4"
-                      key={cartItem.product._id}
-                    >
+                    <div className="mb-3" key={cartItem.product._id}>
                       <div className="card mb-3">
                         <img
                           src={cartItem.product.image}
@@ -97,13 +93,14 @@ export default function Cart() {
               </div>
             </div>
           </div>
-
-          <p className="card-text">Totalt:{calculateTotal}sek</p>
-          <BtnGoToCheckout onCloseDrawer={closeDrawer} />
-          <br />
-          <br />
-          <p>DU KANSKE GILLAR DETTA OCKSÅ</p>
-          <p>Images???</p>
+          <div className="cart-bottom">
+            <p className="card-text">Totalt:{calculateTotal}sek</p>
+            <BtnGoToCheckout onCloseDrawer={closeDrawer} />
+            <br />
+            <br />
+            <p>DU KANSKE GILLAR DETTA OCKSÅ</p>
+            <p>Images???</p>
+          </div>
         </div>
       )}
     </>
