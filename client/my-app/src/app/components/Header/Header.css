@@ -3,5 +3,22 @@
   background-color: rgb(43, 226, 128);
 }
 .header .headercontent {
-  padding-top: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background-color: blueviolet;
 }
+.cart {
+  background-color: brown !important;
+  margin-left: 1rem;
+}
+.login {
+  background-color: brown !important;
+  margin-left: 1rem;
+}
+.search {
+  margin-left: 1rem;
+}
+
+/* .logo {
+  margin-right: 2rem;
+} */

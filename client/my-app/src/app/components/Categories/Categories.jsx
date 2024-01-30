@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 
 const Categories = () => {
   const { categories, getAllCategories } = useCategoryContext();
-
+  //LÄGG TILL ALLA PRDOKUTE LINK I HANDLE KLICK TLL PRODUKTSIDAN PÅ ANNAT SÄTT???
   const router = useRouter();
 
   useEffect(() => {

@@ -45,7 +45,7 @@ export default function Cart() {
       {" "}
       {/* Btn to open Drawer */}
       <button
-        className="btn btn-outline-success my-2 my-sm-0 "
+        className="btn btn-outline-success my-2 my-sm-0"
         onClick={openDrawer}
       >
         <FontAwesomeIcon icon={faCartShopping} />

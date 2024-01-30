@@ -6,7 +6,8 @@ import CustomerProvider from "../Context/customerContext/customerContext";
 import CategoryProvider from "../Context/categoryContext/categoryContext";
 import OrderProvider from "../Context/orderContext/orderContext.jsx";
 //Components
-
+//css
+import "./globals.css";
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
