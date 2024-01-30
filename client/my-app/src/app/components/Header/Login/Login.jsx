@@ -6,7 +6,7 @@ import { faPaw } from "@fortawesome/free-solid-svg-icons";
 import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import "bootstrap/dist/css/bootstrap.min.css";
 import LoginForm from "./LoginForm/LoginForm";
-
+import "./Login.css";
 export default function Login() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const openDrawer = () => {
@@ -29,16 +29,16 @@ export default function Login() {
       {/* Drawer */}
       {isDrawerOpen && (
         <div>
-          <div>
-            <p>MIN LOGINFORM</p>
+          <div className="login-form-container">
+            <button
+              className="btn btn-outline-success position-absolute top-0 end-0  "
+              onClick={closeDrawer}
+            >
+              <FontAwesomeIcon icon={faXmark} />
+            </button>
+            <h4 className="login-header">LOGGA IN</h4>
             <LoginForm />
           </div>
-          <button
-            className="btn btn-outline-success my-2 my-sm-0 "
-            onClick={closeDrawer}
-          >
-            <FontAwesomeIcon icon={faXmark} />
-          </button>
         </div>
       )}
     </>
