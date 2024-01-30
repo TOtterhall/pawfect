@@ -67,8 +67,9 @@ const LoginForm = () => {
           We'll never share your email with anyone else.
         </small>
       </div>
+
       <div className="form-group">
-        <label htmlFor="exampleInputPassword1">Password</label>
+        <label htmlFor="exampleInputPassword1">Lösenord</label>
         <input
           type="password"
           className="form-control"
@@ -78,6 +79,7 @@ const LoginForm = () => {
           onChange={handlePasswordChange}
         />
       </div>
+      <br />
       <div className="form-group form-check">
         <input
           type="checkbox"
@@ -85,7 +87,7 @@ const LoginForm = () => {
           id="exampleCheck1"
         />
         <label className="form-check-label" htmlFor="exampleCheck1">
-          Check me out
+          Spara lösenordet
         </label>
       </div>
 

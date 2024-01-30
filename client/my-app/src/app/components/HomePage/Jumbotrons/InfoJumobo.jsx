@@ -6,6 +6,7 @@ import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Golden from "../../../../../public/assets/carousel/golden_dog.jpg";
 import Link from "next/link";
+
 export default function InfoJumbo() {
   return (
     <div>

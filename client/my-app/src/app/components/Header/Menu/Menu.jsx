@@ -36,11 +36,11 @@ const Menu = () => {
                 </Link>
               </li>
 
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link  text-white" href="/butik">
                   BUTIK
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link  text-white" href="/omoss">
                   OM OSS
@@ -53,7 +53,7 @@ const Menu = () => {
               </li>
               <li>
                 <button
-                  className="btn btn-outline-success my-2 my-sm-0 "
+                  className="btn btn-outline-dark my-2 my-sm-0 "
                   onClick={openDrawer}
                 >
                   BUTIK
@@ -62,7 +62,7 @@ const Menu = () => {
                   <div className="modal-slide slide-in-left">
                     <div>
                       <button
-                        className="btn btn-outline-success position-absolute top-0 end-0 "
+                        className="btn btn-outline-dark position-absolute top-0 end-0 "
                         onClick={closeDrawer}
                       >
                         X
@@ -132,11 +132,11 @@ const Menu = () => {
                   HEM <span className="sr-only">(current)</span>
                 </Link>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <Link className="nav-link" href="/butik">
                   BUTIK
                 </Link>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" href="/omoss">
                   OM OSS
@@ -149,7 +149,7 @@ const Menu = () => {
               </li>
               <li>
                 <button
-                  className="btn btn-outline-success my-2 my-sm-0 "
+                  className="btn btn-outline-dark my-2 my-sm-0 "
                   onClick={openDrawer}
                 >
                   BUTIK
@@ -158,7 +158,7 @@ const Menu = () => {
                   <div className="modal-slide slide-in-left">
                     <div>
                       <button
-                        className="btn btn-outline-success position-absolute top-0 end-0 "
+                        className="btn btn-outline-dark position-absolute top-0 end-0 "
                         onClick={closeDrawer}
                       >
                         X

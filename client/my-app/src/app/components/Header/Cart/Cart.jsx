@@ -45,7 +45,7 @@ export default function Cart() {
       {" "}
       {/* Btn to open Drawer */}
       <button
-        className="btn btn-outline-success my-2 my-sm-0"
+        className="btn btn-outline-dark my-2 my-sm-0"
         onClick={openDrawer}
       >
         <FontAwesomeIcon icon={faCartShopping} />
@@ -55,7 +55,7 @@ export default function Cart() {
         <div className="cart-container">
           <div className="cartDrawer">
             <button
-              className="btn btn-outline-success position-absolute top-0 end-0 "
+              className="btn btn-outline-dark position-absolute top-0 end-0 "
               onClick={closeDrawer}
             >
               <FontAwesomeIcon icon={faXmark} />

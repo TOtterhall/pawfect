@@ -2,22 +2,26 @@
   background-color: blueviolet;
 }
 .jumbotron-about {
-  background-color: aquamarine;
+  background-color: #afa8a1;
 }
 
+.jumbotron-news {
+  background-color: #949494;
+}
 .jumbotron-Info {
   background-color: rgb(226, 43, 211);
 }
 .jumbotron-social {
-  background-color: rgb(61, 139, 222);
+  background-color: #d6d6d6;
 }
 .card-img-overlay {
   position: absolute;
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-color: rgb(115, 115, 115);
+  background-color: rgb(129, 127, 127);
   max-height: 4rem;
+
   opacity: 0.5;
   color: black;
 }

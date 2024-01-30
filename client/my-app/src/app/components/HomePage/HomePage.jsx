@@ -16,8 +16,9 @@ export default function HomePage() {
       <News />
       <StoreJumbo />
       <AboutJumbo />
-      <InfoJumbo />
+
       <SocialJumbo />
+      <InfoJumbo />
       <Newsletter />
     </main>
   );

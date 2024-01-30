@@ -10,9 +10,11 @@ import Sociala from "../../../../../public/assets/pictures/sociala.svg";
 export default function SocialJumbo() {
   return (
     <div>
-      <div className="jumbotron-social">
+      <div className="jumbotron-news">
         <br />
         <Link className="nav-link btn-lg" href="/social">
+          <br />
+          <br />
           <h4 className="display-4 text-center">NYHETSBREV</h4>
           <br />
           <div className="row justify-content-center">
@@ -28,11 +30,13 @@ export default function SocialJumbo() {
                   placeholder="E-post adress"
                 />
               </div>
-              <button type="submit" className="btn btn-primary mb-2">
+              <button type="submit" className="btn btn-outline-dark mb-2">
                 PRENUMERERA
               </button>
             </form>
           </div>
+          <br />
+          <br />
           <hr className="my-4" />
           <br />
           <br />

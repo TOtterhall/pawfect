@@ -9,7 +9,7 @@ import Golden from "../../../../../public/assets/carousel/golden_dog.jpg";
 import Link from "next/link";
 export default function AboutJumbo() {
   return (
-    <div>
+    <div id="about">
       <div className="jumbotron-about d-flex justify-content-center align-items-center">
         <div class="card-group">
           <div class="card-about ">

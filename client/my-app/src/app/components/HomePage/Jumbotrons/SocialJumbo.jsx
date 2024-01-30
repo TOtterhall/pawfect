@@ -12,6 +12,7 @@ export default function SocialJumbo() {
     <div>
       <div className="jumbotron-social">
         <br />
+        <br />
         <Link className="nav-link btn-lg" href="/social">
           <h4 className="display-4 text-center">SOCIALA MEDIER</h4>
           <br />

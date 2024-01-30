@@ -10,9 +10,8 @@ export default function News() {
       <div className="leker-kategorier">KATEGORIER?</div>
       <br />
       <br />
-      <br />
+
       <h1 class="card-title news text-center">NYHETER</h1>
-      <br />
       <br />
       <br />
 
@@ -75,9 +74,7 @@ export default function News() {
           </div>
         </div>
       </div>
-      <br />
-      <br />
-      <br />
+
       {/* <Image
           className="d-block w-100 img-fluid"
           src={Pagination}
