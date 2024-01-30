@@ -11,3 +11,27 @@
 .jumbotron-social {
   background-color: rgb(61, 139, 222);
 }
+.card-img-overlay {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(115, 115, 115);
+  max-height: 4rem;
+  opacity: 0.5;
+  color: black;
+}
+.card-about {
+  width: 30rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.socialicons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 1rem;
+}

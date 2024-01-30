@@ -1,20 +1,17 @@
 .header {
   height: 90px;
-  background-color: rgb(43, 226, 128);
 }
 .header .headercontent {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: blueviolet;
+  background-color: #afa8a1;
 }
 .cart {
-  background-color: brown !important;
   margin-left: 1rem;
 }
-.login {
-  background-color: brown !important;
-  margin-left: 1rem;
-}
+/* .login {
+  /* margin-left: 1rem; */
+
 .search {
   margin-left: 1rem;
 }
