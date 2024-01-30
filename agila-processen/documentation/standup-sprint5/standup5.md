@@ -77,6 +77,17 @@
 **Idag ska jag göra** Mer styling samt skapa ordrar som sparas från klienten innan jag skapar ordern i Stripe.
 **Förklaring till beslut jag tagit** Fortsätter sista sprinten denna veckan, dock var det enligt plan men vill ändå förtydliga.
 
+# Datum: 2024-01-30
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Mer styling samt skapade ordrar som sparas från klienten till servern om lyckad betalning som sedan den inloggade användaren kan se på sin sida.
+**Ett problem jag har**
+**Jag behöver hjälp med**
+**Igår lärde jag mig**
+**Idag ska jag göra** Styling responsivitet, se över om jag missat något.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
