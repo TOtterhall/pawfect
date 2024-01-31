@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect } from "react";
 import { useProductContext } from "../../../../Context/productContext/productContext";
+import "./ProductCard.css";
 //KOLLA OM DET GÅR ATT GÖRA PÅ ANNAT SÄTT...?FÖR ATT RENDERA UT PRODUCT MED ID PÅ SPECIFIK SIDA
 import { useRouter } from "next/navigation";
 const ProductCard = () => {
@@ -23,12 +24,12 @@ const ProductCard = () => {
 
   //MAP THRUE ALL MY PRODUCTS AND RENDER PRODUCTCARD FOR EACH ONE
   return (
-    <div>
+    <div className="container d-flex">
       {products.map((product) => (
         <div
           key={product._id}
           onClick={() => handleProductClick(product._id)}
-          className="card"
+          className="card card mx-2 mb-4 col-md-3 col-sm-6 justify-content-center"
           style={{ width: "16rem" }}
         >
           <img
