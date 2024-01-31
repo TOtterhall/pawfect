@@ -88,6 +88,17 @@
 **Idag ska jag göra** Styling responsivitet, se över om jag missat något.
 **Förklaring till beslut jag tagit**
 
+# Datum: 2024-01-31
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Styling. Fick till karusellen, så jäkla glad. Det blev en hel del massa timmar på stylingen men det är det jag tycker är roligast.
+**Ett problem jag har**
+**Jag behöver hjälp med**
+**Igår lärde jag mig**
+**Idag ska jag göra** Göra klart presentationen, och lite mer styling spela in demo video.
+**Förklaring till beslut jag tagit** Har valt att inte göra en adminpanel eftersom man kan sköta allt från databasen i mongodb. La kanske för mycket krut på att styla men samtidigt vill jag ha något någorlunda vettigt att visa upp, samt att kunna lägga i min portfolio för att använda när jag söker jobb.
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
