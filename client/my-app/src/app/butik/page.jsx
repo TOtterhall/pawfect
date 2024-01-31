@@ -6,10 +6,9 @@ import "./butik.css";
 export default function Store() {
   return (
     <main>
-      <div className="container"></div>
-      <h1>Min butik</h1>
-      <h1>Alla mina produkter:</h1>
-      <ProductCard />
+      <div className="container">
+        <ProductCard />
+      </div>
     </main>
   );
 }

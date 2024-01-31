@@ -15,9 +15,55 @@ export default function Orderconfirm() {
   // skapa useeffect med function i create order
   return (
     <div>
-      <h1>WOW- DITT KÖP LYCKADES</h1>
-      <h2>ORDERBEKRÄFTELSE</h2>
-      <h3>Fortsätt handla- länka?</h3>
+      <div className="jumbotron-page my-5 d-flex justify-content-center ">
+        <div className="">
+          <div className="">
+            <div className="card-body">
+              <h1 className="">WOW - ditt köp lyckades</h1>
+              <p className="lead">
+                This is a simple hero unit, a simple jumbotron-style component
+                for calling extra attention to featured content or information.
+              </p>
+              <hr className="my-4" />
+              <br />
+              <br />
+              <br />
+              <p>
+                It uses utility classNamees for typography and spacing to space
+                content out within the larger container. It uses utility
+                classNamees for typography and spacing to space content out
+                within the larger container. It uses utility classNamees for
+                typography and spacing to space content out within the larger
+                container. It uses utility classNamees for typography and
+                spacing to space content out within the larger container. It
+                uses utility classNamees for typography and spacing to space
+                content out within the larger container. It uses utility
+                classNamees for typography and spacing to space content out
+                within the larger container. It uses utility classNamees for
+                typography and spacing to space content out within the larger
+                container. It uses utility classNamees for typography and
+                spacing to space content out within the larger container. It
+                uses utility classNamees for typography and spacing to space
+                content out within the larger container. It uses utility
+                classNamees for typography and spacing to space content out
+                within the larger container. It uses utility classNamees for
+                typography and spacing to space content out within the larger
+                container. It uses utility classNamees for typography and
+                spacing to space content out within the larger container. It
+                uses utility classNamees for typography and spacing to space
+                content out within the larger container. container. It uses
+                utility classNamees for typography and spacing to space content
+                out within the larger container. It uses utility classNamees for
+                typography and spacing to space content out within the larger
+                container. container. It uses utility classNamees for typography
+                and spacing to space content out within the larger container. It
+                uses utility classNamees for typography and spacing to space
+                content out within the larger container.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
 
       {/* <ul>
         {allorders.map((order) => (
