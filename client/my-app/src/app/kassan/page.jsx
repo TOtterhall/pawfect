@@ -15,17 +15,24 @@ export default function checkout() {
 
   return (
     <div>
+      <h1 className="my-5 text-center">KASSAN</h1>
+
       <div className="container">
         <div className="row">
-          <h1>KASSAN</h1>
-          <h1>FORTSÄTT SHOPPA</h1>
-          <div>Din beställning</div>
+          <button
+            type="button"
+            className="btn btn-outline-dark my-2 my-sm-0 btn-lg"
+          >
+            FORTSÄTT SHOPPA
+          </button>
+          {/* <h1>FORTSÄTT SHOPPA</h1>
+          <div>Din beställning</div> */}
           {cart.map((cartItem) => (
             <div
-              className="col-xs-12 col-md-6 col-lg-4"
+              className="col-xs-12 col-md-6 col-lg-2 my-5"
               key={cartItem.product._id}
             >
-              <div className="card mb-3">
+              <div className="card mb-6">
                 <img
                   src={cartItem.product.image}
                   alt={cartItem.product.title}
@@ -34,16 +41,16 @@ export default function checkout() {
                 <div className="card-body">
                   <h5 className="card-title">{cartItem.product.title}</h5>
                   <p className="card-text">
-                    Price: {cartItem.product.price}sek
+                    Price: {cartItem.product.price} SEK
                   </p>
-                  <p className="card-text">Quantity: {cartItem.quantity}st</p>
+                  <p className="card-text">Quantity: {cartItem.quantity} ST</p>
                 </div>
               </div>
             </div>
           ))}
         </div>
-        <h1>FORM</h1>
-        {auth ? <CheckOutBtn /> : <LoginForm />}
+
+        <div>{auth ? <CheckOutBtn /> : <LoginForm />}</div>
       </div>
     </div>
   );
