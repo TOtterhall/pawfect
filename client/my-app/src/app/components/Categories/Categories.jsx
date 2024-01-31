@@ -23,12 +23,14 @@ const Categories = () => {
         <div className="row">
           <div className="col-md-4">
             {categories.map((categoryTitle) => (
-              <div key={categoryTitle._id}>
+              <div className="my-2" key={categoryTitle._id}>
                 <Link
                   href="/products/[categoryTitle]"
                   as={`/products/${encodeURIComponent(categoryTitle.title)}`}
                 >
-                  <h2>{categoryTitle.title}</h2>
+                  <button className=" btn btn-outline-dark my-2 my-sm-0 btn-lg ">
+                    {categoryTitle.title}
+                  </button>
                 </Link>
               </div>
             ))}

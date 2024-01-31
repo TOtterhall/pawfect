@@ -14,7 +14,7 @@ export default function SearchForm() {
         aria-label="Sök"
       />
       {/* ändra färg på knapp sedan */}
-      <button className="btn btn-outline-success my-2 my-sm-0 " type="submit">
+      <button className="btn btn-outline-dark my-2 my-sm-0" type="submit">
         <h4>SÖK</h4>
         {/* <FontAwesomeIcon icon={faMagnifyingGlass} /> */}
       </button>

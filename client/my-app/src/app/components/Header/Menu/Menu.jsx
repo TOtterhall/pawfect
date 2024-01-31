@@ -163,34 +163,35 @@ const Menu = () => {
                       >
                         X
                       </button>
-                      <h1>BUTIK</h1>
+                      <h1 className="text-center my-4">BUTIK</h1>
+                      <hr />
                       <div className="modal-body">
                         <div className="container-fluid">
                           <div className="row">
+                            <Link
+                              className="p-2 btn btn-outline-dark my-2 my-sm-0 btn-lg "
+                              href="/butik"
+                              onClick={closeDrawer}
+                            >
+                              ALLA PRODUKTER
+                            </Link>
                             <div className="p-2 g-col-6">
                               {" "}
+                              <h4 className="text-center my-5">KATEGORIER:</h4>
+                              <hr />
                               <ul>
                                 <li
-                                  className="p-2 g-col-6"
+                                  className="p-2 btn-link btn-outline-dark my-2 my-sm-0 btn-lg "
                                   onClick={closeDrawer}
                                 >
-                                  <h4>Kategorier:</h4>
                                   <Categories onClick={closeDrawer} />
                                 </li>
-
-                                <Link
-                                  className="nav-link"
-                                  href="/butik"
-                                  onClick={closeDrawer}
-                                >
-                                  <h4>ALLA PRODUKTER</h4>
-                                </Link>
                               </ul>
-                              <div className=" card p-2 g-col-6">
+                              {/* <div className=" card p-2 g-col-6">
                                 <div className="">Bild 1</div>
                                 <div>Bild 2</div>
                                 <div>Bild 3</div>
-                              </div>
+                              </div> */}
                             </div>
                           </div>
                         </div>

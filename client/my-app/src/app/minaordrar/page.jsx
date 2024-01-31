@@ -13,7 +13,7 @@ export default function OrderList() {
   }, [auth.costomerId]);
 
   return (
-    <div>
+    <div className="container">
       <div>Mina ordrar</div>
       <LoginForm />
       <ul>

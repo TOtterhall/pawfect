@@ -14,8 +14,8 @@ export default function checkout() {
   console.log("Cart in Checkout:", auth);
 
   return (
-    <div>
-      <h1 className="my-5 text-center">KASSAN</h1>
+    <div className="mb-5">
+      <h1 className="my-5  text-center">KASSAN</h1>
 
       <div className="container">
         <div className="row">
