@@ -35,7 +35,7 @@ const CheckOutBtn = () => {
   return (
     <div>
       <button
-        className="btn btn-primary btn-lg"
+        className="btn btn btn-outline-dark my-2 my-sm-0 btn-lg"
         role="button"
         onClick={handleCheckOut}
       >

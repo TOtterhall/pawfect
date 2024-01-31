@@ -25,16 +25,31 @@ const BtnAddToCart = ({ product }) => {
   return (
     <div>
       <div className="quantity-selector rounded-start">
-        <button className="quantity-button" onClick={decrement}>
+        <button
+          className="quantity-button btn btn-outline-dark my-2 my-sm-0 btn-lg"
+          onClick={decrement}
+        >
           -
         </button>
-        <input type="text" value={quantity} readOnly />
-        <button className="quantity-button" onClick={increment}>
+
+        <input
+          className="form-label"
+          type="text"
+          value={quantity}
+          readOnly
+          style={{ width: "100px", height: "42px", textAlign: "center" }}
+        />
+        <button
+          className="quantity-button btn btn-outline-dark my-2 my-sm-0 btn-lg"
+          onClick={increment}
+        >
           +
         </button>
       </div>
+      <br />
+      <br />
       <button
-        className="btn btn-primary btn-lg"
+        className="btn btn btn-outline-dark my-2 my-sm-0 btn-lg"
         role="button"
         onClick={() => handleAddToCart()}
       >

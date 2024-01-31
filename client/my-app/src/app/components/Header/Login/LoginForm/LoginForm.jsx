@@ -94,19 +94,23 @@ const LoginForm = () => {
       {/* skapa en annan knapp so komponent sedan? */}
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-outline-dark my-2 my-sm-0 "
         onClick={handleToogleBtn}
       >
         {toogleBtn}
       </button>
       <button
         type="button"
-        className="btn btn-primary"
+        className="btn btn-outline-dark my-2 my-sm-0 "
         onClick={handleRegister}
       >
         Registrera
       </button>
-      <button type="button" className="btn btn-primary" onClick={handleLogout}>
+      <button
+        type="button"
+        className="btn btn-outline-dark my-2 my-sm-0 "
+        onClick={handleLogout}
+      >
         Logout
       </button>
       <p></p>

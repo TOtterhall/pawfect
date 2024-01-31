@@ -6,7 +6,7 @@ const BtnGoToCheckout = ({ onCloseDrawer }) => {
     <div>
       <Link className="nav-link" href="/kassan">
         <button
-          className="btn btn-primary btn-lg"
+          className="btn btn btn-outline-dark my-2 my-sm-0 btn-lg"
           role="button"
           onClick={onCloseDrawer}
         >
