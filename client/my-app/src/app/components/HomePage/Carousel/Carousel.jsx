@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import "bootstrap/dist/css/bootstrap.min.css";
 import Golden from "../../../../../public/assets/carousel/golden_dog.jpg";
-import Dalmatines from "../../../../../public/assets/carousel/dalmatine_dogs.jpg";
-import Aussie from "../../../../../public/assets/carousel/aussie_dog.jpg";
+import Dalmatines from "../../../../../public/assets/carousel/sheltie_dog.svg";
+import Aussie from "../../../../../public/assets/carousel/labbe_dog.svg";
 //BYT BILDER//SE ÖVER STORLEKARNA
 export default function Carousel() {
   const [currentSlide, setCurrentSlide] = useState(0);

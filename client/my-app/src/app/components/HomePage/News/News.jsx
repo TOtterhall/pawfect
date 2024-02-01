@@ -7,8 +7,7 @@ import "./News.css";
 export default function News() {
   return (
     <div>
-      <div className="leker-kategorier">KATEGORIER?</div>
-      <br />
+      <div className="leker-kategorier"></div>
       <br />
 
       <h1 class="card-title news text-center">NYHETER</h1>

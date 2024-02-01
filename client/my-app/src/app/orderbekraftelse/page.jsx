@@ -17,7 +17,7 @@ export default function Orderconfirm() {
     <div>
       <div className="jumbotron-page my-5 d-flex justify-content-center ">
         <div className="">
-          <div className="">
+          <div className="card">
             <div className="card-body">
               <h1 className="">WOW - ditt köp lyckades</h1>
               <p className="lead">
@@ -29,13 +29,6 @@ export default function Orderconfirm() {
               <br />
               <br />
               <p>
-                It uses utility classNamees for typography and spacing to space
-                content out within the larger container. It uses utility
-                classNamees for typography and spacing to space content out
-                within the larger container. It uses utility classNamees for
-                typography and spacing to space content out within the larger
-                container. It uses utility classNamees for typography and
-                spacing to space content out within the larger container. It
                 uses utility classNamees for typography and spacing to space
                 content out within the larger container. It uses utility
                 classNamees for typography and spacing to space content out
