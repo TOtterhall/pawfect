@@ -32,9 +32,8 @@ const CustomerContextProvider = ({ children }) => {
         setAuth(false);
       }
       setAuth(authData);
-      console.log(authData);
     } catch (error) {
-      console.log("Kan inte hämta alla användarna.....", error);
+      error.message;
     }
   };
 
@@ -44,13 +43,12 @@ const CustomerContextProvider = ({ children }) => {
       const customers = await res.json();
       setAllCustomers(customers);
     } catch (error) {
-      console.log("Kan inte hämta alla användarna.....", error);
+      error.message;
     }
   };
 
   const register = async ({ email, password }) => {
     const customerData = { email: email, password: password };
-    console.log(customerData);
 
     try {
       const res = await fetch(`http://localhost:3080/api/customers/register`, {
@@ -62,29 +60,25 @@ const CustomerContextProvider = ({ children }) => {
         body: JSON.stringify(customerData),
       });
 
-      console.log(res);
-
       if (res.ok) {
         const data = await res.json();
         const { token } = data;
         setAuth(data);
         setToken(token);
-        console.log(token);
-        console.log("Ny kund registrerad");
+
+        alert("Du har nu registrerat dig- välkommen");
         setIsLoggedIn(true);
       } else {
-        console.log("Kan inte registrera dig, fel tassavtryck");
+        alert("Kan inte registrera dig, fel tassavtryck");
       }
     } catch (error) {
-      console.error("Kan inte registrera DIG.....", error);
+      error.message;
     }
   };
 
   //LOGIN
   const login = async ({ email, password }) => {
     const customerData = { email: email, password: password };
-    console.log(customerData);
-    //om kunden är registrerad => logga in denne.
 
     try {
       const res = await fetch(`http://localhost:3080/api/customers/login`, {
@@ -97,26 +91,18 @@ const CustomerContextProvider = ({ children }) => {
         body: JSON.stringify(customerData),
       });
 
-      console.log(res);
-
       if (res.ok) {
         const data = await res.json();
         const { token } = data;
         setToken(token);
         setAuth(data);
-        console.log(token);
-
         localStorage.setItem("token", token);
-
-        console.log("Token stored in localStorage:", token);
-        console.log("inloggning lyckades från context");
+        alert("Du lyckades logga in....YAYY");
       } else {
-        console.log(
-          "Kan inte logga in DU i context...Du måste registrera dig först"
-        );
+        alert("Kan inte logga in...Fel användarnamn eller lösenord");
       }
     } catch (error) {
-      console.error("Kan inte logga in DU.....", error);
+      error.message;
     }
   };
 
@@ -132,19 +118,15 @@ const CustomerContextProvider = ({ children }) => {
         credentials: "include",
       });
 
-      console.log(res);
-
       if (res.ok) {
         localStorage.removeItem("token");
         setIsLoggedIn(false);
-        console.log("Du är nu utloggad från context");
+        alert("Du har nu tassat ut");
       } else {
-        console.log(
-          "Kan inte logga ut dig i context...Du måste registrera dig först"
-        );
+        alert("Du kan inte tassa ut innan du tassat in");
       }
     } catch (error) {
-      console.error("Kan inte logga ut DU.....", error);
+      error.message;
     }
   };
 
@@ -160,7 +142,6 @@ const CustomerContextProvider = ({ children }) => {
         logout,
         token,
         auth,
-        // getAuth,
       }}
     >
       {children}
