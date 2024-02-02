@@ -5,22 +5,13 @@ import BtnGoToCheckout from "../../Buttons/GoToCheckout";
 import { useCartContext } from "@/Context/cartContext/cartContext";
 
 export default function CartItems() {
-  // MED DENNA SÅ TRIGGAS CART VARJE GÅNG JAG TRYCKER PÅ KNAPPEN
-  // const [cart, setCart] = useState([]);
-  // console.log(cart);
-  // useEffect(() => {
-  //   setCart(JSON.parse(localStorage.getItem("cart")));
-  // }, []);
-
-  // MED DENNA SÅ MÅSTE JAG MANUELLT UPPDATERA SIDAN?
+  //UPDATE CART
   const { cart } = useCartContext();
   useEffect(() => {
     console.log(cart);
   }, []);
 
-  {
-    /* Calkulate Total Sum */
-  }
+  //CALCULATE TOTALSUM
   const calculateTotal = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
     0
