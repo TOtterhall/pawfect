@@ -1,56 +1,45 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useCustomerContext } from "../../../../../Context/customerContext/customerContext";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const LoginForm = () => {
-  const { register, login, isLoggedIn, logout } = useCustomerContext();
+  const { register, login, logout } = useCustomerContext();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [toogleBtn, setToogleBtn] = useState("");
 
-  //FÖR ATT ÄNDRA PÅ KNAPPTEXT BEROENDE PÅ OM KUND ÄR I LOGGAD ELLER INTE
-  useEffect(() => {
-    setToogleBtn(isLoggedIn ? "Logout" : "Login");
-  }, [isLoggedIn]);
-
-  // TA EMOT EMAIL FRÅN FORMULÄRET
+  // GET CUSTOMER EMAIL
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
   };
 
-  // TA EMOT LÖSENORD FRÅN FORMULÄRET
+  // GET CUSTOMER PASSWORD
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
 
-  //REGISTRERA ANVÄNDAREN
+  //REGISTER CUSTOMER
   const handleRegister = async (e) => {
     e.preventDefault();
 
     await register({ email, password });
   };
 
-  //LOGGAIN ANVÄNDAREN
+  //LOGGAIN CUSTOMER
   const handleLogin = async (e) => {
     e.preventDefault();
 
     await login({ email, password });
-    setToogleBtn("Logout");
   };
 
-  //LOGGAUT ANVÄNDAREN
+  //LOGGOUT CUSTOMER
   const handleLogout = async (e) => {
     e.preventDefault();
 
     await logout();
-    setToogleBtn("Login");
   };
 
-  const handleToogleBtn = isLoggedIn ? handleLogout : handleLogin;
-
   return (
-    // form from bootstrap
     <form>
       <div className="form-group">
         <label htmlFor="exampleInputEmail1">Email address</label>
@@ -64,7 +53,7 @@ const LoginForm = () => {
           onChange={handleEmailChange}
         />
         <small id="emailHelp" className="form-text text-muted">
-          We'll never share your email with anyone else.
+          Använd din e-postadress som användarnamn
         </small>
       </div>
 
@@ -80,47 +69,29 @@ const LoginForm = () => {
         />
       </div>
       <br />
-      <div className="form-group form-check">
-        <input
-          type="checkbox"
-          className="form-check-input"
-          id="exampleCheck1"
-        />
-        <label className="form-check-label" htmlFor="exampleCheck1">
-          Spara lösenordet
-        </label>
-      </div>
 
-      {/* skapa en annan knapp so komponent sedan? */}
       <button
         type="button"
         className="btn btn-outline-dark my-2 my-sm-0 "
-        onClick={handleToogleBtn}
+        onClick={handleLogin}
       >
-        {toogleBtn}
+        LOGGA IN
       </button>
       <button
         type="button"
         className="btn btn-outline-dark my-2 my-sm-0 "
         onClick={handleRegister}
       >
-        Registrera
+        REGISTRERA
       </button>
       <button
         type="button"
         className="btn btn-outline-dark my-2 my-sm-0 "
         onClick={handleLogout}
       >
-        Logout
+        LOGGA UT
       </button>
-      <p></p>
     </form>
   );
 };
 export default LoginForm;
-// Notes to myself
-//Setcookie?-logga ut sesson._id
-// <label className="form-check-label" htmlFor="exampleCheck1">
-// var for innan men enligt stckowerflow borde det vara htmlFor,stämmer?
-//stackoverflow.com/questions/59924585/im-getting-an-error-using-react-invalid-dom-property-for-did-you-mean-htm
-// <label className="form-check-label" for="exampleCheck1">
