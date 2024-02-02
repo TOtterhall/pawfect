@@ -17,8 +17,6 @@ const OrderContextProvider = ({ children }) => {
 
   const createOrder = async () => {
     try {
-      console.log(auth);
-      console.log(cart);
       const res = await fetch("http://localhost:3080/api/orders/createorder", {
         method: "POST",
         headers: {
@@ -27,19 +25,14 @@ const OrderContextProvider = ({ children }) => {
         body: JSON.stringify({ customer: auth.customerId, cart: cart }),
       });
 
-      console.log(res);
-
       if (res.ok) {
         const orderData = await res.json();
 
-        console.log("Ny Order registrerad");
         setOrder(orderData);
         localStorage.removeItem("cart");
-      } else {
-        console.log("Kan inte registrera din order, fel tassavtryck");
       }
     } catch (error) {
-      console.error("Kan inte skapa en order åt DIG.....", error);
+      error.message;
     }
   };
 
@@ -60,19 +53,11 @@ const OrderContextProvider = ({ children }) => {
       if (response.ok) {
         const orderData = await response.json();
         setOrders(orderData);
-        console.log(orderData);
-      } else {
-        console.error(
-          "Fel vid hämtning av ordrar från ordersidan...:",
-          response.statusText
-        );
       }
     } catch (error) {
-      console.error("Fel vid hämtning av ordrar från Ordersidan:", error);
+      error.message;
     }
   };
-
-  // allCustomerOrders(auth.customerId);
 
   return (
     <OrderContext.Provider

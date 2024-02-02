@@ -18,29 +18,9 @@ const ProductContextProvider = ({ children }) => {
 
       setAllProducts(products);
     } catch (error) {
-      console.log("Kan inte hämta alla produkter tyvärr.....", error);
+      error.message;
     }
   };
-
-  // const getProductsByCategory = async (categoryTitle) => {
-  //   try {
-  //     console.log(
-  //       `Fetchar produkter från produktcontext med categoriId:${categoryTitle}`
-  //     );
-  //     const res = await fetch(
-  //       `http://localhost:3080/api/products/categories/${encodeURIComponent(
-  //         categoryTitle
-  //       )}`
-  //     );
-  //     const productCategories = await res.json();
-  //     console.log("ProductsmedKategoriContext:", productCategories);
-
-  //     setAllCategories(productCategories);
-  //     console.log(productCategories);
-  //   } catch (error) {
-  //     console.log("Kan inte hämta alla produkter tyvärr.....", error);
-  //   }
-  // };
 
   const getProductsById = async (productId) => {
     try {

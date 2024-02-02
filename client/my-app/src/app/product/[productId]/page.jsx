@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import BtnAddToCart from "../../components/Buttons/AddToCart";
 import { useProductContext } from "../../../Context/productContext/productContext";
 import Image from "next/image";
-import "./productId.css";
 
 export default function ProductListById() {
   const { product, getProductById, getAllProducts } = useProductContext();

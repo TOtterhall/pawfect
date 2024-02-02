@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import LoginForm from "../components/Header/Login/LoginForm/LoginForm";
 import { useCustomerContext } from "@/Context/customerContext/customerContext";
 import { useOrderContext } from "@/Context/orderContext/orderContext.jsx";

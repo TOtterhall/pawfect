@@ -1,13 +1,15 @@
 import { Inter } from "next/font/google";
-import "bootstrap/dist/css/bootstrap.css";
+//PROVIDERS FROM CONTEXT
 import CartProvider from "../Context/cartContext/cartContext";
 import ProductProvider from "../Context/productContext/productContext";
 import CustomerProvider from "../Context/customerContext/customerContext";
 import CategoryProvider from "../Context/categoryContext/categoryContext";
 import OrderProvider from "../Context/orderContext/orderContext.jsx";
-//Components
-//css
+
+//CSS
 import "./globals.css";
+import "bootstrap/dist/css/bootstrap.css";
+//COMPONENTS
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
