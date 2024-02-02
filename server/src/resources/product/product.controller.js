@@ -88,3 +88,4 @@ module.exports = {
   getSpecificProduct,
   getProductsByCategory,
 };
+//product controller

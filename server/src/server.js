@@ -21,3 +21,5 @@ async function main() {
     process.exit(1); // Avslutar applikationen om anslutningen misslyckas
   }
 }
+
+//merge to main
