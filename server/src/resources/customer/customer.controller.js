@@ -95,4 +95,9 @@ async function authorize(req, res, next) {
   res.status(200).json(req.session);
 }
 
-module.exports = { registerCustomer, loginCustomer, logoutCustomer, authorize };
+module.exports = {
+  registerCustomer,
+  loginCustomer,
+  logoutCustomer,
+  authorize,
+};
