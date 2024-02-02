@@ -1,18 +1,5 @@
 const { OrderModel } = require("../order/order.model");
 
-//FUNCTION- GET ALL ORDERS
-// async function getOrders(req, res) {
-//   const customerOrders = { customer: req.params._id };
-//   try {
-//     const orders = await OrderModel.findById(customerOrders).populate(
-//       "customer"
-//     );
-//     res.status(200).json([orders]);
-//   } catch (err) {
-//     next(err);
-//   }
-// }
-
 //FUNCTION- CREATE ORDER
 const createOrder = async (req, res, next) => {
   try {

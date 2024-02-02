@@ -16,7 +16,7 @@ const Hundhalsband = () => {
         const products = await res.json();
         setProducts(products);
       } catch (error) {
-        console.error("Kan inte hämta produkter i kategorin", error);
+        error.message;
       }
     };
 

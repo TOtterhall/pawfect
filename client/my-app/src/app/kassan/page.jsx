@@ -10,7 +10,6 @@ import LoginForm from "../components/Header/Login/LoginForm/LoginForm";
 export default function checkout() {
   const { cart } = useCartContext();
   const { auth } = useCustomerContext();
-  console.log("Cart in Checkout:", auth);
 
   return (
     <div className="mb-5">

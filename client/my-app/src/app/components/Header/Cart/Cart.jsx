@@ -23,6 +23,12 @@ export default function Cart() {
     setDrawerOpen(false);
   };
 
+  const removeFromCart = (productId) => {
+    const updatedCart = cart.filter((item) => item.product._id !== productId);
+    setCart(updatedCart);
+    localStorage.setItem("cart", JSON.stringify(updatedCart));
+  };
+
   const calculateTotal = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
     0
@@ -73,6 +79,12 @@ export default function Cart() {
                           <p className="card-text">
                             Quantity: {cartItem.quantity}st
                           </p>
+                          <button
+                            className="btn btn btn-outline-dark my-2 my-sm-0 btn-lg"
+                            onClick={() => removeFromCart(cartItem.product._id)}
+                          >
+                            TA BORT
+                          </button>
                         </div>
                       </div>
                     </div>
