@@ -3,9 +3,8 @@
 import React from "react";
 import "../Jumbotrons/Jumbotrons.css";
 import Link from "next/link";
-import Image from "next/image";
+
 import "bootstrap/dist/css/bootstrap.min.css";
-import Sociala from "../../../../../public/assets/pictures/sociala.svg";
 
 export default function SocialJumbo() {
   return (

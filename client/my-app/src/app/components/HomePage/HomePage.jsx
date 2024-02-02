@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-
 import Carousel from "./Carousel/Carousel";
 import News from "./News/News";
 import StoreJumbo from "./Jumbotrons/StoreJumbo";
@@ -16,7 +15,6 @@ export default function HomePage() {
       <News />
       <StoreJumbo />
       <AboutJumbo />
-
       <SocialJumbo />
       <InfoJumbo />
       <Newsletter />
