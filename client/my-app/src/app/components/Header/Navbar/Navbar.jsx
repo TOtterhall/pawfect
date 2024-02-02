@@ -42,34 +42,3 @@ export default function Header() {
     </header>
   );
 }
-// "use client";
-// import React, { useState, useEffect } from "react";
-// import Link from "next/link";
-// import SearchForm from "../SearchForm/SearchForm";
-// import Logo from "../Logo/Logo";
-// import Login from "../Login/Login";
-// import Cart from "../Cart/Cart";
-// import Menu from "../Menu/Menu";
-// export default function Navbar() {
-//   return (
-//     <div className="container d-flex justify-content-between align-items-center fixed-top">
-//       <nav className="navbar navbar-expand-lg navbar-light bg-light">
-//         <div className="navbar-nav mr-auto mt-2 mt-lg-0">
-//           <Menu />
-//           {/* <SearchForm /> */}
-//         </div>
-
-//         <Link className="nav-link" href="/">
-//           <Logo />
-//         </Link>
-
-//         <div>
-//           <div>
-//             <Login />
-//             <Cart />
-//           </div>
-//         </div>
-//       </nav>
-//     </div>
-//   );
-// }
