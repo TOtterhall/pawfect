@@ -18,7 +18,6 @@ export default function Login() {
   };
   return (
     <>
-      {/* ändra färg på knapp sedan */}
       <button
         className="btn btn-outline-dark my-2 my-sm-0 "
         onClick={openDrawer}
@@ -26,7 +25,6 @@ export default function Login() {
         <FontAwesomeIcon icon={faPaw} />
       </button>
 
-      {/* Drawer */}
       {isDrawerOpen && (
         <div>
           <div className="login-form-container">
