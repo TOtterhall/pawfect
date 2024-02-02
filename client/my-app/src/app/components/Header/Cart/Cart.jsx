@@ -10,16 +10,10 @@ import BtnGoToCheckout from "../../Buttons/GoToCheckout";
 export default function Cart() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [cart, setCart] = useState([]);
-  console.log(cart);
+
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart")));
   }, [isDrawerOpen]);
-  // const { cart } = useCartContext();
-  // //MED DENNA SÅ TRIGGAS CART VARJE GÅNG JAG TRYCKER PÅ KNAPPEN
-  //MED DENNA SÅ MÅSTE JAG MANUELLT UPPDATERA SIDAN?
-  // useEffect(() => {
-  //   console.log(cart);
-  // }, []);
 
   const openDrawer = () => {
     setDrawerOpen(true);

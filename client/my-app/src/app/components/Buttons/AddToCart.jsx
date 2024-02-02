@@ -17,10 +17,6 @@ const BtnAddToCart = ({ product }) => {
   };
   const handleAddToCart = () => {
     addToCart(product, quantity);
-
-    // console.log(product);
-    // console.log(quantity);
-    // console.log("Du har klickat på knappen add to cart");
   };
   return (
     <div>
