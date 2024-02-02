@@ -1,0 +1,38 @@
+
+###//==============================//
+###//===========CUSTOMER===========//
+###//==============================//
+### // CREATE CUSTOMER
+POST http://localhost:3080/api/customers/register
+Content-Type: application/json
+
+{
+    "email":"t@gmail.com",
+    "password":"admin1234",
+    "firstName":"Therese",
+    "lastName":"testar bara",
+    "adress":"Gatan 1234",
+    "phoneNumber":"12341234",
+    "isAdmin":true
+   
+}
+###
+### // CREATE LOGIN
+POST http://localhost:3080/api/customers/login
+Content-Type: application/json
+
+{
+    "email":"te@gmail.com",
+    "password":"admin1234"
+   
+}
+
+
+###
+### // LOGOUT
+POST http://localhost:3080/api/customers/logout
+Content-Type: application/json
+
+###
+GET http://localhost:3080/api/customers/authorize
+###

@@ -1,0 +1,35 @@
+###//==============================//
+###//===========PRODUCTS===========//
+###//==============================//
+### // CREATE PRODUCTS
+
+POST http://localhost:3080/api/products
+Content-Type: application/json
+
+{
+    "title":"EASY LIFE SPÅRLINA",
+    "price":1269,
+    "image":"https://www.tinybuddy.se/assets/products/50-pack-bajspasar-med-handtag-premium-16625_440x.jpg?1699522491",
+    "description":"Rejält, extra stort och stabilt koppel från Flexi.En säker, stark och kromad karbinhake.",
+    "colors":["ROSA"],
+    "sizes": ["M","L","XL"],
+    "categories":["Husse & Matte"]
+
+
+}
+
+### // GET ALL PRODUCTS
+GET http://localhost:3080/api/products
+
+
+### // GET PRODUCTS BY ID(existingproduct)
+GET http://localhost:3080/api/products/65a65393a97b953852648036
+###
+
+### // GET PRODUCTS BY ID(NOT existingproduct)
+GET http://localhost:3080/api/products/659421c88866f6d4715be804
+###
+### // GET PRODUCTS BY CATEGORY
+GET http://localhost:3080/api/products/categories/Hundkoppel
+###
+GET http://localhost:3080/api/products/categories/${categoryTitle}

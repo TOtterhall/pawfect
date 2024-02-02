@@ -1,0 +1,16 @@
+.header {
+  height: 90px;
+  margin-bottom: 1rem;
+}
+.header .headercontent {
+  padding-top: 1rem;
+
+  background-color: #afa8a1;
+}
+.cart {
+  margin-left: 1rem;
+}
+
+.search {
+  margin-left: 1rem;
+}

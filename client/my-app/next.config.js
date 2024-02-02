@@ -1,8 +1,15 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["donlorino.com", "theoddpup.com", "bjaf.se"], // Lägg till domänen här
+    domains: ["bjaf.se", "tinybuddy.se"],
   },
+  // webpackDevMiddleware: (config) => {
+  //   config.watchOptions = {
+  //     poll: 1000,
+  //     aggregateTimeout: 300,
+  //   };
+  //   return config;
+  // },
 };
 
 module.exports = nextConfig;
