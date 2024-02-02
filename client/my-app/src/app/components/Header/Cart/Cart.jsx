@@ -10,7 +10,7 @@ import BtnGoToCheckout from "../../Buttons/GoToCheckout";
 export default function Cart() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const [cart, setCart] = useState([]);
-
+  console.log(cart);
   useEffect(() => {
     setCart(JSON.parse(localStorage.getItem("cart")));
   }, [isDrawerOpen]);
