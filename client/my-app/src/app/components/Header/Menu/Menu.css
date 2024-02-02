@@ -5,46 +5,8 @@
   height: 100%;
   width: 350px;
   background-color: #949494;
-  z-index: 1200;
+  z-index: 8999;
   overflow-y: auto;
   padding: 20px;
   box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }
-.headercontent {
-  height: 100%;
-  align-items: stretch;
-}
-/* /* .cartDrawer {
-  position: relative;
-} */
-
-.store-header {
-  padding-bottom: 2rem !important;
-  padding-top: 2rem !important;
-  padding-left: 0.7rem;
-  background-color: aqua !important;
-}
-/* .container-pictures {
-  flex: 1;
-  padding-left: 20px;
-} */
-.menu {
-  background-color: #afa8a1 !important;
-  font-size: 1rem;
-}
-#category {
-  color: white !important;
-}
-/* .modal-slide h1 {
-  background-color: rgb(43, 128, 122);
-  margin-top: 5rem;
-  margin-left: 10%;
-}
-.modal-slide ul {
-  background-color: rgb(58, 161, 202);
-}
-.modal-slide container div {
-  background-color: red;
-  width: 100%;
-  margin-left: 100%;
-} */

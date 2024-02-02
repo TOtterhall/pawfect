@@ -9,20 +9,22 @@ import Sociala from "../../../../../public/assets/pictures/sociala.svg";
 
 export default function SocialJumbo() {
   return (
-    <div>
+    <div className="jumbotron-social-container">
       <div className="jumbotron-social">
         <br />
         <br />
         <Link className="nav-link btn-lg" href="/socialamedier">
           <h4 className="display-4 text-center">SOCIALA MEDIER</h4>
           <br />
-          <Image
-            className="socialicons"
-            src={Sociala}
-            alt="socialicons"
-            width={400}
-            height={200}
-          />
+          <div className="socialicons-container">
+            <Image
+              className="socialicons"
+              src={Sociala}
+              alt="socialicons"
+              width={400}
+              height={200}
+            />
+          </div>
 
           <hr className="my-4" />
           <br />

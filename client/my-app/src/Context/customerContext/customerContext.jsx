@@ -67,6 +67,7 @@ const CustomerContextProvider = ({ children }) => {
       if (res.ok) {
         const data = await res.json();
         const { token } = data;
+        setAuth(data);
         setToken(token);
         console.log(token);
         console.log("Ny kund registrerad");

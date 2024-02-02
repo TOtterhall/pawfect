@@ -17,37 +17,39 @@ const Menu = () => {
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
+
+  const closeMobileDrawer = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   const toogleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
 
-  //Kolla om jag ska bryta ner...?
   return (
-    <div className="menu">
-      <div className={`pos-f-t ${isMenuOpen ? "menu-open" : ""}`}>
+    <div className="">
+      <div className="">
         <div className="collapse" id="navbarToggleExternalContent">
-          <div className="bg-dark p-4">
-            <h4 className="text-white">Meny</h4>
-
+          <div className="modal-slide slide-in-left">
+            <h4>Meny i mobil</h4>
+            <button
+              className="btn btn-outline-dark position-absolute top-0 end-0"
+              onClick={closeMobileDrawer}
+            >
+              X
+            </button>
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
-                <Link className="nav-link text-white" href="/">
-                  HEM <span className="sr-only">(current)</span>
+                <Link className="nav-link " href="/">
+                  HEM <span className="sr-only"></span>
                 </Link>
               </li>
-
-              {/* <li className="nav-item">
-                <Link className="nav-link  text-white" href="/butik">
-                  BUTIK
-                </Link>
-              </li> */}
               <li className="nav-item">
-                <Link className="nav-link  text-white" href="/omoss">
+                <Link className="nav-link" href="/omoss">
                   OM OSS
                 </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link  text-white" href="/kontakt">
+                <Link className="nav-link" href="/kontakt">
                   KONTAKTA OSS
                 </Link>
               </li>
@@ -58,6 +60,7 @@ const Menu = () => {
                 >
                   BUTIK
                 </button>
+
                 {isDrawerOpen && (
                   <div className="modal-slide slide-in-left">
                     <div>
@@ -74,25 +77,19 @@ const Menu = () => {
                           <div className="row">
                             <div className="col-md-4">
                               {" "}
+                              <Link
+                                className="p-2 btn btn-outline-dark my-2 my-sm-0 btn-lg "
+                                href="/butik"
+                                onClick={closeDrawer}
+                              >
+                                ALLA PRODUKTER
+                              </Link>
                               <ul>
                                 <li className="p-2 g-col-6">
                                   <h4 className="store-header">Kategorier:</h4>
                                   <Categories closeDrawer={closeDrawer} />
                                 </li>
                               </ul>
-                              <div className="container-pictures">
-                                <div className="row">
-                                  <div className="mb-3">
-                                    <div className="card-body">
-                                      <div className="card-body">
-                                        Bild 1 om tid?
-                                      </div>
-                                      <div className="card">Bild 2</div>
-                                      <div className="card">Bild 3</div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
                             </div>
                           </div>
                         </div>
@@ -104,8 +101,7 @@ const Menu = () => {
             </ul>
           </div>
         </div>
-        <nav className="">
-          {/* den ljusa byt ut klassnamn på nav navbar navbar-expand-lg navbar-light bg-light */}
+        <nav className="menu">
           <button
             className="navbar-toggler "
             type="button"
@@ -124,19 +120,14 @@ const Menu = () => {
               <span className="navbar-toggler-icon "></span>
             )}
           </button>
-          {/* Utfälld meny */}
+          {/* Utfälld meny- större skärmar*/}
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
                 <Link className="nav-link" href="/">
-                  HEM <span className="sr-only">(current)</span>
+                  HEM <span className="sr-only"></span>
                 </Link>
               </li>
-              {/* <li className="nav-item">
-                <Link className="nav-link" href="/butik">
-                  BUTIK
-                </Link>
-              </li> */}
               <li className="nav-item">
                 <Link className="nav-link" href="/omoss">
                   OM OSS
@@ -154,6 +145,7 @@ const Menu = () => {
                 >
                   BUTIK
                 </button>
+                {/* Meny (Butik) */}
                 {isDrawerOpen && (
                   <div className="modal-slide slide-in-left">
                     <div>
@@ -187,11 +179,6 @@ const Menu = () => {
                                   <Categories onClick={closeDrawer} />
                                 </li>
                               </ul>
-                              {/* <div className=" card p-2 g-col-6">
-                                <div className="">Bild 1</div>
-                                <div>Bild 2</div>
-                                <div>Bild 3</div>
-                              </div> */}
                             </div>
                           </div>
                         </div>

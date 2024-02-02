@@ -39,7 +39,7 @@ const CheckOutBtn = () => {
         role="button"
         onClick={handleCheckOut}
       >
-        Gå till Kassan
+        BETALA KÖP
       </button>
     </div>
   );

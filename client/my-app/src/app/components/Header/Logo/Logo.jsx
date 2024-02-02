@@ -14,6 +14,7 @@ export default function Logo() {
         alt="LogoPawfect"
         width={200}
         height={100}
+        priority={true}
       />
     </div>
   );

@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import CheckOutBtn from "../components/Buttons/CheckOutBtn";
+import Link from "next/link";
 import RegisterForm from "../components/Buttons/Register";
 import { useCartContext } from "@/Context/cartContext/cartContext";
 import { useCustomerContext } from "@/Context/customerContext/customerContext";
@@ -19,12 +20,13 @@ export default function checkout() {
 
       <div className="container">
         <div className="row">
-          <button
-            type="button"
-            className="btn btn-outline-dark my-2 my-sm-0 btn-lg"
+          <Link
+            className="p-2 btn btn-outline-dark my-2 my-sm-0 btn-lg "
+            href="/butik"
           >
             FORTSÄTT SHOPPA
-          </button>
+          </Link>
+
           {/* <h1>FORTSÄTT SHOPPA</h1>
           <div>Din beställning</div> */}
           {cart.map((cartItem) => (
