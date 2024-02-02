@@ -1,7 +1,8 @@
 # PAWFECT-SERVER
 
-För att starta klienten se READ.me i klient
-examensarbete
+(se till att ha en terminal för server och en för client öppen)
+Navigera till din server i terminalen -> cd server
+Kör kommandot - > npm install
+Kör därefter kommandot - > npm run start
 
-cd server
-npm run start
+Nu är servern igång
