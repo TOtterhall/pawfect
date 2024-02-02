@@ -99,6 +99,28 @@
 **Idag ska jag göra** Göra klart presentationen, och lite mer styling spela in demo video.
 **Förklaring till beslut jag tagit** Har valt att inte göra en adminpanel eftersom man kan sköta allt från databasen i mongodb. La kanske för mycket krut på att styla men samtidigt vill jag ha något någorlunda vettigt att visa upp, samt att kunna lägga i min portfolio för att använda när jag söker jobb.
 
+# Datum: 2024-02-01
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Gjorde klart presentationen, och mer styling för att ha något någorlunda att visa upp, spelade in demo video till presentationen.
+**Ett problem jag har**
+**Jag behöver hjälp med**
+**Igår lärde jag mig** Att jag fortfarande blir så sjukt nervös inför en presentation.
+**Idag ska jag göra** Presentera projektet.
+**Förklaring till beslut jag tagit**
+
+# Datum: 2024-02-02
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Presenterade projektet och lyssnade till de andra.
+**Ett problem jag har**
+**Jag behöver hjälp med**
+**Igår lärde jag mig** Att jag fortfarande måste utsätta mig för att presentera fastän jag tycker det är så SJUKT jobbigt. Att jag har lärt mig otroligt mkt på den här utbildningen med tanke på att jag aldrig rört en kodrad i hela mitt liv innan.
+**Idag ska jag göra** Knyta ihop säcken, alltså göra sista fixet, städa upp i koden, ta bort consol loggar, och lämna in hela projektet i de olika delarna på it's learning.
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
