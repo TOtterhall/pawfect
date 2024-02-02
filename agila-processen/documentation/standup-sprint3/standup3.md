@@ -33,6 +33,28 @@
 **Idag ska jag göra** Fortsätta att strukturera upp client-side /.
 **Förklaring till beslut jag tagit** Måste läsa på mer dokumentation och göra lite research hur det fungerar i Next.js men med tanke på att stylingen inte är betygsgrundande så avvaktar jag med det just nu för att få flow i projektet och komma vidare utan att ödsla tid.
 
+# Datum: 2024-01-11
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Skapade jumpotrons i mina komponenter. Hade handledning för att stämma av med Anders om jag var på rätt spår gällande hur jag dokumenterar tid/standup kopplat till mina issues. Han intygade att det var bra, så fortsätter på samma spår. Läste dokumentation gällande Next.js 13. Började se över hur det fungerade med routing.
+**Ett problem jag har** Fastnade i hur jag skulle kunna gå från home till exempelvis "about" men det tycks fungera annorlunda med Next.js 13 så har behövt läsa en hel del dokumentation för att förstå hur det fungerar. Jag lyckades bläddra bland sidorna men min komponent "shop" som har "productlistan" i sig vill inte visas på "butiksidan" men om jag lägger den i home så syns den. Tror mig ha kommit fram till efter att ha läst dokumentationen att det har med mallheriarkin att göra.
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** Mer om Next.js.
+**Idag ska jag göra** Fortsätta att strukturera upp client-side och läsa dokumentation om Next.js13, försöka få till mall heriarkin så jag kan rendera ut "produktlistan" när man klickar på "butiken".
+**Förklaring till beslut jag tagit**
+
+# Datum: 2024-01-12
+
+## Namn: Therese Otterhäll
+
+**Igår gjorde jag** Fortsätte att strukturera upp client-side och läste dokumentation om Next.js13, fick till mall heriarkin så att jag kan rendera ut "produktlistan" när man klickar på "butiken".
+**Ett problem jag har**
+**Jag behöver hjälp med** -
+**Igår lärde jag mig** Mer om Next.js - mall heriarki.
+**Idag ska jag göra** Det som behövs till client så som drawers för cart,meny och login och om jag hinner "add to cart function".
+**Förklaring till beslut jag tagit**
+
 **Frågor jag har:**
 **Planerad tidestimering:**
 **Faktiska tid denna veckan:**
