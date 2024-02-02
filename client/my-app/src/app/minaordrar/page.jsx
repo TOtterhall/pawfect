@@ -13,14 +13,18 @@ export default function OrderList() {
   }, [auth.costomerId]);
 
   return (
-    <div className="container">
+    <main className="container">
+      <br />
+      <br />
+      <br />
+      <div>Du måste logga in för att se dina ordrar</div>
       <div>Mina ordrar</div>
-      <LoginForm />
+
       <ul>
         {orders.map((order) => (
           <li key={order._id}>Order nummer: {order.orderNumber}</li>
         ))}
       </ul>
-    </div>
+    </main>
   );
 }

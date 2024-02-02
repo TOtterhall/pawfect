@@ -1,5 +1,5 @@
 const { Router } = require("express");
-// const { authorization } = require("../middlewares");
+
 const { validate } = require("../middlewares");
 const {
   registerCustomer,
@@ -14,7 +14,7 @@ customerRouter.post(
   "/customers/register",
   validate(CustomerValidationSchema),
   registerCustomer
-); //MÅSTE SKAPA VALIDERING
+);
 customerRouter.post(
   "/customers/login",
   validate(CustomerValidationSchema),

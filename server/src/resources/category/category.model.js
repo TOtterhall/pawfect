@@ -10,12 +10,11 @@ const CategorySchema = new Schema(
 );
 
 const CategoryModel = models.category || model("category", CategorySchema);
-// const CategoryModel = model("category", CategorySchema);
+
 const AddCategoryValidationSchema = Joi.object({
   title: Joi.string().strict().min(5).max(100).required(),
-  // .label("Category title"),
+
   description: Joi.string().min(5).max(500).optional(),
-  // .label("Category description"),
 });
 
 const CategoryValidationSchema = Joi.object({

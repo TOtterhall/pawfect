@@ -10,7 +10,6 @@ const { orderRouter } = require("./resources/order/order.router");
 
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const cookieParser = require("cookie-parser");
-//Also need to add errorhandler
 
 const app = express();
 app.use(cookieParser());
@@ -33,7 +32,7 @@ app.post("/create-checkout-session", async (req, res) => {
   try {
     const { cart } = req.body;
     const customerId = req.session.customerId;
-    //KOLLA MER PÅ VAD JAG VILL SKICKA MED && RADE KASSAN VID SLUTFÖRT KÖP
+
     const session = await stripe.checkout.sessions.create({
       customer: customerId,
       line_items: cart.map((cartItem) => {
@@ -49,12 +48,11 @@ app.post("/create-checkout-session", async (req, res) => {
         };
       }),
       mode: "payment",
-      //Skapa en sida /confirm
+
       success_url: `${CLIENT_URL}/orderbekraftelse`,
 
       cancel_url: `${CLIENT_URL}/misslyckadbetalning`,
     });
-    //vad ??? tillbaka sessionen ex sessionsobj..fyll på?
 
     res.status(200).json({ url: session.url });
   } catch (error) {
@@ -62,15 +60,8 @@ app.post("/create-checkout-session", async (req, res) => {
     res.status(400).json("det gick inte alls bra det här du...");
   }
 });
-// app.get("/order/success", async (req, res) => {
-//   const session = await stripe.checkout.sessions.retrieve(req.query.session_id);
-//   const customer = await stripe.customers.retrieve(session.customer);
 
-//   res.send(
-//     `<html><body><h1>Thanks for your order, ${customer.email}!</h1></body></html>`
-//   );
-// });
-//Routes
+//ROUTES
 
 app.use("/api", productRouter);
 app.use("/api", customerRouter);

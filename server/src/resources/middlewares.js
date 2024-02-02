@@ -1,12 +1,4 @@
 // MIDDLEWARES
-//ADMIN fixa mer med admin
-// function admin(joiSchema) {
-//   return (req, res, next) => {
-//     const isAdmin = joiSchema.validate(req.session._id);
-//     if (!isAdmin.error) return next();
-//     res.status(400).json(isAdmin.error.message);
-//   };
-// }
 
 //AUTH
 function authenticated(joiSchema) {

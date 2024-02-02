@@ -28,7 +28,7 @@ export default function checkout() {
             className="p-2 btn btn-outline-dark my-2 my-sm-0 btn-lg "
             href="/minaordrar"
           >
-            FORTSÄTT SHOPPA
+            SE MINA ORDRAR
           </Link>
 
           {cart.map((cartItem) => (
