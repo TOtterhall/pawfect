@@ -13,7 +13,7 @@ export default function SocialJumbo() {
       <div className="jumbotron-social">
         <br />
         <br />
-        <Link className="nav-link btn-lg" href="/social">
+        <Link className="nav-link btn-lg" href="/socialamedier">
           <h4 className="display-4 text-center">SOCIALA MEDIER</h4>
           <br />
           <Image
@@ -22,9 +22,6 @@ export default function SocialJumbo() {
             alt="socialicons"
             width={400}
             height={200}
-            layout="responsive"
-            objectFit="contain"
-            objectPosition="center"
           />
 
           <hr className="my-4" />

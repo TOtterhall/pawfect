@@ -32,10 +32,9 @@
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
-.socialicons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  height: 1rem;
+.socialicons {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
