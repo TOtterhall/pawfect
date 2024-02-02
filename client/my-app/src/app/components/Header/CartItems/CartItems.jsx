@@ -18,8 +18,9 @@ export default function CartItems() {
     console.log(cart);
   }, []);
 
-  //Kalkylera vad summan blir beroende på antal produkter
-  //Kalkylera vad summan blir pris * quantfity = total
+  {
+    /* Calkulate Total Sum */
+  }
   const calculateTotal = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
     0

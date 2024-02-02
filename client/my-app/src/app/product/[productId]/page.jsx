@@ -2,6 +2,7 @@
 import React, { useEffect } from "react";
 import BtnAddToCart from "../../components/Buttons/AddToCart";
 import { useProductContext } from "../../../Context/productContext/productContext";
+import Image from "next/image";
 import "./productId.css";
 
 export default function ProductListById() {
@@ -26,7 +27,7 @@ export default function ProductListById() {
         <div className="row justify-content-center">
           <div className="col-lg-4 col-md-6">
             <div className="card-img text-center mb-4">
-              <img
+              <Image
                 src={product.image}
                 alt={product.title}
                 width={200}

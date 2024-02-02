@@ -32,16 +32,15 @@ export default function InfoJumbo() {
             </div>
           </div>
           <div className="card-about">
-            <Image
-              className="card-img-top"
-              src={Golden}
-              alt="Golden Dog"
-              width={400}
-              height={200}
-              layout="responsive"
-              objectFit="contain"
-              objectPosition="center"
-            />
+            <div>
+              <Image
+                className="golden"
+                src={Golden}
+                alt="golden"
+                width={400}
+                height={200}
+              />
+            </div>
           </div>
         </div>
       </div>

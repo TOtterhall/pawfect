@@ -1,5 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
+import Image from "next/image";
 import "./productByCategory.css";
 import Link from "next/link";
 const Hundhalsband = () => {
@@ -44,7 +45,7 @@ const Hundhalsband = () => {
               className="card card mx-2 mb-4 col-md-3 col-sm-6 justify-content-center"
               style={{ width: "16rem" }}
             >
-              <img
+              <Image
                 className="card-img-top"
                 src={product.image}
                 alt={product.title}

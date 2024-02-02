@@ -10,12 +10,12 @@ export default function News() {
       <div className="leker-kategorier"></div>
       <br />
 
-      <h1 class="card-title news text-center">NYHETER</h1>
+      <h1 className="card-title news text-center">NYHETER</h1>
       <br />
       <br />
 
-      <div class="card-group">
-        <div class="card">
+      <div className="card-group">
+        <div className="card">
           <Image
             className="d-block w-100 img-fluid"
             src={Golden}
@@ -23,18 +23,18 @@ export default function News() {
             width={200}
             height={300}
           />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+            <p className="card-text">
               This card has supporting text below as a natural lead-in to
               additional content.
             </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <p className="card-text">
+              <small className="text-muted">Last updated 3 mins ago</small>
             </p>
           </div>
         </div>
-        <div class="card">
+        <div className="card">
           <Image
             className="d-block w-100 img-fluid"
             src={Golden}
@@ -42,18 +42,18 @@ export default function News() {
             width={200}
             height={300}
           />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+            <p className="card-text">
               This card has supporting text below as a natural lead-in to
               additional content.
             </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <p className="card-text">
+              <small className="text-muted">Last updated 3 mins ago</small>
             </p>
           </div>
         </div>
-        <div class="card">
+        <div className="card">
           <Image
             className="d-block w-100 img-fluid"
             src={Golden}
@@ -61,14 +61,14 @@ export default function News() {
             width={200}
             height={300}
           />
-          <div class="card-body">
-            <h5 class="card-title">Card title</h5>
-            <p class="card-text">
+          <div className="card-body">
+            <h5 className="card-title">Card title</h5>
+            <p className="card-text">
               This card has supporting text below as a natural lead-in to
               additional content.
             </p>
-            <p class="card-text">
-              <small class="text-muted">Last updated 3 mins ago</small>
+            <p className="card-text">
+              <small className="text-muted">Last updated 3 mins ago</small>
             </p>
           </div>
         </div>

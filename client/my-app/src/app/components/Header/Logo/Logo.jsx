@@ -12,8 +12,8 @@ export default function Logo() {
         className="d-block img-fluid"
         src={Pawfect}
         alt="LogoPawfect"
-        width={230}
-        height={200}
+        width={200}
+        height={100}
       />
     </div>
   );

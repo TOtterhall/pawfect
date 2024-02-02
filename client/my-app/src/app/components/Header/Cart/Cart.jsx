@@ -1,8 +1,4 @@
 "use client";
-
-//skapa cards som lägger sig i kassan och inkludera + && - för att kunna ändra i varukorgen
-//Lägga till knapp för att fortsätta shoppa...
-//cart ska automatiskt uppdatera sig...???utan att behöva uppdatera sidan.
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
@@ -33,8 +29,6 @@ export default function Cart() {
     setDrawerOpen(false);
   };
 
-  //Kalkylera vad summan blir beroende på antal produkter
-  //Kalkylera vad summan blir pris * quantfity = total
   const calculateTotal = cart.reduce(
     (total, item) => total + item.product.price * item.quantity,
     0
@@ -98,8 +92,6 @@ export default function Cart() {
             <BtnGoToCheckout onCloseDrawer={closeDrawer} />
             <br />
             <br />
-            <p>DU KANSKE GILLAR DETTA OCKSÅ</p>
-            <p>Images???</p>
           </div>
         </div>
       )}

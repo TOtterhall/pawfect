@@ -11,22 +11,19 @@ export default function AboutJumbo() {
   return (
     <div id="about">
       <div className="jumbotron-about d-flex justify-content-center align-items-center">
-        <div class="card-group">
-          <div class="card-about ">
+        <div className="card-group">
+          <div>
             <Image
-              className="card-img-top"
+              className="golden"
               src={Golden}
-              alt="Golden Dog"
+              alt="golden"
               width={400}
               height={200}
-              layout="responsive"
-              objectFit="contain"
-              objectPosition="center"
             />
           </div>
 
-          <div class="card-about">
-            <div class="card-body">
+          <div className="card-about">
+            <div className="card-body">
               <h1 className="display-4">OM OSS...</h1>
               <p className="lead">
                 This is a simple hero unit, a simple jumbotron-style component

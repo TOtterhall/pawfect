@@ -1,3 +1,12 @@
+"use Client";
+
+import React from "react";
+
+import Image from "next/image";
+import "bootstrap/dist/css/bootstrap.min.css";
+import Golden from "../../../../../client/my-app/public/assets/carousel/golden_dog.jpg";
+import Link from "next/link";
+
 export default function Info() {
   return (
     <main>
@@ -23,16 +32,15 @@ export default function Info() {
             </div>
           </div>
           <div className="card-about">
-            <Image
-              className="card-img-top"
-              src={Golden}
-              alt="Golden Dog"
-              width={400}
-              height={200}
-              layout="responsive"
-              objectFit="contain"
-              objectPosition="center"
-            />
+            <div>
+              <Image
+                className="golden"
+                src={Golden}
+                alt="golden"
+                width={400}
+                height={200}
+              />
+            </div>
           </div>
         </div>
       </div>

@@ -27,8 +27,9 @@ export default function Carousel() {
               className="d-block w-100 img-fluid"
               src={Golden}
               alt="Golden Dog"
-              width={1920}
-              height={1080}
+              width={400}
+              height={200}
+              priority={true}
             />
           </div>
           <div
@@ -38,8 +39,9 @@ export default function Carousel() {
               className="d-block w-100 img-fluid"
               src={Dalmatines}
               alt="Dalmatine Dogs"
-              width={1920}
-              height={1080}
+              width={400}
+              height={200}
+              priority={true}
             />
           </div>
           <div
@@ -49,8 +51,9 @@ export default function Carousel() {
               className="d-block w-100 img-fluid"
               src={Aussie}
               alt="Aussie Dog"
-              width={1920}
-              height={1080}
+              width={400}
+              height={200}
+              priority={true}
             />
           </div>
         </div>

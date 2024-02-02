@@ -11,7 +11,7 @@ export default function StoreJumbo() {
     <div>
       <div className="jumbotron-store">
         <Link className="nav-link btn-lg" href="/butik">
-          <div class="card bg-dark text-white">
+          <div className="card bg-dark text-white">
             <Image
               className="d-block w-100 img-fluid"
               src={Golden}
@@ -19,8 +19,8 @@ export default function StoreJumbo() {
               width={400}
               height={200}
             />
-            <div class="card-img-overlay card-to-shop">
-              <h5 class="card-title text-center">
+            <div className="card-img-overlay card-to-shop">
+              <h5 className="card-title text-center">
                 DAX ATT VÅRSHOPPA TILLL VOVVEN
               </h5>
             </div>
