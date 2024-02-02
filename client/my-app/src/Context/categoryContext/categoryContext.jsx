@@ -17,18 +17,15 @@ export const CategoryContextProvider = ({ children }) => {
 
       setAllcategories(categories);
     } catch (error) {
-      console.log("Kan inte hämta alla kategorier tyvärr.....", error);
+      error;
     }
   };
-
-  // andra funktioner och useEffect
 
   return (
     <CategoryContext.Provider
       value={{
         getAllCategories,
         categories,
-        // andra värden/funktioner
       }}
     >
       {children}

@@ -6,7 +6,6 @@ const jwt = require("jsonwebtoken");
 async function registerCustomer(req, res, next) {
   try {
     const { email, password } = req.body;
-    //UTÖKA OM ANVÄDAREN REDAN FINNS_SKA INTE KUNNA REGISTRERA SIG DÅ
 
     const existingCustomer = await CustomerModel.findOne({ email: email });
     if (existingCustomer) {
@@ -42,8 +41,6 @@ async function loginCustomer(req, res, next) {
   const { email, password } = req.body;
   try {
     console.log(password);
-    // const thisIsThePassword = req.body.password;
-    // console.log(thisIsThePassword);
 
     const customer = await CustomerModel.findOne({
       email: email,
@@ -60,7 +57,7 @@ async function loginCustomer(req, res, next) {
       req.body.password,
       customer.password
     );
-    // console.log(correctPassword);
+
     if (!correctPassword) {
       return res.status(401).json({
         message: "Fel lösenord... testa igen",
@@ -74,74 +71,33 @@ async function loginCustomer(req, res, next) {
     req.session.customerId = customer._id;
     return res.status(200).json({ customer, token });
   } catch (err) {
-    console.log(err);
-    next();
+    next(err);
   }
 }
 
 //FUNCTION LOGOUT
 async function logoutCustomer(req, res, next) {
   try {
-    // if (!req.session || !req.session._id) {
-    //   console.log(req.session._id);
-    //   return res.status(400).json({
-    //     message: "Kan ju inte tassa iväg om du inte kommit hit än...",
-    //   });
-    // }
-
-    res.clearCookie("jwtToken");
     req.session = null;
+    console.log(req.session);
     res
       .status(200)
       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
   } catch (err) {
-    console.log(err);
     next(err);
   }
 }
 //FUNCTION AUTHORIZE
-// async function authorize(req, res, next) {
-//   if (!req.session._id) {
-//     return res
-//       .status(401)
-//       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
-//   }
-//   res.status(200).json(req.session);
-// }
-// //FUNCTION LOGOUT
-// async function logoutCustomer(req, res, next) {
-//   try {
-//     const token = req.cookies.jwtToken;
-//     console.log(token);
-//     if (!token) {
-//       return res.status(400).json({
-//         message: "Kan ju inte tassa iväg om du inte kommit hit än...",
-//       });
-//     }
-//     res.clearCookie("jwtToken");
-//     res
-//       .status(204)
-//       .json({ message: "Du har tassat ut, välkommen tillbaka..." });
-//   } catch (err) {
-//     console.log(err);
-//     next(err);
-//   }
-// }
+async function authorize(req, res, next) {
+  if (!req.session.customerId) {
+    return res.status(401).json({ message: "Du e inte AUTH" });
+  }
+  res.status(200).json(req.session);
+}
 
-//TO DO kolla på
-//-middlewares
-//-CLIENT- LOGIN FORM
-//-Kolla listan TOdos
-//-Lägga till fler productmodell(vallidering/exist)
-//-Lägga till fler saker i customer modell
-//FUNCTION AUTH
-
-//DONE
-//-cookie
-//-OAuth/google?
-
-//NEXT SPRINT
-//-auth/autherize
-//Ta bort console.log
-//Lägga till bättre beskrivningar?
-module.exports = { registerCustomer, loginCustomer, logoutCustomer };
+module.exports = {
+  registerCustomer,
+  loginCustomer,
+  logoutCustomer,
+  authorize,
+};

@@ -1,23 +1,12 @@
 .modal-slide {
-  background-color: aqua;
-  display: flex;
   position: fixed;
-  top: 0rem;
+  top: 0;
   left: 0;
-  width: 40%;
   height: 100%;
-  z-index: 9990;
-}
-.modal-slide h1 {
-  background-color: rgb(43, 128, 122);
-  margin-top: 5rem;
-  margin-left: 10%;
-}
-.modal-slide li {
-  background-color: rgb(58, 161, 202);
-}
-.modal-slide container div {
-  background-color: red;
-  width: 100%;
-  margin-left: 100%;
+  width: 350px;
+  background-color: #949494;
+  z-index: 8999;
+  overflow-y: auto;
+  padding: 20px;
+  box-shadow: -2px 0px 5px 0px rgba(0, 0, 0, 0.1);
 }

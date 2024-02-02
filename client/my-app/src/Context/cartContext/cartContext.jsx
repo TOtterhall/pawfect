@@ -8,19 +8,14 @@ export const useCartContext = () => {
 };
 
 export const CartContextProvider = ({ children }) => {
-  const [cartItems, setCartItems] = useState([]);
-  const [cartQuantity, updatedCartQuantity] = useState(0);
-  const [totalCost, setTotalCost] = useState(0);
-
+  const [cart, setCart] = useState([]);
   useEffect(() => {
-    const cart = JSON.parse(localStorage.getItem("cart")) || [];
-    setCartItems(cart);
-    updatedCartQuantity(cart);
-
-    // const cost = cart.reduce((total, item) => {
-    //   return total + item.product * item.quantity;
-    // }, 0);
-    // setTotalCost(cost);
+    const lsCart = JSON.parse(localStorage.getItem("cart"));
+    setCart(lsCart);
+    if (!lsCart) {
+      localStorage.setItem("cart", JSON.stringify([]));
+      setCart([]);
+    }
   }, []);
 
   const addToCart = (product, quantity) => {
@@ -28,56 +23,30 @@ export const CartContextProvider = ({ children }) => {
       console.error("Invalid product or product ID");
       return;
     }
+    const cartItem = {
+      product: product,
+      quantity: quantity,
+    };
 
-    const existingCartItemIndex = cartItems.findIndex(
+    const existingProductIndex = cart.findIndex(
       (item) => item.product._id === product._id
     );
 
-    if (existingCartItemIndex !== -1) {
-      setCartItems((prevItems) => {
-        const updatedCartItems = [...prevItems];
-        updatedCartItems[existingCartItemIndex].quantity = quantity;
-
-        localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-
-        const newCartQuantity = updatedCartItems.reduce(
-          (total, item) => total + item.quantity,
-          0
-        );
-        updatedCartQuantity(newCartQuantity);
-
-        return updatedCartItems;
-      });
+    if (existingProductIndex !== -1) {
+      cart[existingProductIndex].quantity += quantity;
     } else {
-      const cartItem = {
-        product: product,
-        quantity: quantity,
-      };
-
-      setCartItems((prevItems) => {
-        const updatedCartItems = [...prevItems, cartItem];
-
-        localStorage.setItem("cart", JSON.stringify(updatedCartItems));
-        const newCartQuantity = updatedCartItems.reduce(
-          (total, item) => total + item.quantity,
-          0
-        );
-        updatedCartQuantity(newCartQuantity);
-
-        return updatedCartItems;
-      });
+      cart.push(cartItem);
     }
+
+    localStorage.setItem("cart", JSON.stringify(cart));
+    setCart(cart);
   };
-  // andra funktioner och useEffect
 
   return (
     <CartContext.Provider
       value={{
         addToCart,
-        cartItems,
-        cartQuantity,
-        totalCost,
-        // andra värden/funktioner
+        cart,
       }}
     >
       {children}

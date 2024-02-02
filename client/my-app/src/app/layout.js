@@ -1,9 +1,15 @@
 import { Inter } from "next/font/google";
-import "bootstrap/dist/css/bootstrap.css";
+//PROVIDERS FROM CONTEXT
 import CartProvider from "../Context/cartContext/cartContext";
 import ProductProvider from "../Context/productContext/productContext";
-//Components
+import CustomerProvider from "../Context/customerContext/customerContext";
+import CategoryProvider from "../Context/categoryContext/categoryContext";
+import OrderProvider from "../Context/orderContext/orderContext.jsx";
 
+//CSS
+import "./globals.css";
+import "bootstrap/dist/css/bootstrap.css";
+//COMPONENTS
 import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 
@@ -23,17 +29,24 @@ export default function RootLayout({ children }) {
           integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
           crossOrigin="anonymous"
         ></script>
+        <script src="https://js.stripe.com/v3/"></script>
       </head>
       <body className={inter.className}>
-        <CartProvider>
+        <CustomerProvider>
           <ProductProvider>
-            <Header />
+            <CartProvider>
+              <OrderProvider>
+                <CategoryProvider>
+                  <Header />
 
-            <main>{children}</main>
+                  <main>{children}</main>
 
-            <Footer />
+                  <Footer />
+                </CategoryProvider>
+              </OrderProvider>
+            </CartProvider>
           </ProductProvider>
-        </CartProvider>
+        </CustomerProvider>
       </body>
     </html>
   );

@@ -1,5 +1,5 @@
 "use client";
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 
 export const CustomerContext = createContext();
 
@@ -10,7 +10,32 @@ export const useCustomerContext = () => {
 const CustomerContextProvider = ({ children }) => {
   const [customers, setAllCustomers] = useState([]);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState("");
+  const [auth, setAuth] = useState(false);
+
+  useEffect(() => {
+    getAuth();
+  }, []);
+
+  const getAuth = async () => {
+    try {
+      const res = await fetch(`http://localhost:3080/api/customers/authorize`, {
+        method: "GET",
+
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+      const authData = await res.json();
+      if (authData.message == "Du e inte AUTH") {
+        setAuth(false);
+      }
+      setAuth(authData);
+    } catch (error) {
+      error.message;
+    }
+  };
 
   const getAllCustomers = async () => {
     try {
@@ -18,13 +43,12 @@ const CustomerContextProvider = ({ children }) => {
       const customers = await res.json();
       setAllCustomers(customers);
     } catch (error) {
-      console.log("Kan inte hämta alla användarna.....", error);
+      error.message;
     }
   };
 
   const register = async ({ email, password }) => {
     const customerData = { email: email, password: password };
-    console.log(customerData);
 
     try {
       const res = await fetch(`http://localhost:3080/api/customers/register`, {
@@ -36,30 +60,25 @@ const CustomerContextProvider = ({ children }) => {
         body: JSON.stringify(customerData),
       });
 
-      console.log(res);
-
       if (res.ok) {
         const data = await res.json();
         const { token } = data;
+        setAuth(data);
         setToken(token);
-        console.log(token);
 
-        localStorage.setItem("token", token);
-        console.log("Ny kund registrerad");
+        alert("Du har nu registrerat dig- välkommen");
         setIsLoggedIn(true);
       } else {
-        console.log("Kan inte registrera dig, fel tassavtryck");
+        alert("Kan inte registrera dig, fel tassavtryck");
       }
     } catch (error) {
-      console.error("Kan inte registrera DIG.....", error);
+      error.message;
     }
   };
 
   //LOGIN
   const login = async ({ email, password }) => {
     const customerData = { email: email, password: password };
-    console.log(customerData);
-    //om kunden är registrerad => logga in denne.
 
     try {
       const res = await fetch(`http://localhost:3080/api/customers/login`, {
@@ -68,30 +87,22 @@ const CustomerContextProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
         body: JSON.stringify(customerData),
       });
-
-      console.log(res);
 
       if (res.ok) {
         const data = await res.json();
         const { token } = data;
         setToken(token);
-        console.log(token);
-
+        setAuth(data);
         localStorage.setItem("token", token);
-
-        console.log("Token stored in localStorage:", token);
-        console.log("inloggning lyckades från context");
-        setIsLoggedIn(true);
+        alert("Du lyckades logga in....YAYY");
       } else {
-        register();
-        console.log(
-          "Kan inte logga in DU i context...Du måste registrera dig först"
-        );
+        alert("Kan inte logga in...Fel användarnamn eller lösenord");
       }
     } catch (error) {
-      console.error("Kan inte logga in DU.....", error);
+      error.message;
     }
   };
 
@@ -104,21 +115,18 @@ const CustomerContextProvider = ({ children }) => {
         headers: {
           "Content-Type": "application/json",
         },
+        credentials: "include",
       });
-
-      console.log(res);
 
       if (res.ok) {
         localStorage.removeItem("token");
         setIsLoggedIn(false);
-        console.log("Du är nu utloggad från context");
+        alert("Du har nu tassat ut");
       } else {
-        console.log(
-          "Kan inte logga ut dig i context...Du måste registrera dig först"
-        );
+        alert("Du kan inte tassa ut innan du tassat in");
       }
     } catch (error) {
-      console.error("Kan inte logga ut DU.....", error);
+      error.message;
     }
   };
 
@@ -133,6 +141,7 @@ const CustomerContextProvider = ({ children }) => {
         register,
         logout,
         token,
+        auth,
       }}
     >
       {children}

@@ -1,13 +1,13 @@
 "use client";
 import React from "react";
-import Shop from "../components/Shop/Shop";
+import ProductCard from "../components/Products/ProductCard/ProductCard";
 
 export default function Store() {
   return (
     <main>
-      <h1>Min butik</h1>
-      <h1>Mina produkter:</h1>
-      <Shop />
+      <div className="container">
+        <ProductCard />
+      </div>
     </main>
   );
 }

@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { app } = require("./app");
-const dotenv = require("dotenv").config();
+require("dotenv").config();
 
 main().catch((err) => console.log(err));
 

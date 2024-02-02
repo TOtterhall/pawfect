@@ -7,13 +7,13 @@ POST http://localhost:3080/api/products
 Content-Type: application/json
 
 {
-    "title":"FLEXIKOPPEL GIANT",
-    "price":459,
-    "image":"https://www.tinybuddy.se/assets/products/21409_940x.jpg?1647434784",
+    "title":"EASY LIFE SPÅRLINA",
+    "price":1269,
+    "image":"https://www.tinybuddy.se/assets/products/50-pack-bajspasar-med-handtag-premium-16625_440x.jpg?1699522491",
     "description":"Rejält, extra stort och stabilt koppel från Flexi.En säker, stark och kromad karbinhake.",
-    "colors":["Svart"],
+    "colors":["ROSA"],
     "sizes": ["M","L","XL"],
-    "categories":["Hundkoppel"]
+    "categories":["Husse & Matte"]
 
 
 }

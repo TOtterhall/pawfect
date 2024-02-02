@@ -34,3 +34,5 @@ POST http://localhost:3080/api/customers/logout
 Content-Type: application/json
 
 ###
+GET http://localhost:3080/api/customers/authorize
+###

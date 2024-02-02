@@ -12,26 +12,25 @@ const Categories = () => {
     getAllCategories();
   }, []);
 
-  const handleClick = (categoryTitle) => {
-    router.push(`/products/${encodeURIComponent(categoryTitle)}`);
-    console.log(categoryTitle);
-  };
+  // const handleClick = (categoryTitle) => {
+  //   router.push(`/products/${encodeURIComponent(categoryTitle)}`);
+  //   console.log(categoryTitle);
+  // };
 
   return (
     <div className="modal-body">
       <div className="container-fluid">
         <div className="row">
           <div className="col-md-4">
-            {categories.map((category) => (
-              <div key={category._id}>
+            {categories.map((categoryTitle) => (
+              <div className="my-2" key={categoryTitle._id}>
                 <Link
-                  className="nav-link"
                   href="/products/[categoryTitle]"
-                  as={`/products/${encodeURIComponent(category.title)}`}
+                  as={`/products/${encodeURIComponent(categoryTitle.title)}`}
                 >
-                  <h2 onClick={() => handleClick(category.titel)}>
-                    {category.title}
-                  </h2>
+                  <button className=" btn btn-outline-dark my-2 my-sm-0 btn-lg ">
+                    {categoryTitle.title}
+                  </button>
                 </Link>
               </div>
             ))}
@@ -43,3 +42,29 @@ const Categories = () => {
 };
 
 export default Categories;
+// ("use client");
+// import React from "react";
+// import Link from "next/link";
+// Nödlösning...
+// const Categories = () => {
+//   return (
+//     <div className="modal-body">
+//       <div className="container-fluid">
+//         <div className="row">
+//           <div className="col-md-4">
+//             <ul>
+//               <Link>
+//                 <li>Hundhalsband</li>
+//               </Link>
+//               <Link>
+//                 <li>Hundhalkoppel</li>
+//               </Link>
+//             </ul>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Categories;

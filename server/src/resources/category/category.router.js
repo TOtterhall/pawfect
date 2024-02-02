@@ -5,7 +5,7 @@ const {
   getAllCategories,
   getSpecificCategory,
 } = require("./category.controller");
-// const { CategorySchema } = require("./category.model");
+
 const { CategoryValidationSchema } = require("./category.model");
 
 const categoryRouter = Router();

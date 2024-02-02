@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -17,45 +17,93 @@ const Menu = () => {
   const closeDrawer = () => {
     setDrawerOpen(false);
   };
+
+  const closeMobileDrawer = () => {
+    setMenuOpen(!isMenuOpen);
+  };
   const toogleMenu = () => {
     setMenuOpen(!isMenuOpen);
   };
-  return (
-    <div>
-      <div className={`pos-f-t ${isMenuOpen ? "menu-open" : ""}`}>
-        <div className="collapse" id="navbarToggleExternalContent">
-          <div className="bg-dark p-4">
-            <h4 className="text-white">Meny</h4>
 
+  return (
+    <div className="">
+      <div className="">
+        <div className="collapse" id="navbarToggleExternalContent">
+          <div className="modal-slide slide-in-left">
+            <h4>Meny i mobil</h4>
+            <button
+              className="btn btn-outline-dark position-absolute top-0 end-0"
+              onClick={closeMobileDrawer}
+            >
+              X
+            </button>
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
-                <Link className="nav-link  text-white" href="/">
-                  Hem <span className="sr-only">(current)</span>
+                <Link className="nav-link " href="/">
+                  HEM <span className="sr-only"></span>
                 </Link>
               </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="/omoss">
+                  OM OSS
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link className="nav-link" href="/kontakt">
+                  KONTAKTA OSS
+                </Link>
+              </li>
+              <li>
+                <button
+                  className="btn btn-outline-dark my-2 my-sm-0 "
+                  onClick={openDrawer}
+                >
+                  BUTIK
+                </button>
 
-              <li className="nav-item">
-                <Link className="nav-link  text-white" href="/butik">
-                  Butik
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link  text-white" href="/omoss">
-                  Om oss
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link  text-white" href="/kontakt">
-                  Kontakta oss
-                </Link>
+                {isDrawerOpen && (
+                  <div className="modal-slide slide-in-left">
+                    <div>
+                      <button
+                        className="btn btn-outline-dark position-absolute top-0 end-0 "
+                        onClick={closeDrawer}
+                      >
+                        X
+                      </button>
+                      <h1 className="store-header">BUTIK</h1>
+
+                      <div className="modal-body">
+                        <div className="row">
+                          <div className="row">
+                            <div className="col-md-4">
+                              {" "}
+                              <Link
+                                className="p-2 btn btn-outline-dark my-2 my-sm-0 btn-lg "
+                                href="/butik"
+                                onClick={closeDrawer}
+                              >
+                                ALLA PRODUKTER
+                              </Link>
+                              <ul>
+                                <li className="p-2 g-col-6">
+                                  <h4 className="store-header">Kategorier:</h4>
+                                  <Categories closeDrawer={closeDrawer} />
+                                </li>
+                              </ul>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                )}
               </li>
             </ul>
           </div>
         </div>
-        <nav className="navbar navbar-dark bg-dark">
-          {/* den ljusa byt ut klassnamn på nav navbar navbar-expand-lg navbar-light bg-light */}
+        <nav className="menu">
           <button
-            className="navbar-toggler"
+            className="navbar-toggler "
             type="button"
             data-bs-toggle="collapse"
             data-bs-target="#navbarToggleExternalContent"
@@ -72,63 +120,65 @@ const Menu = () => {
               <span className="navbar-toggler-icon "></span>
             )}
           </button>
+          {/* Utfälld meny- större skärmar*/}
           <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            {/* <a classNameName="navbar-brand" href="/">
-            Home
-          </a> */}
             <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
               <li className="nav-item active">
                 <Link className="nav-link" href="/">
-                  Home <span className="sr-only">(current)</span>
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" href="/butik">
-                  Butik
+                  HEM <span className="sr-only"></span>
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" href="/omoss">
-                  Om oss
+                  OM OSS
                 </Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" href="/kontakt">
-                  Kontakta oss
+                  KONTAKTA OSS
                 </Link>
               </li>
               <li>
                 <button
-                  className="btn btn-outline-success my-2 my-sm-0 "
+                  className="btn btn-outline-dark my-2 my-sm-0 "
                   onClick={openDrawer}
                 >
-                  open
+                  BUTIK
                 </button>
+                {/* Meny (Butik) */}
                 {isDrawerOpen && (
                   <div className="modal-slide slide-in-left">
                     <div>
                       <button
-                        className="btn btn-outline-success position-absolute top-0 end-0 "
+                        className="btn btn-outline-dark position-absolute top-0 end-0 "
                         onClick={closeDrawer}
                       >
                         X
                       </button>
-                      <h1>BUTIK</h1>
+                      <h1 className="text-center my-4">BUTIK</h1>
+                      <hr />
                       <div className="modal-body">
                         <div className="container-fluid">
                           <div className="row">
+                            <Link
+                              className="p-2 btn btn-outline-dark my-2 my-sm-0 btn-lg "
+                              href="/butik"
+                              onClick={closeDrawer}
+                            >
+                              ALLA PRODUKTER
+                            </Link>
                             <div className="p-2 g-col-6">
                               {" "}
+                              <h4 className="text-center my-5">KATEGORIER:</h4>
+                              <hr />
                               <ul>
-                                <li className="p-2 g-col-6">
-                                  <Categories />
+                                <li
+                                  className="p-2 btn-link btn-outline-dark my-2 my-sm-0 btn-lg "
+                                  onClick={closeDrawer}
+                                >
+                                  <Categories onClick={closeDrawer} />
                                 </li>
                               </ul>
-                              <div className=" card p-2 g-col-6">
-                                <div className="">Bild 1</div>
-                                <div>Bild 2</div>
-                                <div>Bild 3</div>
-                              </div>
                             </div>
                           </div>
                         </div>

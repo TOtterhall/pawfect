@@ -1,0 +1,45 @@
+.jumbotron-store {
+  background-color: blueviolet;
+}
+.jumbotron-about {
+  background-color: #afa8a1;
+}
+
+.jumbotron-news {
+  background-color: #949494;
+}
+.jumbotron-Info {
+  background-color: rgb(226, 43, 211);
+}
+.jumbotron-social {
+  background-color: #d6d6d6;
+}
+.card-img-overlay {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(129, 127, 127);
+  max-height: 4rem;
+
+  opacity: 0.5;
+  color: black;
+}
+.card-about {
+  width: 30rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+.socialicons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 5rem;
+}
+.socialicons-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
