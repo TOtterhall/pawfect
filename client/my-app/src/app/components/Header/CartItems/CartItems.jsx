@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import BtnGoToCheckout from "../../Buttons/GoToCheckout";
 import { useCartContext } from "@/Context/cartContext/cartContext";
@@ -8,7 +8,7 @@ export default function CartItems() {
   //UPDATE CART
   const { cart } = useCartContext();
   useEffect(() => {
-    console.log(cart);
+    cart;
   }, []);
 
   //CALCULATE TOTALSUM
