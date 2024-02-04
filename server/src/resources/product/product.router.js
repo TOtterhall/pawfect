@@ -8,7 +8,7 @@ const {
 } = require("./product.controller");
 
 const { ifmodelexist } = require("../middlewares");
-const { UpdateProductValidationSchema } = require("../product/product.model");
+const { UpdateProductValidationSchema } = require("./product.model");
 // const { CategoryValidationSchema } = require("../category/category.model");
 const productRouter = Router();
 productRouter.post(

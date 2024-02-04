@@ -18,6 +18,6 @@ async function main() {
     );
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
-    process.exit(1); // END CONNECTION IF ERROR
+    process.exit(1); // Avslutar applikationen om anslutningen misslyckas
   }
 }
