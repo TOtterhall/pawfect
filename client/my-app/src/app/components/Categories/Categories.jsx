@@ -12,11 +12,6 @@ const Categories = () => {
     getAllCategories();
   }, []);
 
-  // const handleClick = (categoryTitle) => {
-  //   router.push(`/products/${encodeURIComponent(categoryTitle)}`);
-  //   console.log(categoryTitle);
-  // };
-
   return (
     <div className="modal-body">
       <div className="container-fluid">
@@ -42,29 +37,3 @@ const Categories = () => {
 };
 
 export default Categories;
-// ("use client");
-// import React from "react";
-// import Link from "next/link";
-// Nödlösning...
-// const Categories = () => {
-//   return (
-//     <div className="modal-body">
-//       <div className="container-fluid">
-//         <div className="row">
-//           <div className="col-md-4">
-//             <ul>
-//               <Link>
-//                 <li>Hundhalsband</li>
-//               </Link>
-//               <Link>
-//                 <li>Hundhalkoppel</li>
-//               </Link>
-//             </ul>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default Categories;
